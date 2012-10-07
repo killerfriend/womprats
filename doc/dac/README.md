@@ -12,9 +12,9 @@ Additionally, it has a proven track record in open source designs, such as the A
 
 # useful links:
 
-- [DIP Package](http://www.digikey.com/product-detail/en/MCP4921-E%2FP/MCP4921-E%2FP-ND/716280)
+- [DIP Package](http://www.digikey.com/product-detail/en/MCP4921-E%2FP/MCP4921-E%2FP-ND/716280) Cost $2.36
 
-- [SOIC Package](http://www.digikey.com/product-detail/en/MCP4921-E%2FSN/MCP4921-E%2FSN-ND/716196)
+- [SOIC Package](http://www.digikey.com/product-detail/en/MCP4921-E%2FSN/MCP4921-E%2FSN-ND/716196) Cost $2.36
 
 - [Adafruit Wave Shield](http://www.adafruit.com/products/94)
 
