@@ -1,0 +1,204 @@
+%%MaD.tex - Notes taken for Materials and Devices Lecture
+%%Author: Andy Goetz
+%%Date Modified: 10-7-09
+%%License: Ask me before reproducing/modifying, etc.
+
+
+\documentclass{article}
+
+%Make sure you have the file ShumanNote.scy in the same directory as
+%this one. It has contains the style sheet for ECE111, and is needed
+%to standardize the layout of LateX documents created for the class.
+\usepackage{ShumanNotes} 
+\usepackage{tikz}
+\usepackage{program}
+\usepackage{listings}
+\pdfpagewidth 8.5in 
+\pdfpageheight 11in
+
+%This package is used to line up pictures 
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{listings}
+%allows cursive font
+%\usepackage{amsmath}
+
+%allows hyperlinks 
+%\usepackage{hyperref}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+
+\lhead{Homework 2}
+
+\begin{document}
+
+%% These commands allow me to use cursive letter for things such as
+%% length.  Note that on ubuntu linux, this required installation of
+%% the package 'texlive-fonts-extra'. 
+%% Taken from
+%% http://www.latex-community.org/forum/viewtopic.php?f=5&t=1404&start=0
+\newenvironment{frcseries}{\fontfamily{frc}\selectfont}{}
+\newcommand{\textfrc}[1]{{\frcseries#1}}
+\newcommand{\mathfrc}[1]{\text{\textfrc{#1}}}
+
+
+\section{Group Overview}
+Our group was formed with Andy Goetz, Bradon Kanyid, Jackson Pugh, and
+Kevin Riedl. Our group has a wiki located at \url{https://projects.cecs.pdx.edu/projects/fa2012ece411-womprats/wiki}.
+\section{Project Overview}
+
+We evaluated 4 separate ideas for our practicum: An audio synthesizer,
+a flood sensor, a space wars clone, and a gameboy/MIDI interface.
+
+\subsection{Audio Synthesizer}
+The audio synth project would be a simple synthesizer that does
+software-based processing and synthesis of waveforms from various
+input sources, such as possibly potentiometers, photodiodes, and other
+tactile sensors. There may be a user interface for modifying effects,
+chaining together inputs, and calibration of inputs. The output would
+be a built-in speaker with an optional headphone/line-out. This would
+likely have two power options - portable and fixed. MIDI input is a
+possibility as well. So basically the flow would be "sensor inputs ->
+modifications -> synthesis -> audio outputs", or something along those
+lines.
+\subsection{Flood Sensor}
+The Flood sensor project is a rather simple device that would alert
+the occupants of a house/building when a flood would happen. This is
+similar in idea to a smoke alarm or a carbon monoxide detector. There
+are several different ways this could be implemented and could have
+varying degrees of complication depending on how we want to implement
+the alert system.
+\subsection{Space Wars Clone}
+In this project, we would construct a clone of the classic videogame,
+Space Wars. This would involve creating hardware to interact with
+joysticks, as well as hardware and software to display the game on an
+NTSC television. 
+
+\subsection{Gameboy/MIDI interface}
+
+The Gameboy MIDI project allows the user to hook up a MIDI
+controller/device to a Gameboy (via the link port) and play 8-bit
+notes through the speakers. Specifically, when the gameboy is turned
+on, the device can take in MIDI control signals, which it processes
+and then outputs as a tune. Thus, you can use the Gameboy as musical
+instrument to play classic 8-bit sounds.
+
+\section{Decision Matrix}
+We created a decision matrix to evaluate these ideas. 
+
+\centerimage{
+\begin{tabular}{l|p{.7in}p{0.8in}p{0.8in}p{01in}}
+& Audio Synthesizer & Flood Sensor & Space Wars & Gameboy Midi Interface \\
+\hline
+Mechanical Complexity &4 &2 &5 &3 \\
+Cheap to Make& 3& 5& 4&4 \\
+Open Source Free & 5& 5& 5& 3\\
+Gracefully Degradeable & 5& 1& 3& 1\\
+Visible Circuit & 4& 5& 3& 2\\
+Plug 'n Play & 5& 5& 5& 4\\
+Presentable & 5& 4& 3&4 
+\end{tabular}
+}{Decision Matrix}{decmatrix}
+
+\section{Decision Matrix Criteria}
+The dimension of
+our matrix were Mechanical Complexity, Cheap to Make, Open Source,
+Gracefully Degradeable, Visible Circuit, Plug n' Play, and
+Presentable. Scores ranged from 1 to 5, with 5 being better. More
+detail about these dimensions can be found below.
+\subsection {Mechanical Complexity}
+This dimension measures how complex the device would be to manufacture
+mechanically. For example, if a project only requires a bare circuit
+board, it would score a 5 in this category. If it required a
+custom-designed enclosure, it would score closer to a one. 
+\subsection{Cheap to Make}
+This dimension measures how expensive the device would be to
+manufacture. Projects that only require cheap microcontrollers and
+components would score a 5, while projects that require exotic
+materials, expensive components, or existing objects (i.e. a game boy)
+would score lower. 
+\subsection{Open Source}
+Does the project depend only on open source or well documented tools?
+Open source tools tend to be better quality and easier to use as well.
+Using an AVR microcontroller would score higher than a Xilinx
+FPGA. Both of these are significantly easier than programming a game
+boy.
+\subsection{Gracefully Degradeable}
+Can the scope of this project be easily scaled back if certain aspects are
+unachievable? 
+\subsection{Visible Circuit}
+How easy is it to prototype this project before commiting to a PCB?
+Are breakouts commonly available? Does the project depend on non-DIP
+parts, or operate at a frequency too high for a breadboard?
+\subsection{Plug n' Play}
+Does this project require custom software to run on a host computer,
+or will it work as soon as it is plugged into any other devices?
+\subsection{Presentable}
+How easy is this device to demonstrate without depending on external
+resources? Can it be shown off in an interview situation?
+
+\section{Details about individual projects}
+Each project has its value on the decision matrix explained below. 
+
+\subsection{Audio Synthesizer}
+\subsubsection {Mechanical Complexity}
+
+\subsubsection{Cheap to Make}
+
+\subsubsection{Open Source}
+
+\subsubsection{Gracefully Degradeable}
+
+\subsubsection{Visible Circuit}
+
+\subsubsection{Plug n' Play}
+
+\subsubsection{Presentable}
+
+
+\subsection{Flood Sensor}
+\subsubsection {Mechanical Complexity}
+\subsubsection{Cheap to Make}
+\subsubsection{Open Source}
+\subsubsection{Gracefully Degradeable}
+\subsubsection{Visible Circuit}
+\subsubsection{Plug n' Play}
+\subsubsection{Presentable}
+
+\subsection{Space Wars}
+\subsubsection {Mechanical Complexity}
+This project did not have a very high mechanical complexity, as in a
+pinch, it could be left as a bare board. 
+\subsubsection{Cheap to Make}
+This project is relatively cheap to make, as it would not require any
+expensive components. The most expensive components would be the
+controllers, and these could be had for less than 5 dollars. 
+\subsubsection{Open Source}
+This project could be made with completely open source
+tools. Additionally, the source code for the Space Wars game is
+available online.
+\subsubsection{Gracefully Degradeable}
+The project is fairly degradeable. If the Space Wars project was too
+ambitious, we could always program a simpler game, such as
+pong. However, if the NTSC output of controller input does not work,
+the project would be dead in the water.
+\subsubsection{Visible Circuit}
+This project would be fairly easy to prototype. The Analog circuitry
+for the NTSC output might be hard to do on a breadboard. 
+\subsubsection{Plug n' Play}
+This project would be very plug and play, just plug in the controllers and a TV.
+\subsubsection{Presentable}
+This project would be fairly presentable. However, it might be hard to
+find a television in a conference room to plug in to. 
+
+\subsection{Gameboy/Midi Interface}
+\subsubsection {Mechanical Complexity}
+\subsubsection{Cheap to Make}
+\subsubsection{Open Source}
+\subsubsection{Gracefully Degradeable}
+\subsubsection{Visible Circuit}
+\subsubsection{Plug n' Play}
+\subsubsection{Presentable}
+
+
+\end{document}

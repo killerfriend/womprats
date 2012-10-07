@@ -1,0 +1,4 @@
+To compile:
+
+
+pdflatex -file-line-error"  "-interaction=nonstopmode writeup
