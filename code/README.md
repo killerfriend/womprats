@@ -1,3 +1,12 @@
+# Software structure:
+
+Each one of the subdirectories in this directory correspond to an
+Eclipse project. 
+
+## sandbox
+
+Basic code for testing new ideas.
+
 # Setting up the development Environment
 
 1) Get the [IDE](http://lpcxpresso.code-red-tech.com/LPCXpresso/)
