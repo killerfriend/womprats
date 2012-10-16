@@ -49,6 +49,14 @@ Below is the specification of the Audio Synthesizer:
 \hline
 Engineering Requirement & Justification \\
 \hline
+The power supply must be capable of delivering a minimum of 400 mA current at a constant voltage level of 3v3.&In order to support the overall power requirements of the hardware, the power supply must supply the anticipated amount that the entire circuit will consume.\\
+\hline
+ Fuses must be present in the power supply.&For safety reasons, there should be circuit protection involved when transferring mains power to the device.  The fuse provides limited built-in internal protection from any harmful surges in power.\\
+\hline
+The power supply must be passively-cooled.&There must be as little noise interference produced from the device as possible.  Passive cooling methods are quieter than active cooling methods.\\
+\hline
+The power supply must be powered from the wall.&The battery/wall-wart combination involves extra circuit complication and the missing capability of a battery does not impact the primary objective of the device.  Thus, powering from the wall is sufficient for the intended application.\\
+\hline
 \end{tabular}
 
 \section{Sound Synthesis}
@@ -82,6 +90,12 @@ Engineering Requirement & Justification \\
 \begin{tabular}{|p{3in}|p{3in}|}
 \hline
 Engineering Requirement & Justification \\
+\hline
+The audio output of the device must support mono speaker and line out.&Mono speaker will provide enough sound output for the client to use the device.  The line out feature provides an additional option for headphones which may be desired when playing the device for personal use.\\
+\hline
+The audio output of the device must output a minimum of 1/2 W power.&It is important that the device be able to output audio with enough sound volume.  An output of 1/2 W is enough to drive a mono 8${\Omega}$ resistance speaker.\\
+\hline
+The audio output of the device must be passively cooled.&Noise interference with the main sound output of the device is undesired.  Thus, using passive cooling will minimize any noise from interfering with the desired output sound of the device.\\
 \hline
 \end{tabular}
 
