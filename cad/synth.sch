@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 15 Oct 2012 11:35:16 PM PDT
+EESchema Schematic File Version 2  date Tue 16 Oct 2012 09:14:22 AM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -29,11 +29,12 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-EELAYER 43  0
+LIBS:synth-cache
+EELAYER 25  0
 EELAYER END
 $Descr User 11000 8500
 encoding utf-8
-Sheet 1 8
+Sheet 1 7
 Title "Audio Synth"
 Date "16 oct 2012"
 Rev "1.0"
