@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 16 Oct 2012 09:14:22 AM PDT
+EESchema Schematic File Version 2  date Tue 16 Oct 2012 10:42:10 AM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -29,6 +29,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:audiosynth
 LIBS:synth-cache
 EELAYER 25  0
 EELAYER END
