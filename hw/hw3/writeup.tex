@@ -1,0 +1,115 @@
+%%MaD.tex - Notes taken for Materials and Devices Lecture
+%%Author: Andy Goetz
+%%Date Modified: 10-7-09
+%%License: Ask me before reproducing/modifying, etc.
+
+
+\documentclass{article}
+
+%Make sure you have the file ShumanNote.scy in the same directory as
+%this one. It has contains the style sheet for ECE111, and is needed
+%to standardize the layout of LateX documents created for the class.
+\usepackage{ShumanNotes} 
+\usepackage{tikz}
+\usepackage{program}
+\usepackage{listings}
+\pdfpagewidth 8.5in 
+\pdfpageheight 11in
+
+%This package is used to line up pictures 
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{listings}
+%allows cursive font
+%\usepackage{amsmath}
+
+%allows hyperlinks 
+%\usepackage{hyperref}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+
+\lhead{Product Design Specification}
+
+\begin{document}
+
+%% These commands allow me to use cursive letter for things such as
+%% length.  Note that on ubuntu linux, this required installation of
+%% the package 'texlive-fonts-extra'. 
+%% Taken from
+%% http://www.latex-community.org/forum/viewtopic.php?f=5&t=1404&start=0
+\newenvironment{frcseries}{\fontfamily{frc}\selectfont}{}
+\newcommand{\textfrc}[1]{{\frcseries#1}}
+\newcommand{\mathfrc}[1]{\text{\textfrc{#1}}}
+
+Below is the specification of the Audio Synthesizer:
+
+\section{Power Supply}
+
+\begin{tabular}{|p{3in}|p{3in}|}
+\hline
+Engineering Requirement & Justification \\
+\hline
+\end{tabular}
+
+\section{Sound Synthesis}
+
+\begin{tabular}{|p{3in}|p{3in}|}
+\hline
+Engineering Requirement & Justification \\
+\hline
+\end{tabular}
+
+
+\section{User Interface}
+
+\begin{tabular}{|p{3in}|p{3in}|}
+\hline
+Engineering Requirement & Justification \\
+\hline
+\end{tabular}
+
+\section{Case}
+
+\begin{tabular}{|p{3in}|p{3in}|}
+\hline
+Engineering Requirement & Justification \\
+\hline
+\end{tabular}
+
+
+\section{Sound Hardware}
+
+\begin{tabular}{|p{3in}|p{3in}|}
+\hline
+Engineering Requirement & Justification \\
+\hline
+\end{tabular}
+
+
+\section{Channel Interface}
+
+\begin{tabular}{|p{3in}|p{3in}|}
+\hline
+Engineering Requirement & Justification \\
+\hline
+
+25mA Current Per Channel & The quick brown fox jumps over the lazy
+dog. The quick brown fox jumps over the lazy dog. The quick brown fox
+jumps over the lazy dog.  \\
+
+\hline
+Modular & This is the reason why \\
+\hline
+Rugged & This is the reason why \\
+\hline
+0-3v3 Supply & This is the reason why \\
+\hline
+Provides Dig + Analog Signal & This is the reason why \\
+\hline
+Filter @ 20Hz & This is the reason why \\
+\hline
+
+\end{tabular}
+
+
+\end{document}
