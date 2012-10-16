@@ -88,25 +88,49 @@ Engineering Requirement & Justification \\
 
 \section{Channel Interface}
 
+The inputs of the audio synthesizer are known as ``Channels'' They are
+a mix of analog and digital inputs. The following is a list of
+specifications for these channels:
+
+\vspace {.3in}
+
 \begin{tabular}{|p{3in}|p{3in}|}
 \hline
 Engineering Requirement & Justification \\
 \hline
 
-25mA Current Per Channel & The quick brown fox jumps over the lazy
-dog. The quick brown fox jumps over the lazy dog. The quick brown fox
-jumps over the lazy dog.  \\
+The audio synthesizer must have channels that are permanently
+connected to the design, as well as modular, external sensors. & In
+order to remain flexible, the system must support external inputs,
+however, the device has to be useable by itself, meaning that it must
+have channels that are built into the unit. \\
 
 \hline
-Modular & This is the reason why \\
+
+The External Interface must be capable of supplying 25 mA per channel.
+& In order to support a multitude of inputs, the external interfaces
+of the Audio Synth need to be able to power a large range of sensors.\\
+
 \hline
-Rugged & This is the reason why \\
+
+The channel external interface must provide a 3.3 volt source & In
+order to support a wide range of sensors, the audio synth must provide
+a power source in its external inputs. \\
+
 \hline
-0-3v3 Supply & This is the reason why \\
-\hline
-Provides Dig + Analog Signal & This is the reason why \\
-\hline
-Filter @ 20Hz & This is the reason why \\
+
+Each external channel of the audio interface must provide a digital
+signal, and an analog signal. & In order to be useful, a digital
+signal is needed to gate synthesizer output, while an analog input is
+needed to modulate the amplitude or frequency of the synthesizer.\\
+
+\hline 
+
+The external interface of the audio synth must filter out all
+frequencies above 20Hz. & It is important that high frequency noise on
+the inputs not cause ``humming'' on the output of the digital
+synthesizer.\\
+
 \hline
 
 \end{tabular}
