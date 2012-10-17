@@ -65,8 +65,34 @@ The power supply must be powered from the wall.&The battery/wall-wart combinatio
 \hline
 Engineering Requirement & Justification \\
 \hline
+The sound synthesis must produce a sample rate of 44.1 kHz&
+Since the human ear can hear frequencies up to ~20 kHz, the Nyquist rate 
+determines that to be able to create waveforms in these higher frequencies, 
+we need a sampling rate at least twice our highest output frequency. \\
+\hline
+The sound synthesis must produce 3 waveform variants: Square, Triange, and Sawtooth&
+These 3 waveforms allow for many individual musical tones and timbres to be generated. Combinations of these 3
+waveforms allow for many complex sounds to be generated.\\ 
+\hline
+The sound synthesis must support a gating feature for on/off control of oscillators&
+Because some musical sounds lend themselves to shorter percussive sounds, gating allows a momentary
+generation of the waveform to handle these types of instruments\\
+\hline
+The sound synthesis must allow frequency and amplitude parameter control of the oscillators from the 
+analog inputs, as well as from the UI&
+Allowing parameters to be fixed values from the UI, or driven in real-time from external inputs provides the
+opportunity for complex combinations of waveforms from limited physical controls. \\
+\hline
+The sound synthesis must allow runtime software-defined routing of inputs to oscillator parameters&
+Because there are more parameters to control than there are physical inputs to the device, there needs
+to be flexibility in allowing the user to map physical inputs to the internal synthesis modules he or she
+wishes to control.\\
+\hline
+The sound synthesis must be capable of creating output frequencies from 0-22 kHz&
+The human ear can hear frequencies from approximately 20 Hz to 20 kHz, and musical notes throughout history
+have spanned this range, it follows that our device should also cover all of these frequencies.\\
+\hline
 \end{tabular}
-
 
 \section{User Interface}
 
