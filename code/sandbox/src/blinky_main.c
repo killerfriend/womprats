@@ -14,7 +14,7 @@
 
 #include "gpio.h"
 #include "timer32.h"
-
+#include "uart.h"
 
 
 /* Main Program */
@@ -32,7 +32,7 @@ int main (void) {
    * the TimeTick global each time timer 0 matches and resets.
    */
   enable_timer32(0);
-
+  UARTInit(9600);
   /* Initialize GPIO (sets up clock) */
   GPIOInit();
   /* Set LED port pin to output */
@@ -45,9 +45,11 @@ int main (void) {
 	if ( (timer32_0_counter%LED_TOGGLE_TICKS) < (LED_TOGGLE_TICKS/2) )
 	{
 	  GPIOSetValue( LED_PORT, LED_BIT, LED_OFF );
+	  UARTSend((uint8_t*)"a\r\n", 3);
 	} else
 	{
 	  GPIOSetValue( LED_PORT, LED_BIT, LED_ON );
+	  UARTSend((uint8_t*)"b\r\n", 3);
 	}
     /* Go to sleep to save power between timer interrupts */
     __WFI();
