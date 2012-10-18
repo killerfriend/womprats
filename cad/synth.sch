@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 17 Oct 2012 01:33:14 PM PDT
+EESchema Schematic File Version 2  date Thu 18 Oct 2012 12:56:28 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr User 11000 8500
 encoding utf-8
 Sheet 1 7
 Title "Audio Synth"
-Date "17 oct 2012"
+Date "18 oct 2012"
 Rev "1.0"
 Comp "Womprats"
 Comment1 "ECE411 Practicum"
@@ -45,6 +45,138 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L GND #PWR?
+U 1 1 50805DC7
+P 3050 7050
+F 0 "#PWR?" H 3050 7050 30  0001 C CNN
+F 1 "GND" H 3050 6980 30  0001 C CNN
+	1    3050 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 50805DC0
+P 3050 6800
+F 0 "R?" V 3130 6800 50  0000 C CNN
+F 1 "2K" V 3050 6800 50  0000 C CNN
+	1    3050 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D?
+U 1 1 50805DBA
+P 3050 6350
+F 0 "D?" H 3050 6450 50  0000 C CNN
+F 1 "LED" H 3050 6250 50  0000 C CNN
+	1    3050 6350
+	0    1    1    0   
+$EndComp
+$Comp
+L LPC1114FBD48/302 U?
+U 10 1 50805CE6
+P 4200 6250
+F 0 "U?" H 3450 6500 50  0000 C CNN
+F 1 "LPC1114FBD48/302" H 2550 8400 50  0001 C CNN
+F 2 "MODULE" V 2800 7300 50  0001 C CNN
+F 3 "DOCUMENTATION" V 2300 7400 50  0001 C CNN
+	10   4200 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 6400 7950 6400
+Wire Wire Line
+	7850 6200 7950 6200
+Wire Wire Line
+	2850 5050 2650 5050
+Wire Wire Line
+	2650 5050 2650 4850
+Wire Wire Line
+	2650 4850 2250 4850
+Connection ~ 1300 5250
+Wire Wire Line
+	1450 5250 1300 5250
+Wire Wire Line
+	1300 5350 1300 4950
+Wire Wire Line
+	1300 4950 1450 4950
+Wire Wire Line
+	1850 4150 2050 4150
+Wire Wire Line
+	1900 4500 1900 4350
+Wire Wire Line
+	1900 4350 1850 4350
+Wire Wire Line
+	1550 3150 1550 2850
+Wire Wire Line
+	1550 2850 2250 2850
+Wire Wire Line
+	1550 3550 1550 3600
+Connection ~ 3650 1100
+Wire Wire Line
+	3650 950  3650 1700
+Connection ~ 3850 1700
+Wire Wire Line
+	3650 1700 4750 1700
+Wire Wire Line
+	3850 1500 3850 1550
+Wire Wire Line
+	4150 1500 4150 1550
+Wire Wire Line
+	4150 2100 4150 2150
+Wire Wire Line
+	4700 1000 4700 950 
+Wire Wire Line
+	4700 950  4750 950 
+Wire Wire Line
+	1900 1100 2050 1100
+Wire Wire Line
+	1900 1200 2050 1200
+Wire Wire Line
+	4750 850  4650 850 
+Wire Wire Line
+	4650 850  4650 900 
+Connection ~ 4150 1100
+Wire Wire Line
+	4750 1700 4750 1200
+Connection ~ 4150 1700
+Wire Wire Line
+	3650 1100 4750 1100
+Connection ~ 3850 1100
+Wire Wire Line
+	3850 2100 3850 2150
+Wire Wire Line
+	2150 3550 2150 3600
+Wire Wire Line
+	2250 2950 2150 2950
+Wire Wire Line
+	2150 2950 2150 3150
+Wire Wire Line
+	1850 4250 2050 4250
+Wire Wire Line
+	1450 5050 1300 5050
+Connection ~ 1300 5050
+Wire Wire Line
+	2250 5250 2850 5250
+Wire Wire Line
+	2850 5150 2550 5150
+Wire Wire Line
+	2550 5150 2550 4950
+Wire Wire Line
+	2550 4950 2250 4950
+Wire Wire Line
+	7850 6300 7950 6300
+$Comp
+L LPC1114FBD48/302 U?
+U 4 1 5080570C
+P 9100 6300
+F 0 "U?" H 8350 6550 50  0000 C CNN
+F 1 "LPC1114FBD48/302" H 7450 8450 50  0001 C CNN
+F 2 "MODULE" V 7700 7350 50  0001 C CNN
+F 3 "DOCUMENTATION" V 7200 7450 50  0001 C CNN
+	4    9100 6300
+	1    0    0    -1  
+$EndComp
 $Comp
 L LPC1114FBD48/302 U?
 U 6 1 507F15F0
@@ -60,83 +192,6 @@ NoConn ~ 1450 5150
 NoConn ~ 1450 4850
 NoConn ~ 2250 5150
 NoConn ~ 2250 5050
-Wire Wire Line
-	2250 4950 2550 4950
-Wire Wire Line
-	2550 4950 2550 5150
-Wire Wire Line
-	2550 5150 2850 5150
-Wire Wire Line
-	2250 5250 2850 5250
-Connection ~ 1300 5050
-Wire Wire Line
-	1450 5050 1300 5050
-Wire Wire Line
-	1850 4250 2050 4250
-Wire Wire Line
-	2150 3150 2150 2950
-Wire Wire Line
-	2150 2950 2250 2950
-Wire Wire Line
-	2150 3550 2150 3600
-Wire Wire Line
-	3850 2100 3850 2150
-Connection ~ 3850 1100
-Wire Wire Line
-	3650 1100 4750 1100
-Connection ~ 4150 1700
-Wire Wire Line
-	4750 1200 4750 1700
-Connection ~ 4150 1100
-Wire Wire Line
-	4650 900  4650 850 
-Wire Wire Line
-	4650 850  4750 850 
-Wire Wire Line
-	1900 1200 2050 1200
-Wire Wire Line
-	1900 1100 2050 1100
-Wire Wire Line
-	4750 950  4700 950 
-Wire Wire Line
-	4700 950  4700 1000
-Wire Wire Line
-	4150 2100 4150 2150
-Wire Wire Line
-	4150 1500 4150 1550
-Wire Wire Line
-	3850 1500 3850 1550
-Wire Wire Line
-	4750 1700 3650 1700
-Connection ~ 3850 1700
-Wire Wire Line
-	3650 1700 3650 950 
-Connection ~ 3650 1100
-Wire Wire Line
-	1550 3550 1550 3600
-Wire Wire Line
-	2250 2850 1550 2850
-Wire Wire Line
-	1550 2850 1550 3150
-Wire Wire Line
-	1850 4350 1900 4350
-Wire Wire Line
-	1900 4350 1900 4500
-Wire Wire Line
-	1850 4150 2050 4150
-Wire Wire Line
-	1450 4950 1300 4950
-Wire Wire Line
-	1300 4950 1300 5350
-Wire Wire Line
-	1450 5250 1300 5250
-Connection ~ 1300 5250
-Wire Wire Line
-	2250 4850 2650 4850
-Wire Wire Line
-	2650 4850 2650 5050
-Wire Wire Line
-	2650 5050 2850 5050
 $Comp
 L GND #PWR?
 U 1 1 507DCD49
@@ -390,10 +445,13 @@ F0 "UI" 60
 F1 "UI.sch" 60
 $EndSheet
 $Sheet
-S 8600 4250 750  450 
+S 7100 6100 750  450 
 U 507CFFCF
 F0 "Audio Out" 60
 F1 "Audio Out.sch" 60
+F2 "DAC_SDI" I R 7850 6300 60 
+F3 "DAC_SCK" I R 7850 6400 60 
+F4 "DAC_CS" I R 7850 6200 60 
 $EndSheet
 $Sheet
 S 8600 3650 850  350 
