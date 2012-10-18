@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 16 Oct 2012 03:38:14 PM PDT
+EESchema Schematic File Version 2  date Wed 17 Oct 2012 01:33:14 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr User 11000 8500
 encoding utf-8
 Sheet 1 7
 Title "Audio Synth"
-Date "16 oct 2012"
+Date "17 oct 2012"
 Rev "1.0"
 Comp "Womprats"
 Comment1 "ECE411 Practicum"
@@ -45,6 +45,17 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L LPC1114FBD48/302 U?
+U 6 1 507F15F0
+P 6550 3050
+F 0 "U?" H 5800 3300 50  0000 C CNN
+F 1 "LPC1114FBD48/302" H 4900 5200 50  0001 C CNN
+F 2 "MODULE" V 5150 4100 50  0001 C CNN
+F 3 "DOCUMENTATION" V 4650 4200 50  0001 C CNN
+	6    6550 3050
+	1    0    0    -1  
+$EndComp
 NoConn ~ 1450 5150
 NoConn ~ 1450 4850
 NoConn ~ 2250 5150
@@ -173,8 +184,6 @@ F 3 "DOCUMENTATION" V 1250 5450 50  0001 C CNN
 	2    3150 4300
 	1    0    0    -1  
 $EndComp
-NoConn ~ 7450 1550
-NoConn ~ 7450 1750
 $Comp
 L GND #PWR?
 U 1 1 507DC386
@@ -288,12 +297,12 @@ $EndComp
 $Comp
 L LPC1114FBD48/302 U?
 U 9 1 507DBAA0
-P 8600 1500
-F 0 "U?" H 7850 1750 50  0000 C CNN
-F 1 "LPC1114FBD48/302" H 6950 3650 50  0001 C CNN
-F 2 "MODULE" V 7200 2550 50  0001 C CNN
-F 3 "DOCUMENTATION" V 6700 2650 50  0001 C CNN
-	9    8600 1500
+P 7800 1100
+F 0 "U?" H 7050 1350 50  0000 C CNN
+F 1 "LPC1114FBD48/302" H 6150 3250 50  0001 C CNN
+F 2 "MODULE" V 6400 2150 50  0001 C CNN
+F 3 "DOCUMENTATION" V 5900 2250 50  0001 C CNN
+	9    7800 1100
 	1    0    0    -1  
 $EndComp
 $Comp
