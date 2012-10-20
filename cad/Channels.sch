@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 20 Oct 2012 03:45:46 PM UTC
+EESchema Schematic File Version 2  date Sat 20 Oct 2012 04:23:53 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -30,7 +30,6 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:audiosynth
-LIBS:synth-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
@@ -45,28 +44,340 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 7000 3900 0    60   Input ~ 0
-D5
-Text HLabel 7000 3800 0    60   Input ~ 0
-D4
-Text HLabel 7000 3700 0    60   Input ~ 0
-D3
-Text HLabel 7000 3600 0    60   Input ~ 0
-D2
-Text HLabel 7000 3500 0    60   Input ~ 0
-D1
-Text HLabel 7000 3400 0    60   Input ~ 0
+Text Notes 4500 5300 0    60   ~ 0
+CHANNEL 3
+Text Notes 6600 2950 0    60   ~ 0
+CHANNEL 4
+$Comp
+L 3V3 #PWR?
+U 1 1 50833107
+P 6300 4350
+F 0 "#PWR?" H 6300 4450 40  0001 C CNN
+F 1 "3V3" H 6300 4475 40  0000 C CNN
+	1    6300 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_3X2 P?
+U 1 1 50833106
+P 6850 5050
+F 0 "P?" H 6850 5300 50  0000 C CNN
+F 1 "CONN_3X2" V 6850 5100 40  0000 C CNN
+	1    6850 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L FUSE F?
+U 1 1 50833105
+P 6300 4600
+F 0 "F?" H 6400 4650 40  0000 C CNN
+F 1 "0ZCA0005FF2E" H 6300 4450 40  0000 C CNN
+	1    6300 4600
+	0    -1   -1   0   
+$EndComp
+Text Notes 6600 5300 0    60   ~ 0
+CHANNEL 6\nEXT 2
+$Comp
+L GND #PWR?
+U 1 1 50833104
+P 7350 5100
+F 0 "#PWR?" H 7350 5100 30  0001 C CNN
+F 1 "GND" H 7350 5030 30  0001 C CNN
+	1    7350 5100
+	1    0    0    -1  
+$EndComp
+NoConn ~ 7250 5100
+NoConn ~ 6450 5100
+Wire Wire Line
+	7250 4900 7500 4900
+Wire Wire Line
+	6300 4900 6450 4900
+Wire Wire Line
+	6300 4850 6300 4900
+Wire Wire Line
+	7350 5000 7250 5000
+Wire Wire Line
+	7350 5100 7350 5000
+Wire Wire Line
+	6200 5000 6450 5000
+Wire Wire Line
+	6200 3800 6450 3800
+Wire Wire Line
+	7350 3900 7350 3800
+Wire Wire Line
+	7350 3800 7250 3800
+Wire Wire Line
+	6300 3650 6300 3700
+Wire Wire Line
+	6300 3700 6450 3700
+Wire Wire Line
+	7250 3700 7500 3700
+NoConn ~ 6450 3900
+NoConn ~ 7250 3900
+$Comp
+L GND #PWR?
+U 1 1 508330F2
+P 7350 3900
+F 0 "#PWR?" H 7350 3900 30  0001 C CNN
+F 1 "GND" H 7350 3830 30  0001 C CNN
+	1    7350 3900
+	1    0    0    -1  
+$EndComp
+Text Notes 6600 4100 0    60   ~ 0
+CHANNEL 5\nEXT 1
+$Comp
+L FUSE F?
+U 1 1 508330F1
+P 6300 3400
+F 0 "F?" H 6400 3450 40  0000 C CNN
+F 1 "0ZCA0005FF2E" H 6300 3250 40  0000 C CNN
+	1    6300 3400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_3X2 P?
+U 1 1 508330F0
+P 6850 3850
+F 0 "P?" H 6850 4100 50  0000 C CNN
+F 1 "CONN_3X2" V 6850 3900 40  0000 C CNN
+	1    6850 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3V3 #PWR?
+U 1 1 508330EF
+P 6300 3150
+F 0 "#PWR?" H 6300 3250 40  0001 C CNN
+F 1 "3V3" H 6300 3275 40  0000 C CNN
+	1    6300 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3V3 #PWR?
+U 1 1 508330DF
+P 6300 1950
+F 0 "#PWR?" H 6300 2050 40  0001 C CNN
+F 1 "3V3" H 6300 2075 40  0000 C CNN
+	1    6300 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_3X2 P?
+U 1 1 508330DE
+P 6850 2650
+F 0 "P?" H 6850 2900 50  0000 C CNN
+F 1 "CONN_3X2" V 6850 2700 40  0000 C CNN
+	1    6850 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L FUSE F?
+U 1 1 508330DD
+P 6300 2200
+F 0 "F?" H 6400 2250 40  0000 C CNN
+F 1 "0ZCA0005FF2E" H 6300 2050 40  0000 C CNN
+	1    6300 2200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 508330DC
+P 7350 2700
+F 0 "#PWR?" H 7350 2700 30  0001 C CNN
+F 1 "GND" H 7350 2630 30  0001 C CNN
+	1    7350 2700
+	1    0    0    -1  
+$EndComp
+NoConn ~ 7250 2700
+NoConn ~ 6450 2700
+Wire Wire Line
+	7250 2500 7500 2500
+Wire Wire Line
+	6300 2500 6450 2500
+Wire Wire Line
+	6300 2450 6300 2500
+Wire Wire Line
+	7350 2600 7250 2600
+Wire Wire Line
+	7350 2700 7350 2600
+Wire Wire Line
+	6200 2600 6450 2600
+Wire Wire Line
+	4100 5000 4350 5000
+Wire Wire Line
+	5250 5100 5250 5000
+Wire Wire Line
+	5250 5000 5150 5000
+Wire Wire Line
+	4200 4850 4200 4900
+Wire Wire Line
+	4200 4900 4350 4900
+Wire Wire Line
+	5150 4900 5400 4900
+NoConn ~ 4350 5100
+NoConn ~ 5150 5100
+$Comp
+L GND #PWR?
+U 1 1 508330A7
+P 5250 5100
+F 0 "#PWR?" H 5250 5100 30  0001 C CNN
+F 1 "GND" H 5250 5030 30  0001 C CNN
+	1    5250 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L FUSE F?
+U 1 1 508330A6
+P 4200 4600
+F 0 "F?" H 4300 4650 40  0000 C CNN
+F 1 "0ZCA0005FF2E" H 4200 4450 40  0000 C CNN
+	1    4200 4600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_3X2 P?
+U 1 1 508330A5
+P 4750 5050
+F 0 "P?" H 4750 5300 50  0000 C CNN
+F 1 "CONN_3X2" V 4750 5100 40  0000 C CNN
+	1    4750 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3V3 #PWR?
+U 1 1 508330A4
+P 4200 4350
+F 0 "#PWR?" H 4200 4450 40  0001 C CNN
+F 1 "3V3" H 4200 4475 40  0000 C CNN
+	1    4200 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3V3 #PWR?
+U 1 1 5083308C
+P 4200 3150
+F 0 "#PWR?" H 4200 3250 40  0001 C CNN
+F 1 "3V3" H 4200 3275 40  0000 C CNN
+	1    4200 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_3X2 P?
+U 1 1 5083308B
+P 4750 3850
+F 0 "P?" H 4750 4100 50  0000 C CNN
+F 1 "CONN_3X2" V 4750 3900 40  0000 C CNN
+	1    4750 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L FUSE F?
+U 1 1 5083308A
+P 4200 3400
+F 0 "F?" H 4300 3450 40  0000 C CNN
+F 1 "0ZCA0005FF2E" H 4200 3250 40  0000 C CNN
+	1    4200 3400
+	0    -1   -1   0   
+$EndComp
+Text Notes 4500 4100 0    60   ~ 0
+CHANNEL 2
+$Comp
+L GND #PWR?
+U 1 1 50833089
+P 5250 3900
+F 0 "#PWR?" H 5250 3900 30  0001 C CNN
+F 1 "GND" H 5250 3830 30  0001 C CNN
+	1    5250 3900
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5150 3900
+NoConn ~ 4350 3900
+Wire Wire Line
+	5150 3700 5400 3700
+Wire Wire Line
+	4200 3700 4350 3700
+Wire Wire Line
+	4200 3650 4200 3700
+Wire Wire Line
+	5250 3800 5150 3800
+Wire Wire Line
+	5250 3900 5250 3800
+Wire Wire Line
+	4100 3800 4350 3800
+Wire Wire Line
+	4100 2600 4350 2600
+Wire Wire Line
+	5250 2700 5250 2600
+Wire Wire Line
+	5250 2600 5150 2600
+Wire Wire Line
+	4200 2450 4200 2500
+Wire Wire Line
+	4200 2500 4350 2500
+Wire Wire Line
+	5150 2500 5400 2500
+NoConn ~ 4350 2700
+NoConn ~ 5150 2700
+$Comp
+L GND #PWR?
+U 1 1 5083279F
+P 5250 2700
+F 0 "#PWR?" H 5250 2700 30  0001 C CNN
+F 1 "GND" H 5250 2630 30  0001 C CNN
+	1    5250 2700
+	1    0    0    -1  
+$EndComp
+Text HLabel 5400 2500 2    60   Input ~ 0
 D0
-Text HLabel 6500 3900 0    60   Input ~ 0
+Text Notes 4500 2900 0    60   ~ 0
+CHANNEL 1
+$Comp
+L FUSE F?
+U 1 1 50831761
+P 4200 2200
+F 0 "F?" H 4300 2250 40  0000 C CNN
+F 1 "0ZCA0005FF2E" H 4200 2050 40  0000 C CNN
+	1    4200 2200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_3X2 P?
+U 1 1 508310F2
+P 4750 2650
+F 0 "P?" H 4750 2900 50  0000 C CNN
+F 1 "CONN_3X2" V 4750 2700 40  0000 C CNN
+	1    4750 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3V3 #PWR?
+U 1 1 508311E4
+P 4200 1950
+F 0 "#PWR?" H 4200 2050 40  0001 C CNN
+F 1 "3V3" H 4200 2075 40  0000 C CNN
+	1    4200 1950
+	1    0    0    -1  
+$EndComp
+Text HLabel 7500 4900 2    60   Input ~ 0
+D5
+Text HLabel 7500 3700 2    60   Input ~ 0
+D4
+Text HLabel 7500 2500 2    60   Input ~ 0
+D3
+Text HLabel 5400 4900 2    60   Input ~ 0
+D2
+Text HLabel 5400 3700 2    60   Input ~ 0
+D1
+Text HLabel 6200 5000 0    60   Input ~ 0
 A5
-Text HLabel 6500 3800 0    60   Input ~ 0
+Text HLabel 6200 3800 0    60   Input ~ 0
 A4
-Text HLabel 6500 3700 0    60   Input ~ 0
+Text HLabel 6200 2600 0    60   Input ~ 0
 A3
-Text HLabel 6500 3600 0    60   Input ~ 0
+Text HLabel 4100 5000 0    60   Input ~ 0
 A2
-Text HLabel 6500 3500 0    60   Input ~ 0
+Text HLabel 4100 3800 0    60   Input ~ 0
 A1
-Text HLabel 6500 3400 0    60   Input ~ 0
+Text HLabel 4100 2600 0    60   Input ~ 0
 A0
 $EndSCHEMATC
