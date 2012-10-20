@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 20 Oct 2012 03:45:46 PM UTC
+EESchema Schematic File Version 2  date Sat 20 Oct 2012 04:38:26 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -375,7 +375,7 @@ L R R?
 U 1 1 50820D92
 P 6400 1800
 F 0 "R?" V 6480 1800 50  0000 C CNN
-F 1 "2K" V 6400 1800 50  0000 C CNN
+F 1 "1.5k" V 6400 1800 50  0000 C CNN
 	1    6400 1800
 	-1   0    0    1   
 $EndComp
@@ -402,7 +402,7 @@ L R R?
 U 1 1 50820D8E
 P 6050 1600
 F 0 "R?" V 6130 1600 50  0000 C CNN
-F 1 "2K" V 6050 1600 50  0000 C CNN
+F 1 "1.5k" V 6050 1600 50  0000 C CNN
 	1    6050 1600
 	-1   0    0    1   
 $EndComp
@@ -498,7 +498,7 @@ L R R?
 U 1 1 50805DC0
 P 5700 1400
 F 0 "R?" V 5780 1400 50  0000 C CNN
-F 1 "2K" V 5700 1400 50  0000 C CNN
+F 1 "1.5k" V 5700 1400 50  0000 C CNN
 	1    5700 1400
 	-1   0    0    1   
 $EndComp
