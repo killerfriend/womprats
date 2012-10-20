@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 19 Oct 2012 10:44:04 PM PDT
+EESchema Schematic File Version 2  date Sat 20 Oct 2012 12:01:48 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,11 +31,11 @@ LIBS:contrib
 LIBS:valves
 LIBS:audiosynth
 LIBS:synth-cache
-EELAYER 27 0
+EELAYER 25  0
 EELAYER END
-$Descr A4 11693 8268
+$Descr A4 11700 8267
 encoding utf-8
-Sheet 3 7
+Sheet 6 7
 Title ""
 Date "20 oct 2012"
 Rev ""
@@ -45,6 +45,17 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L LM4875 U?
+U 1 1 5082F50B
+P 7900 2850
+F 0 "U?" H 7900 2750 50  0000 C CNN
+F 1 "LM4875" H 7900 2950 50  0000 C CNN
+F 2 "MODULE" H 7900 2850 50  0001 C CNN
+F 3 "DOCUMENTATION" H 7900 2850 50  0001 C CNN
+	1    7900 2850
+	1    0    0    -1  
+$EndComp
 Connection ~ 6700 3650
 Wire Wire Line
 	7050 3650 6300 3650
