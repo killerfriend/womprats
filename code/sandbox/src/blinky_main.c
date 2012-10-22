@@ -44,32 +44,28 @@ int main (void) {
   
   while (1)                                /* Loop forever */
   {
-	/* Each time we wake up... */
-	/* Check TimeTick to see whether to set or clear the LED I/O pin */
-	if ( (timer32_0_counter%LED_TOGGLE_TICKS) < (LED_TOGGLE_TICKS/2) )
-	{
-	  GPIOSetValue( LED_PORT, LED_BIT, LED_OFF );
-	} else
-	{
-	  GPIOSetValue( LED_PORT, LED_BIT, LED_ON );
-	}
+
 
 	if((timer32_0_counter%LED_TOGGLE_TICKS) == (LED_TOGGLE_TICKS/2) ) {
 		int success = TRUE;
 		uint8_t data = 1;
 		uint8_t dest = 0;
 
+
 		for (i = 0; i < 5; i++) {
 			data++;
-			eeprom_write(0, &data, 1);
-			eeprom_read(&dest, 0, 1);
+			eeprom_write(i, &data, 1);
+			eeprom_read(&dest, i, 1);
 			success = success && (data == dest);
 		}
 		if(success) {
 			mesg = (uint8_t*)"read success\r\n";
 
+			GPIOSetValue( LED_PORT, LED_BIT, LED_ON );
+
 		} else {
 			mesg = (uint8_t*)"read fail\r\n";
+			GPIOSetValue( LED_PORT, LED_BIT, LED_OFF );
 
 		}
 		UARTSend(mesg, strlen((char*)mesg));
