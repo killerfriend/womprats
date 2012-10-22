@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 20 Oct 2012 07:20:56 PM UTC
+EESchema Schematic File Version 2  date Mon 22 Oct 2012 10:34:40 AM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 7 7
 Title ""
-Date "20 oct 2012"
+Date "22 oct 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -139,7 +139,7 @@ L LED D?
 U 1 1 5082B76F
 P 8400 3750
 F 0 "D?" H 8400 3850 50  0000 C CNN
-F 1 "LED" H 8400 3650 50  0000 C CNN
+F 1 "PWRLED" H 8400 3650 50  0000 C CNN
 	1    8400 3750
 	0    1    1    0   
 $EndComp
