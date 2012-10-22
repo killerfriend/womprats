@@ -15,6 +15,7 @@
 #include "gpio.h"
 #include "timer32.h"
 #include "uart.h"
+#include "ssp.h"
 #include "eeprom.h"
 #include <string.h>
 
@@ -36,11 +37,33 @@ int main (void) {
    */
   enable_timer32(0);
   UARTInit(9600);
+
   /* Initialize GPIO (sets up clock) */
   GPIOInit();
   /* Set LED port pin to output */
   GPIOSetDir( LED_PORT, LED_BIT, 1 );
-  eeprom_setup();
+  //eeprom_setup();
+
+  SSP_IOConfig(0);
+  SSP_Init(0);
+
+  GPIOSetValue( LED_PORT, LED_BIT, LED_OFF );
+
+  uint16_t data;
+
+  i = 0;
+  while (1)
+  {
+	  //if((timer32_0_counter%LED_TOGGLE_TICKS) == (LED_TOGGLE_TICKS/2) ) {
+		  GPIOSetValue( LED_PORT, LED_BIT, LED_OFF );
+		  data = 0x3000;
+		  data |= (i & 0xFFF );
+		  SSP_Send(0, &data, 1);
+		  GPIOSetValue( LED_PORT, LED_BIT, LED_ON );
+		  i++;
+	  //}
+	  //__WFI();
+  }
   
   while (1)                                /* Loop forever */
   {
@@ -53,7 +76,7 @@ int main (void) {
 	{
 	  GPIOSetValue( LED_PORT, LED_BIT, LED_ON );
 	}
-
+/*
 	if((timer32_0_counter%LED_TOGGLE_TICKS) == (LED_TOGGLE_TICKS/2) ) {
 		int success = TRUE;
 		uint8_t data = 1;
@@ -74,6 +97,8 @@ int main (void) {
 		}
 		UARTSend(mesg, strlen((char*)mesg));
 	}
+*/
+
 	
     /* Go to sleep to save power between timer interrupts */
     __WFI();

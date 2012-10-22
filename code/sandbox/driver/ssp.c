@@ -130,7 +130,7 @@ void SSP_IOConfig( uint8_t portNum )
 {
   LPC_SYSCON->PRESETCTRL |= (0x1<<0);
 	LPC_SYSCON->SYSAHBCLKCTRL |= (0x1<<11);
-	LPC_SYSCON->SSP0CLKDIV = 0x02;			/* Divided by 2 */
+	LPC_SYSCON->SSP0CLKDIV = 0x04;			/* Divided by 1 */
   LPC_IOCON->PIO0_8           &= ~0x07;	/*  SSP I/O config */
   LPC_IOCON->PIO0_8           |= 0x01;		/* SSP MISO */
   LPC_IOCON->PIO0_9           &= ~0x07;	
@@ -210,10 +210,14 @@ void SSP_Init( uint8_t portNum )
   if ( portNum == 0 )
   {
   /* Set DSS data to 8-bit, Frame format SPI, CPOL = 0, CPHA = 0, and SCR is 15 */
-	LPC_SSP0->CR0 = 0x0707;
+//	LPC_SSP0->CR0 = 0x0707;
+
+	/* Set DSS data to 16-bit, Frame format SPI, CPOL = 0, CPHA = 0, and SCR is 0 */
+	LPC_SSP0->CR0 = 0x000F;
 
   /* SSPCPSR clock prescale register, master mode, minimum divisor is 0x02 */
-	LPC_SSP0->CPSR = 0x2;
+//	LPC_SSP0->CPSR = 0x2;
+	LPC_SSP0->CPSR = 16;
 
   for ( i = 0; i < FIFOSIZE; i++ )
   {
@@ -266,7 +270,7 @@ void SSP_Init( uint8_t portNum )
 	LPC_SSP1->CR1 = SSPCR1_LBM | SSPCR1_SSE;
 #else
 #if SSP_SLAVE
-	/* Slave mode */
+	/* Slave mode */ux
 	if ( LPC_SSP1->CR1 & SSPCR1_SSE )
 	{
 	  /* The slave bit can't be set until SSE bit is zero. */
@@ -297,7 +301,7 @@ void SSP_Init( uint8_t portNum )
 ** Returned value:		None
 ** 
 *****************************************************************************/
-void SSP_Send( uint8_t portNum, uint8_t *buf, uint32_t Length )
+void SSP_Send( uint8_t portNum, uint16_t *buf, uint32_t Length )
 {
   uint32_t i;
   uint8_t Dummy = Dummy;
