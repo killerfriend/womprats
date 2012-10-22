@@ -52,15 +52,27 @@ int main (void) {
   uint16_t data;
 
   i = 0;
+  int dir = 2;
   while (1)
   {
 	  //if((timer32_0_counter%LED_TOGGLE_TICKS) == (LED_TOGGLE_TICKS/2) ) {
 		  GPIOSetValue( LED_PORT, LED_BIT, LED_OFF );
+		  i += dir;
+		  if (i < 0)
+		  {
+			i = 0;
+			dir = -dir;
+		  }
+		  if ( i > 0xFFF)
+		  {
+			i = 0xFFF;
+			dir = -dir;
+		  }
+
 		  data = 0x3000;
 		  data |= (i & 0xFFF );
 		  SSP_Send(0, &data, 1);
 		  GPIOSetValue( LED_PORT, LED_BIT, LED_ON );
-		  i++;
 	  //}
 	  //__WFI();
   }
