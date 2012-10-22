@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 22 Oct 2012 12:25:21 PM PDT
+EESchema Schematic File Version 2  date Mon 22 Oct 2012 12:57:00 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,9 +31,9 @@ LIBS:contrib
 LIBS:valves
 LIBS:audiosynth
 LIBS:synth-cache
-EELAYER 27 0
+EELAYER 25  0
 EELAYER END
-$Descr A4 11693 8268
+$Descr A4 11700 8267
 encoding utf-8
 Sheet 4 7
 Title ""
@@ -45,83 +45,111 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 6500 3350 2    60   Input ~ 0
-RST
-Text HLabel 6500 3450 2    60   Input ~ 0
-CD
-Text HLabel 6500 3250 2    60   Input ~ 0
-CE
-Text HLabel 6500 3550 2    60   Input ~ 0
-SCK
-Text HLabel 6500 3650 2    60   Input ~ 0
-MOSI
-Text HLabel 6850 2500 0    60   Input ~ 0
-BCKLIGHT
-$Comp
-L C C1
-U 1 1 50821AD6
-P 7200 4300
-F 0 "C1" H 7250 4400 50  0000 L CNN
-F 1 "1uF" H 7250 4200 50  0000 L CNN
-	1    7200 4300
-	1    0    0    -1  
-$EndComp
-$Comp
-L 3V3 #PWR?
-U 1 1 5081F23D
-P 6850 3850
-F 0 "#PWR?" H 6850 3950 40  0001 C CNN
-F 1 "3V3" H 6850 3975 40  0000 C CNN
-	1    6850 3850
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	6850 3850 6500 3850
+	6500 4450 7050 4450
 Wire Wire Line
-	6850 4000 6500 4000
+	7050 4450 7050 4300
 Wire Wire Line
-	6500 4050 6500 3950
+	6500 4050 7050 4050
 Wire Wire Line
-	6500 3850 6500 3750
+	7050 4050 7050 3900
+Wire Wire Line
+	5000 3350 4500 3350
+Connection ~ 4950 3550
+Wire Wire Line
+	5000 3550 4950 3550
+Wire Wire Line
+	4200 3750 4200 3800
+Connection ~ 7000 3500
+Wire Wire Line
+	7750 3500 6700 3500
+Connection ~ 7150 3350
+Wire Wire Line
+	7750 3350 6650 3350
+Connection ~ 7300 3200
+Wire Wire Line
+	7750 3200 6600 3200
+Connection ~ 7450 3050
+Wire Wire Line
+	7750 3050 6550 3050
+Connection ~ 6850 3650
+Wire Wire Line
+	7750 3650 6500 3650
+Wire Wire Line
+	6500 3250 6550 3250
+Wire Wire Line
+	6550 3250 6550 3050
+Wire Wire Line
+	6500 3350 6600 3350
+Wire Wire Line
+	6600 3350 6600 3200
+Wire Wire Line
+	6500 3450 6650 3450
+Wire Wire Line
+	6650 3450 6650 3350
+Wire Wire Line
+	6500 3550 6700 3550
+Wire Wire Line
+	6700 3550 6700 3500
+Wire Wire Line
+	5000 3250 4200 3250
+Wire Wire Line
+	4200 3250 4200 3350
+Wire Wire Line
+	4500 3750 4500 3800
+Wire Wire Line
+	5000 3450 4950 3450
+Wire Wire Line
+	4950 3450 4950 3600
+Wire Wire Line
+	6500 3900 6650 3900
+Wire Wire Line
+	6500 4300 6650 4300
 $Comp
 L GND #PWR?
-U 1 1 5081EF97
-P 6850 4050
-F 0 "#PWR?" H 6850 4050 30  0001 C CNN
-F 1 "GND" H 6850 3980 30  0001 C CNN
-	1    6850 4050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6850 4000 6850 4050
-$Comp
-L C C3
-U 1 1 50849027
-P 6500 4750
-F 0 "C3" H 6550 4850 50  0000 L CNN
-F 1 "1uF" H 6550 4650 50  0000 L CNN
-	1    6500 4750
+U 1 1 5085A3AD
+P 4500 3800
+F 0 "#PWR?" H 4500 3800 30  0001 C CNN
+F 1 "GND" H 4500 3730 30  0001 C CNN
+	1    4500 3800
 	1    0    0    -1  
 $EndComp
 $Comp
 L GND #PWR?
-U 1 1 50849050
-P 6500 4950
-F 0 "#PWR?" H 6500 4950 30  0001 C CNN
-F 1 "GND" H 6500 4880 30  0001 C CNN
-	1    6500 4950
+U 1 1 5085A3AA
+P 4200 3800
+F 0 "#PWR?" H 4200 3800 30  0001 C CNN
+F 1 "GND" H 4200 3730 30  0001 C CNN
+	1    4200 3800
 	1    0    0    -1  
 $EndComp
-NoConn ~ 5000 3450
-NoConn ~ 5000 3550
-NoConn ~ 5000 3650
-NoConn ~ 5000 3750
-NoConn ~ 5000 3850
-NoConn ~ 5000 3950
-NoConn ~ 5000 4150
-NoConn ~ 5000 4250
-NoConn ~ 5000 4050
-NoConn ~ 5000 4350
+$Comp
+L GND #PWR?
+U 1 1 5085A331
+P 4950 3600
+F 0 "#PWR?" H 4950 3600 30  0001 C CNN
+F 1 "GND" H 4950 3530 30  0001 C CNN
+	1    4950 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 5085A314
+P 4200 3550
+F 0 "C?" H 4250 3650 50  0000 L CNN
+F 1 "C" H 4250 3450 50  0000 L CNN
+	1    4200 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 5085A30A
+P 4500 3550
+F 0 "C?" H 4550 3650 50  0000 L CNN
+F 1 "C" H 4550 3450 50  0000 L CNN
+	1    4500 3550
+	1    0    0    -1  
+$EndComp
 $Comp
 L EADOGS102W-6 U?
 U 1 1 50859FCD
@@ -133,13 +161,99 @@ F 3 "DOCUMENTATION" H 5750 3900 50  0001 C CNN
 	1    5750 3900
 	1    0    0    -1  
 $EndComp
+Text Notes 5300 2900 0    60   ~ 0
+Raster Display
+$Comp
+L TESTPOINT TP?
+U 1 1 50859F75
+P 6850 3650
+F 0 "TP?" H 6850 3750 60  0000 C CNN
+F 1 "TESTPOINT" H 6850 3550 60  0001 C CNN
+	1    6850 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L TESTPOINT TP?
+U 1 1 50859F73
+P 7000 3500
+F 0 "TP?" H 7000 3600 60  0000 C CNN
+F 1 "TESTPOINT" H 7000 3400 60  0001 C CNN
+	1    7000 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L TESTPOINT TP?
+U 1 1 50859F6B
+P 7150 3350
+F 0 "TP?" H 7150 3450 60  0000 C CNN
+F 1 "TESTPOINT" H 7150 3250 60  0001 C CNN
+	1    7150 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L TESTPOINT TP?
+U 1 1 50859F62
+P 7300 3200
+F 0 "TP?" H 7300 3300 60  0000 C CNN
+F 1 "TESTPOINT" H 7300 3100 60  0001 C CNN
+	1    7300 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L TESTPOINT TP?
+U 1 1 50859F52
+P 7450 3050
+F 0 "TP?" H 7450 3150 60  0000 C CNN
+F 1 "TESTPOINT" H 7450 2950 60  0001 C CNN
+	1    7450 3050
+	1    0    0    -1  
+$EndComp
+Text HLabel 7750 3200 2    60   Input ~ 0
+RST
+Text HLabel 7750 3350 2    60   Input ~ 0
+CD
+Text HLabel 7750 3050 2    60   Input ~ 0
+CE
+Text HLabel 7750 3500 2    60   Input ~ 0
+SCK
+Text HLabel 7750 3650 2    60   Input ~ 0
+MOSI
+Text HLabel 4700 2850 0    60   Input ~ 0
+BCKLIGHT
+$Comp
+L C C1
+U 1 1 50821AD6
+P 6850 3900
+F 0 "C1" V 6900 4000 50  0000 L CNN
+F 1 "1uF" V 6900 3700 50  0000 L CNN
+	1    6850 3900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C3
+U 1 1 50849027
+P 6500 4850
+F 0 "C3" H 6550 4950 50  0000 L CNN
+F 1 "1uF" H 6550 4750 50  0000 L CNN
+	1    6500 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 50849050
+P 6500 5050
+F 0 "#PWR?" H 6500 5050 30  0001 C CNN
+F 1 "GND" H 6500 4980 30  0001 C CNN
+	1    6500 5050
+	1    0    0    -1  
+$EndComp
 $Comp
 L C C2
 U 1 1 50821E22
-P 7950 4250
-F 0 "C2" H 8000 4350 50  0000 L CNN
-F 1 "1uF" H 8000 4150 50  0000 L CNN
-	1    7950 4250
-	1    0    0    -1  
+P 6850 4300
+F 0 "C2" V 6900 4400 50  0000 L CNN
+F 1 "1uF" V 6900 4100 50  0000 L CNN
+	1    6850 4300
+	0    -1   -1   0   
 $EndComp
 $EndSCHEMATC
