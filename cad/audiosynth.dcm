@@ -1,3 +1,8 @@
-EESchema-DOCLIB  Version 2.0  Date: Sat 20 Oct 2012 01:58:07 PM UTC
+EESchema-DOCLIB  Version 2.0  Date: Mon 22 Oct 2012 08:32:54 PM PDT
+#
+$CMP SPST
+D Interrupteur simple
+K switch
+$ENDCMP
 #
 #End Doc Library
