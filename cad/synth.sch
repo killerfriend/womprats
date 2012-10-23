@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 22 Oct 2012 10:34:40 AM PDT
+EESchema Schematic File Version 2  date Mon 22 Oct 2012 08:07:47 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,13 +31,13 @@ LIBS:contrib
 LIBS:valves
 LIBS:audiosynth
 LIBS:synth-cache
-EELAYER 25  0
+EELAYER 27 0
 EELAYER END
 $Descr User 11000 8500
 encoding utf-8
 Sheet 1 7
 Title "Audio Synth"
-Date "22 oct 2012"
+Date "23 oct 2012"
 Rev "1.0"
 Comp "Womprats"
 Comment1 "ECE411 Practicum"
@@ -48,9 +48,9 @@ $EndDescr
 Wire Wire Line
 	2050 1250 3250 1250
 Wire Wire Line
-	3250 2850 3250 1250
+	3250 1250 3250 2850
 Wire Wire Line
-	3450 2850 3250 2850
+	3250 2850 3450 2850
 Wire Wire Line
 	3450 3050 3150 3050
 Wire Wire Line
@@ -65,10 +65,6 @@ Wire Wire Line
 	7900 3300 7050 3300
 Wire Wire Line
 	6050 950  7100 950 
-Wire Wire Line
-	2450 3050 2850 3050
-Wire Wire Line
-	2850 3050 2850 3400
 Connection ~ 3200 3700
 Wire Wire Line
 	3200 4000 3200 3400
@@ -721,6 +717,16 @@ S 1600 2900 850  350
 U 507CFFC3
 F0 "Power" 60
 F1 "Power.sch" 60
-F2 "VDD" I R 2450 3050 60 
 $EndSheet
+$Comp
+L 3V3 #PWR?
+U 1 1 508620D8
+P 2850 3250
+F 0 "#PWR?" H 2850 3350 40  0001 C CNN
+F 1 "3V3" H 2850 3375 40  0000 C CNN
+	1    2850 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 3250 2850 3400
 $EndSCHEMATC

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 22 Oct 2012 12:57:00 PM PDT
+EESchema Schematic File Version 2  date Mon 22 Oct 2012 08:07:47 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,13 +31,13 @@ LIBS:contrib
 LIBS:valves
 LIBS:audiosynth
 LIBS:synth-cache
-EELAYER 25  0
+EELAYER 27 0
 EELAYER END
-$Descr A4 11700 8267
+$Descr A4 11693 8268
 encoding utf-8
 Sheet 4 7
 Title ""
-Date "22 oct 2012"
+Date "23 oct 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -218,7 +218,7 @@ Text HLabel 7750 3500 2    60   Input ~ 0
 SCK
 Text HLabel 7750 3650 2    60   Input ~ 0
 MOSI
-Text HLabel 4700 2850 0    60   Input ~ 0
+Text HLabel 2700 4000 0    60   Input ~ 0
 BCKLIGHT
 $Comp
 L C C1
@@ -256,4 +256,92 @@ F 1 "1uF" V 6900 4100 50  0000 L CNN
 	1    6850 4300
 	0    -1   -1   0   
 $EndComp
+$Comp
+L MOS_P Q?
+U 1 1 5085FD01
+P 3800 4000
+F 0 "Q?" H 3800 4190 60  0000 R CNN
+F 1 "MOS_P" H 3800 3820 60  0000 R CNN
+	1    3800 4000
+	1    0    0    1   
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 5085FDB8
+P 3900 3400
+F 0 "#PWR?" H 3900 3490 20  0001 C CNN
+F 1 "+5V" H 3900 3490 30  0000 C CNN
+	1    3900 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5085FDC9
+P 2950 4000
+F 0 "R?" V 3030 4000 50  0000 C CNN
+F 1 "100" V 2950 4000 50  0000 C CNN
+	1    2950 4000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3900 3400 3900 3800
+$Comp
+L R R?
+U 1 1 5085FE09
+P 3450 3750
+F 0 "R?" H 3530 3750 50  0000 L CNN
+F 1 "10k" V 3450 3750 50  0000 C CNN
+	1    3450 3750
+	-1   0    0    1   
+$EndComp
+Connection ~ 3900 3500
+$Comp
+L R R?
+U 1 1 5085FEF7
+P 4400 4200
+F 0 "R?" V 4480 4200 50  0000 C CNN
+F 1 "28" V 4400 4200 50  0000 C CNN
+	1    4400 4200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R?
+U 1 1 5085FF1D
+P 4400 4350
+F 0 "R?" V 4480 4350 50  0000 C CNN
+F 1 "28" V 4400 4350 50  0000 C CNN
+	1    4400 4350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4650 4200 5000 4200
+Wire Wire Line
+	4650 4350 5000 4350
+Wire Wire Line
+	3900 4200 4150 4200
+Wire Wire Line
+	4150 4200 4150 4350
+$Comp
+L GND #PWR?
+U 1 1 508603C7
+P 4900 4750
+F 0 "#PWR?" H 4900 4750 30  0001 C CNN
+F 1 "GND" H 4900 4680 30  0001 C CNN
+	1    4900 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 4500 4900 4500
+Wire Wire Line
+	4900 4500 4900 4750
+Wire Wire Line
+	5000 4650 4900 4650
+Connection ~ 4900 4650
+Wire Wire Line
+	3900 3500 3450 3500
+Wire Wire Line
+	3200 4000 3600 4000
+Connection ~ 3450 4000
+Text Notes 2200 3750 0    60   ~ 0
+LCD backlight \nhigh side driver\n
 $EndSCHEMATC

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 22 Oct 2012 10:34:40 AM PDT
+EESchema Schematic File Version 2  date Mon 22 Oct 2012 08:07:47 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,13 +31,13 @@ LIBS:contrib
 LIBS:valves
 LIBS:audiosynth
 LIBS:synth-cache
-EELAYER 25  0
+EELAYER 27 0
 EELAYER END
-$Descr A4 11700 8267
+$Descr A4 11693 8268
 encoding utf-8
 Sheet 6 7
 Title ""
-Date "22 oct 2012"
+Date "23 oct 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,16 +45,172 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 5900 4400 0    60   Input ~ 0
+Text HLabel 2150 6100 2    60   Input ~ 0
 BUTTON5
-Text HLabel 5900 4300 0    60   Input ~ 0
+Text HLabel 7800 3100 2    60   Input ~ 0
 BUTTON4
-Text HLabel 5900 4200 0    60   Input ~ 0
+Text HLabel 5900 5000 2    60   Input ~ 0
 BUTTON3
-Text HLabel 5900 4100 0    60   Input ~ 0
+Text HLabel 5950 3100 2    60   Input ~ 0
 BUTTON2
-Text HLabel 5900 4000 0    60   Input ~ 0
+Text HLabel 5900 1450 2    60   Input ~ 0
 BUTTON1
-Text HLabel 5900 3900 0    60   Input ~ 0
+Text HLabel 4100 3100 2    60   Input ~ 0
 BUTTON0
+$Comp
+L SW_PUSH SW?
+U 1 1 508637BA
+P 4000 3600
+F 0 "SW?" V 4150 3710 50  0000 L CNN
+F 1 "SW_PUSH" V 4000 3520 50  0001 C CNN
+	1    4000 3600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4000 3100 4000 3300
+Wire Wire Line
+	4100 3100 4000 3100
+Wire Wire Line
+	4000 3900 4000 4150
+$Comp
+L GND #PWR?
+U 1 1 508637EB
+P 4000 4150
+F 0 "#PWR?" H 4000 4150 30  0001 C CNN
+F 1 "GND" H 4000 4080 30  0001 C CNN
+	1    4000 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 5086384B
+P 5800 1950
+F 0 "SW?" V 5950 2060 50  0000 L CNN
+F 1 "SW_PUSH" V 5800 1870 50  0001 C CNN
+	1    5800 1950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5800 1450 5800 1650
+Wire Wire Line
+	5900 1450 5800 1450
+Wire Wire Line
+	5800 2250 5800 2500
+$Comp
+L GND #PWR?
+U 1 1 50863854
+P 5800 2500
+F 0 "#PWR?" H 5800 2500 30  0001 C CNN
+F 1 "GND" H 5800 2430 30  0001 C CNN
+	1    5800 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 5086385A
+P 5850 3600
+F 0 "SW?" V 6000 3710 50  0000 L CNN
+F 1 "SW_PUSH" V 5850 3520 50  0001 C CNN
+	1    5850 3600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5850 3100 5850 3300
+Wire Wire Line
+	5950 3100 5850 3100
+Wire Wire Line
+	5850 3900 5850 4150
+$Comp
+L GND #PWR?
+U 1 1 50863863
+P 5850 4150
+F 0 "#PWR?" H 5850 4150 30  0001 C CNN
+F 1 "GND" H 5850 4080 30  0001 C CNN
+	1    5850 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 50863869
+P 5800 5500
+F 0 "SW?" V 5950 5610 50  0000 L CNN
+F 1 "SW_PUSH" V 5800 5420 50  0001 C CNN
+	1    5800 5500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5800 5000 5800 5200
+Wire Wire Line
+	5900 5000 5800 5000
+Wire Wire Line
+	5800 5800 5800 6050
+$Comp
+L GND #PWR?
+U 1 1 50863872
+P 5800 6050
+F 0 "#PWR?" H 5800 6050 30  0001 C CNN
+F 1 "GND" H 5800 5980 30  0001 C CNN
+	1    5800 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 50863878
+P 7700 3600
+F 0 "SW?" V 7850 3710 50  0000 L CNN
+F 1 "SW_PUSH" V 7700 3520 50  0001 C CNN
+	1    7700 3600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7700 3100 7700 3300
+Wire Wire Line
+	7800 3100 7700 3100
+Wire Wire Line
+	7700 3900 7700 4150
+$Comp
+L GND #PWR?
+U 1 1 50863881
+P 7700 4150
+F 0 "#PWR?" H 7700 4150 30  0001 C CNN
+F 1 "GND" H 7700 4080 30  0001 C CNN
+	1    7700 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW?
+U 1 1 50863887
+P 2050 6600
+F 0 "SW?" V 2200 6710 50  0000 L CNN
+F 1 "SW_PUSH" V 2050 6520 50  0001 C CNN
+	1    2050 6600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2050 6100 2050 6300
+Wire Wire Line
+	2150 6100 2050 6100
+Wire Wire Line
+	2050 6900 2050 7150
+$Comp
+L GND #PWR?
+U 1 1 50863890
+P 2050 7150
+F 0 "#PWR?" H 2050 7150 30  0001 C CNN
+F 1 "GND" H 2050 7080 30  0001 C CNN
+	1    2050 7150
+	1    0    0    -1  
+$EndComp
+Text Notes 5800 1350 0    60   ~ 0
+Up Button
+Text Notes 4000 3000 0    60   ~ 0
+Left Button
+Text Notes 5850 3000 0    60   ~ 0
+Middle Button
+Text Notes 7700 3000 0    60   ~ 0
+Right Button
+Text Notes 5800 4900 0    60   ~ 0
+Down Button
+Text Notes 2050 6000 0    60   ~ 0
+Auxiliary Button
 $EndSCHEMATC
