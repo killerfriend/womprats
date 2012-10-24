@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 22 Oct 2012 09:12:28 PM PDT
+EESchema Schematic File Version 2  date Tue 23 Oct 2012 07:53:35 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr User 11000 8500
 encoding utf-8
 Sheet 1 7
 Title "Audio Synth"
-Date "23 oct 2012"
+Date "24 oct 2012"
 Rev "1.0"
 Comp "Womprats"
 Comment1 "ECE411 Practicum"
@@ -491,7 +491,7 @@ F1 "EEPROM.sch" 60
 F2 "SDA" B L 8400 2900 60 
 F3 "SCL" B L 8400 2800 60 
 $EndSheet
-Text Notes 7900 1800 0    60   ~ 0
+Text Notes 7850 1300 0    100  ~ 0
 UART
 $Comp
 L LPC1114FBD48/302 U101
@@ -719,7 +719,7 @@ F6 "BUTTON1" I L 7900 6200 60
 F7 "BUTTON0" I L 7900 6100 60 
 $EndSheet
 $Sheet
-S 1600 2900 850  350 
+S 1450 7000 850  350 
 U 507CFFC3
 F0 "Power" 60
 F1 "Power.sch" 60
