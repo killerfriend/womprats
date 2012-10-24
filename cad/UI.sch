@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 23 Oct 2012 07:53:35 PM PDT
+EESchema Schematic File Version 2  date Tue 23 Oct 2012 07:57:16 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -36,7 +36,7 @@ EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 6 7
-Title ""
+Title "Menu Controls for Audio Synth"
 Date "24 oct 2012"
 Rev "1.0"
 Comp "Womprats"
