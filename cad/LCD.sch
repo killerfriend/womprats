@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 23 Oct 2012 07:57:16 PM PDT
+EESchema Schematic File Version 2  date Tue 30 Oct 2012 09:30:33 AM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 7
 Title "LCD and associated circuitry for Audio Synth"
-Date "24 oct 2012"
+Date "30 oct 2012"
 Rev "1.0"
 Comp "Womprats"
 Comment1 "ECE411 Practicum"
@@ -203,7 +203,7 @@ L C C401
 U 1 1 5085A314
 P 4700 3300
 F 0 "C401" H 4750 3400 50  0000 L CNN
-F 1 "C" H 4750 3200 50  0000 L CNN
+F 1 "100n" H 4750 3200 50  0000 L CNN
 	1    4700 3300
 	1    0    0    -1  
 $EndComp
@@ -212,7 +212,7 @@ L C C402
 U 1 1 5085A30A
 P 5000 3300
 F 0 "C402" H 5050 3400 50  0000 L CNN
-F 1 "C" H 5050 3200 50  0000 L CNN
+F 1 "10n" H 5050 3200 50  0000 L CNN
 	1    5000 3300
 	1    0    0    -1  
 $EndComp
