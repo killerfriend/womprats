@@ -1,0 +1,409 @@
+EESchema Schematic File Version 2  date Wed 24 Oct 2012 08:09:21 PM PDT
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:audiosynth
+EELAYER 25  0
+EELAYER END
+$Descr User 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "Audio Output Stage of Audio Synth"
+Date "25 oct 2012"
+Rev "1.0"
+Comp "Womprats"
+Comment1 "ECE411 Practicum"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	7150 3800 7150 3850
+Wire Wire Line
+	6850 3650 6850 3500
+Connection ~ 4450 3400
+Wire Wire Line
+	5050 3400 4150 3400
+Connection ~ 8950 3300
+Wire Wire Line
+	9400 3300 8200 3300
+Connection ~ 6250 2550
+Wire Wire Line
+	6250 2700 6250 2350
+Connection ~ 4950 4250
+Wire Wire Line
+	4950 4250 4950 4200
+Wire Wire Line
+	9400 3550 8750 3550
+Wire Wire Line
+	8750 3550 8750 3900
+Wire Wire Line
+	9200 3400 9200 4250
+Wire Wire Line
+	9200 3400 9400 3400
+Connection ~ 8550 3900
+Wire Wire Line
+	8750 3900 8550 3900
+Wire Wire Line
+	4550 3100 4550 4250
+Connection ~ 7050 3300
+Connection ~ 8550 3300
+Wire Wire Line
+	4800 2600 4800 3300
+Connection ~ 4800 2600
+Wire Wire Line
+	5050 2650 5050 2600
+Wire Wire Line
+	4800 3300 5050 3300
+Wire Wire Line
+	6550 3400 7150 3400
+Wire Wire Line
+	4650 2600 4650 2500
+Connection ~ 4650 2600
+Wire Wire Line
+	6550 3600 6550 3950
+Wire Wire Line
+	5050 3150 5050 3050
+Connection ~ 4550 2600
+Wire Wire Line
+	5050 2600 4300 2600
+Wire Wire Line
+	6550 3950 7800 3950
+Connection ~ 6950 3950
+Wire Wire Line
+	6550 3300 7800 3300
+Wire Wire Line
+	7800 3300 7800 3750
+Wire Wire Line
+	5050 3500 4950 3500
+Wire Wire Line
+	4950 3500 4950 3700
+Wire Wire Line
+	5050 3600 4700 3600
+Wire Wire Line
+	4450 4800 4700 4800
+Wire Wire Line
+	4300 2600 4300 4550
+Wire Wire Line
+	4300 5400 4300 5050
+Wire Wire Line
+	6250 1750 6250 2150
+Connection ~ 6250 1900
+Wire Wire Line
+	3450 3400 3750 3400
+Connection ~ 8700 4250
+Wire Wire Line
+	4550 4250 9200 4250
+Wire Wire Line
+	4700 4800 4700 3600
+Connection ~ 4700 4600
+Wire Wire Line
+	6250 2150 6200 2150
+Wire Wire Line
+	6850 3500 6550 3500
+Wire Wire Line
+	8550 3800 8550 4000
+$Comp
+L PWR_FLAG #FLG01
+U 1 1 5088A447
+P 6200 2150
+F 0 "#FLG01" H 6200 2245 30  0001 C CNN
+F 1 "PWR_FLAG" H 6200 2330 30  0000 C CNN
+	1    6200 2150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L TESTPOINT TP2
+U 1 1 5088A3A4
+P 4700 4600
+F 0 "TP2" H 4700 4700 60  0000 C CNN
+F 1 "TESTPOINT" H 4700 4500 60  0001 C CNN
+	1    4700 4600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L TESTPOINT TP7
+U 1 1 5088A35E
+P 8700 4250
+F 0 "TP7" H 8700 4350 60  0000 C CNN
+F 1 "TESTPOINT" H 8700 4150 60  0001 C CNN
+	1    8700 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L TESTPOINT TP8
+U 1 1 5088A351
+P 8950 3300
+F 0 "TP8" H 8950 3400 60  0000 C CNN
+F 1 "TESTPOINT" H 8950 3200 60  0001 C CNN
+	1    8950 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 P1
+U 1 1 5088A304
+P 3300 3400
+F 0 "P1" H 3380 3400 40  0000 L CNN
+F 1 "A_IN" H 3300 3455 30  0000 C CNN
+	1    3300 3400
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 5088A2C9
+P 6250 2700
+F 0 "#PWR02" H 6250 2700 30  0001 C CNN
+F 1 "GND" H 6250 2630 30  0001 C CNN
+	1    6250 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3V3 #PWR03
+U 1 1 5088A2C2
+P 6250 1750
+F 0 "#PWR03" H 6250 1850 40  0001 C CNN
+F 1 "3V3" H 6250 1875 40  0000 C CNN
+	1    6250 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L TESTPOINT TP3
+U 1 1 5088A28E
+P 6250 1900
+F 0 "TP3" H 6250 2000 60  0000 C CNN
+F 1 "TESTPOINT" H 6250 1800 60  0001 C CNN
+	1    6250 1900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L TESTPOINT TP4
+U 1 1 5088A28A
+P 6250 2550
+F 0 "TP4" H 6250 2650 60  0000 C CNN
+F 1 "TESTPOINT" H 6250 2450 60  0001 C CNN
+	1    6250 2550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_2 P2
+U 1 1 5088A220
+P 6600 2250
+F 0 "P2" V 6550 2250 40  0000 C CNN
+F 1 "PWR" V 6650 2250 40  0000 C CNN
+	1    6600 2250
+	1    0    0    -1  
+$EndComp
+Text Notes 3700 4800 0    60   ~ 0
+Volume\nControl
+$Comp
+L LM4875 U1
+U 1 1 50875245
+P 5800 3450
+F 0 "U1" H 5400 3850 50  0000 C CNN
+F 1 "LM4875" H 5500 3050 50  0000 C CNN
+F 2 "MODULE" H 5800 3450 50  0001 C CNN
+F 3 "DOCUMENTATION" H 5800 3450 50  0001 C CNN
+	1    5800 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L JACK_2P J1
+U 1 1 508750E3
+P 9850 3400
+F 0 "J1" H 9500 3200 60  0000 C CNN
+F 1 "JACK_2P" H 9700 3650 60  0000 C CNN
+	1    9850 3400
+	-1   0    0    1   
+$EndComp
+Text Notes 5550 4000 0    60   ~ 0
+Audio Amplifier
+$Comp
+L SPEAKER SP1
+U 1 1 5082F631
+P 8100 3850
+F 0 "SP1" H 8000 4100 70  0000 C CNN
+F 1 "SPEAKER" H 8000 3600 70  0000 C CNN
+	1    8100 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L TESTPOINT TP5
+U 1 1 50832D56
+P 6950 3950
+F 0 "TP5" H 6950 4050 60  0000 C CNN
+F 1 "TESTPOINT" H 6950 3850 60  0001 C CNN
+	1    6950 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L TESTPOINT TP6
+U 1 1 50832D53
+P 7050 3300
+F 0 "TP6" H 7050 3400 60  0000 C CNN
+F 1 "TESTPOINT" H 7050 3200 60  0001 C CNN
+	1    7050 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR04
+U 1 1 5082A5F3
+P 8550 4000
+F 0 "#PWR04" H 8550 4000 30  0001 C CNN
+F 1 "GND" H 8550 3930 30  0001 C CNN
+	1    8550 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R4
+U 1 1 5082A5DD
+P 8550 3550
+F 0 "R4" V 8630 3550 50  0000 C CNN
+F 1 "150" V 8550 3550 50  0000 C CNN
+	1    8550 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C4
+U 1 1 5082A5C8
+P 8000 3300
+F 0 "C4" H 8050 3400 50  0000 L CNN
+F 1 "100uF" H 8050 3200 50  0000 L CNN
+	1    8000 3300
+	0    1    -1   0   
+$EndComp
+$Comp
+L GND #PWR05
+U 1 1 5082A422
+P 5050 3150
+F 0 "#PWR05" H 5050 3150 30  0001 C CNN
+F 1 "GND" H 5050 3080 30  0001 C CNN
+	1    5050 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR06
+U 1 1 5082A061
+P 4300 5400
+F 0 "#PWR06" H 4300 5400 30  0001 C CNN
+F 1 "GND" H 4300 5330 30  0001 C CNN
+	1    4300 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L POT R1
+U 1 1 5082A022
+P 4300 4800
+F 0 "R1" H 4300 4700 50  0000 C CNN
+F 1 "100k" H 4300 4800 50  0000 C CNN
+	1    4300 4800
+	0    1    1    0   
+$EndComp
+$Comp
+L R R2
+U 1 1 50829F28
+P 4550 2850
+F 0 "R2" V 4630 2850 50  0000 C CNN
+F 1 "100k" V 4550 2850 50  0000 C CNN
+	1    4550 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R3
+U 1 1 50829F1A
+P 4950 3950
+F 0 "R3" V 5030 3950 50  0000 C CNN
+F 1 "100k" V 4950 3950 50  0000 C CNN
+	1    4950 3950
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C2
+U 1 1 50829A5D
+P 5050 2850
+F 0 "C2" H 5100 2950 50  0000 L CNN
+F 1 "1uF" H 5100 2750 50  0000 L CNN
+	1    5050 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3V3 #PWR07
+U 1 1 50829881
+P 4650 2500
+F 0 "#PWR07" H 4650 2600 40  0001 C CNN
+F 1 "3V3" H 4650 2625 40  0000 C CNN
+	1    4650 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR08
+U 1 1 508296BB
+P 6850 3650
+F 0 "#PWR08" H 6850 3650 30  0001 C CNN
+F 1 "GND" H 6850 3580 30  0001 C CNN
+	1    6850 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR09
+U 1 1 50829685
+P 7150 3850
+F 0 "#PWR09" H 7150 3850 30  0001 C CNN
+F 1 "GND" H 7150 3780 30  0001 C CNN
+	1    7150 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C1
+U 1 1 5082956C
+P 3950 3400
+F 0 "C1" V 4100 3350 50  0000 L CNN
+F 1 "1.5uF" V 3800 3350 50  0000 L CNN
+	1    3950 3400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C3
+U 1 1 5082957A
+P 7150 3600
+F 0 "C3" H 7200 3700 50  0000 L CNN
+F 1 "1uF" H 7200 3500 50  0000 L CNN
+	1    7150 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L TESTPOINT TP1
+U 1 1 50820290
+P 4450 3400
+F 0 "TP1" H 4450 3500 60  0000 C CNN
+F 1 "TESTPOINT" H 4450 3300 60  0001 C CNN
+	1    4450 3400
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
