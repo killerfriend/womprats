@@ -1,0 +1,150 @@
+Cmp-Mod V01 Created by CvPcb (2012-jan-04)-stable date = Wed 24 Oct 2012 08:13:47 PM PDT
+
+BeginCmp
+TimeStamp = /5082956C;
+Reference = C1;
+ValeurCmp = 1.5uF;
+IdModule  = SM0603_Capa;
+EndCmp
+
+BeginCmp
+TimeStamp = /50829A5D;
+Reference = C2;
+ValeurCmp = 1uF;
+IdModule  = SM0603_Capa;
+EndCmp
+
+BeginCmp
+TimeStamp = /5082957A;
+Reference = C3;
+ValeurCmp = 1uF;
+IdModule  = SM0603_Capa;
+EndCmp
+
+BeginCmp
+TimeStamp = /5082A5C8;
+Reference = C4;
+ValeurCmp = 100uF;
+IdModule  = SM0603_Capa;
+EndCmp
+
+BeginCmp
+TimeStamp = /508750E3;
+Reference = J1;
+ValeurCmp = JACK_2P;
+IdModule  = PIN_ARRAY_3X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5088A304;
+Reference = P1;
+ValeurCmp = A_IN;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5088A220;
+Reference = P2;
+ValeurCmp = PWR;
+IdModule  = PIN_ARRAY_2X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5082A022;
+Reference = R1;
+ValeurCmp = 100k;
+IdModule  = PIN_ARRAY_3X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /50829F28;
+Reference = R2;
+ValeurCmp = 100k;
+IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /50829F1A;
+Reference = R3;
+ValeurCmp = 100k;
+IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /5082A5DD;
+Reference = R4;
+ValeurCmp = 150;
+IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /5082F631;
+Reference = SP1;
+ValeurCmp = SPEAKER;
+IdModule  = PIN_ARRAY_2X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /50820290;
+Reference = TP1;
+ValeurCmp = TESTPOINT;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5088A3A4;
+Reference = TP2;
+ValeurCmp = TESTPOINT;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5088A28E;
+Reference = TP3;
+ValeurCmp = TESTPOINT;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5088A28A;
+Reference = TP4;
+ValeurCmp = TESTPOINT;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /50832D56;
+Reference = TP5;
+ValeurCmp = TESTPOINT;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /50832D53;
+Reference = TP6;
+ValeurCmp = TESTPOINT;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5088A35E;
+Reference = TP7;
+ValeurCmp = TESTPOINT;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5088A351;
+Reference = TP8;
+ValeurCmp = TESTPOINT;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /50875245;
+Reference = U1;
+ValeurCmp = LM4875;
+IdModule  = SO8N;
+EndCmp
+
+EndListe

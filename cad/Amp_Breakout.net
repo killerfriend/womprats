@@ -1,0 +1,131 @@
+# EESchema Netlist Version 1.1 created  Wed 24 Oct 2012 08:13:47 PM PDT
+(
+ ( /5082956C SM0603_Capa C1 1.5uF
+  ( 1 N-000007 )
+  ( 2 N-000005 )
+ )
+ ( /50829A5D SM0603_Capa C2 1uF
+  ( 1 3V3 )
+  ( 2 GND )
+ )
+ ( /5082957A SM0603_Capa C3 1uF
+  ( 1 N-000006 )
+  ( 2 GND )
+ )
+ ( /5082A5C8 SM0603_Capa C4 100uF
+  ( 1 N-000009 )
+  ( 2 N-000001 )
+ )
+ ( /508750E3 PIN_ARRAY_3X1 J1 JACK_2P
+  ( 1 N-000009 )
+  ( 2 N-000010 )
+  ( 3 GND )
+ )
+ ( /5088A304 PIN_ARRAY_1 P1 A_IN
+  ( 1 N-000007 )
+ )
+ ( /5088A220 PIN_ARRAY_2X1 P2 PWR
+  ( 1 3V3 )
+  ( 2 GND )
+ )
+ ( /5082A022 PIN_ARRAY_3X1 R1 100k
+  ( 1 3V3 )
+  ( 2 N-000011 )
+  ( 3 GND )
+ )
+ ( /50829F28 SM0603 R2 100k
+  ( 1 N-000010 )
+  ( 2 3V3 )
+ )
+ ( /50829F1A SM0603 R3 100k
+  ( 1 N-000010 )
+  ( 2 N-000004 )
+ )
+ ( /5082A5DD SM0603 R4 150
+  ( 1 N-000009 )
+  ( 2 GND )
+ )
+ ( /5082F631 PIN_ARRAY_2X1 SP1 SPEAKER
+  ( 1 N-000001 )
+  ( 2 N-000002 )
+ )
+ ( /50820290 PIN_ARRAY_1 TP1 TESTPOINT
+  ( 1 N-000005 )
+ )
+ ( /5088A3A4 PIN_ARRAY_1 TP2 TESTPOINT
+  ( 1 N-000011 )
+ )
+ ( /5088A28E PIN_ARRAY_1 TP3 TESTPOINT
+  ( 1 3V3 )
+ )
+ ( /5088A28A PIN_ARRAY_1 TP4 TESTPOINT
+  ( 1 GND )
+ )
+ ( /50832D56 PIN_ARRAY_1 TP5 TESTPOINT
+  ( 1 N-000002 )
+ )
+ ( /50832D53 PIN_ARRAY_1 TP6 TESTPOINT
+  ( 1 N-000001 )
+ )
+ ( /5088A35E PIN_ARRAY_1 TP7 TESTPOINT
+  ( 1 N-000010 )
+ )
+ ( /5088A351 PIN_ARRAY_1 TP8 TESTPOINT
+  ( 1 N-000009 )
+ )
+ ( /50875245 SO8N U1 LM4875
+  ( 1 3V3 )
+  ( 2 N-000005 )
+  ( 3 N-000004 )
+  ( 4 N-000011 )
+  ( 5 N-000002 )
+  ( 6 GND )
+  ( 7 N-000006 )
+  ( 8 N-000001 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
