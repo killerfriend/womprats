@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-jan-04)-stable date = Wed 24 Oct 2012 08:13:47 PM PDT
+Cmp-Mod V01 Created by CvPcb (2012-jan-04)-stable date = Sat 03 Nov 2012 04:42:09 PM PDT
 
 BeginCmp
 TimeStamp = /5082956C;
@@ -25,7 +25,7 @@ BeginCmp
 TimeStamp = /5082A5C8;
 Reference = C4;
 ValeurCmp = 100uF;
-IdModule  = SM0603_Capa;
+IdModule  = PIN_ARRAY_2X1;
 EndCmp
 
 BeginCmp

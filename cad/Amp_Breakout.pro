@@ -1,5 +1,5 @@
-update=Wed 24 Oct 2012 07:18:03 PM PDT
-last_client=eeschema
+update=Sat 03 Nov 2012 04:41:10 PM PDT
+last_client=pcbnew
 [eeschema]
 version=1
 LibDir=../../../../../../rattboi
@@ -63,3 +63,34 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=womprats/cad/audiosynth
+LibName32=audiosynth
+[pcbnew]
+version=1
+PadDrlX=320
+PadDimH=600
+PadDimV=600
+BoardThickness=630
+TxtPcbV=800
+TxtPcbH=600
+TxtModV=600
+TxtModH=600
+TxtModW=120
+VEgarde=100
+DrawLar=150
+EdgeLar=150
+TxtLar=120
+MSegLar=150
+LastNetListRead=
+[pcbnew/libraries]
+LibDir=
+LibName1=sockets
+LibName2=connect
+LibName3=discret
+LibName4=pin_array
+LibName5=divers
+LibName6=libcms
+LibName7=display
+LibName8=led
+LibName9=dip_sockets
+LibName10=pga_sockets
+LibName11=valves
