@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Sun 04 Nov 2012 09:41:02 AM PST
+# EESchema Netlist Version 1.1 created  Sun 04 Nov 2012 11:54:43 AM PST
 (
  ( /507DC16E SM0603_Capa C101 100n
   ( 1 3V3 )
@@ -33,20 +33,20 @@
   ( 2 GND )
  )
  ( /507CFFCF/5082956C SM0603_Capa C303 1.5uF
-  ( 1 N-000094 )
-  ( 2 N-000092 )
+  ( 1 N-000088 )
+  ( 2 N-000089 )
  )
  ( /507CFFCF/50829A5D SM0603_Capa C304 1uF
   ( 1 3V3 )
   ( 2 GND )
  )
  ( /507CFFCF/5082957A SM0603_Capa C305 1uF
-  ( 1 N-000090 )
+  ( 1 N-000093 )
   ( 2 GND )
  )
  ( /507CFFCF/5082A5C8 PIN_ARRAY_2X1 C306 100uF
-  ( 1 N-000089 )
-  ( 2 N-000093 )
+  ( 1 N-000090 )
+  ( 2 N-000094 )
  )
  ( /507CFFA1/5085A314 SM0603_Capa C401 100n
   ( 1 3V3 )
@@ -66,14 +66,14 @@
  )
  ( /507CFFA1/50821E22 SM0603_Capa C405 1uF
   ( 1 N-000054 )
-  ( 2 N-000060 )
+  ( 2 N-000058 )
  )
  ( /507CFF65/507D9A3B SM0603_Capa C501 100nF
   ( 1 3V3 )
   ( 2 GND )
  )
  ( /507CFFC3/5082AE7E SM0603_Capa C701 10uF
-  ( 1 N-000082 )
+  ( 1 N-000081 )
   ( 2 GND )
  )
  ( /507CFFC3/5082AE32 SM0603_Capa C702 10uF
@@ -96,41 +96,41 @@
   ( 1 N-000083 )
   ( 2 GND )
  )
- ( /507CFFAB/50831761 $noname$ F201 0ZCA0005FF2E
+ ( /507CFFAB/50831761 SM1210 F201 0ZCA0005FF2E
   ( 1 N-000080 )
   ( 2 3V3 )
  )
- ( /507CFFAB/5083308A $noname$ F202 0ZCA0005FF2E
-  ( 1 N-000076 )
+ ( /507CFFAB/5083308A SM1210 F202 0ZCA0005FF2E
+  ( 1 N-000075 )
   ( 2 3V3 )
  )
- ( /507CFFAB/508330A6 $noname$ F203 0ZCA0005FF2E
-  ( 1 N-000078 )
+ ( /507CFFAB/508330A6 SM1210 F203 0ZCA0005FF2E
+  ( 1 N-000077 )
   ( 2 3V3 )
  )
- ( /507CFFAB/508330DD $noname$ F204 0ZCA0005FF2E
-  ( 1 N-000063 )
+ ( /507CFFAB/508330DD SM1210 F204 0ZCA0005FF2E
+  ( 1 N-000067 )
   ( 2 3V3 )
  )
- ( /507CFFAB/508330F1 $noname$ F205 0ZCA0005FF2E
-  ( 1 N-000073 )
+ ( /507CFFAB/508330F1 SM1210 F205 0ZCA0005FF2E
+  ( 1 N-000071 )
   ( 2 3V3 )
  )
- ( /507CFFAB/50833105 $noname$ F206 0ZCA0005FF2E
-  ( 1 N-000072 )
+ ( /507CFFAB/50833105 SM1210 F206 0ZCA0005FF2E
+  ( 1 N-000070 )
   ( 2 3V3 )
  )
- ( /507CFFC3/5082AEA1 $noname$ F701 FUSE
+ ( /507CFFC3/5082AEA1 SM1812L F701 FUSE
   ( 1 N-000085 )
   ( 2 N-000084 )
  )
  ( /507CFFCF/508750E3 PIN_ARRAY_3X1 J301 JACK_2P
-  ( 1 N-000089 )
-  ( 2 N-000091 )
+  ( 1 N-000090 )
+  ( 2 N-000092 )
   ( 3 GND )
  )
  ( /507CFFC3/5082B09B PIN_ARRAY_3X1 J701 BARREL_JACK
-  ( 1 N-000081 )
+  ( 1 N-000082 )
   ( 2 GND )
   ( 3 GND )
  )
@@ -160,7 +160,7 @@
   ( 6 ? )
  )
  ( /507CFFAB/5083308B pin_array_3x2 P202 CONN_3X2
-  ( 1 N-000076 )
+  ( 1 N-000075 )
   ( 2 /Channels/D1 )
   ( 3 /Channels/A1 )
   ( 4 GND )
@@ -168,7 +168,7 @@
   ( 6 ? )
  )
  ( /507CFFAB/508330A5 pin_array_3x2 P203 CONN_3X2
-  ( 1 N-000078 )
+  ( 1 N-000077 )
   ( 2 /Channels/D2 )
   ( 3 /Channels/A2 )
   ( 4 GND )
@@ -176,7 +176,7 @@
   ( 6 ? )
  )
  ( /507CFFAB/508330DE pin_array_3x2 P204 CONN_3X2
-  ( 1 N-000063 )
+  ( 1 N-000067 )
   ( 2 /Channels/D3 )
   ( 3 /Channels/A3 )
   ( 4 GND )
@@ -184,7 +184,7 @@
   ( 6 ? )
  )
  ( /507CFFAB/508330F0 pin_array_3x2 P205 CONN_3X2
-  ( 1 N-000073 )
+  ( 1 N-000071 )
   ( 2 /Channels/D4 )
   ( 3 /Channels/A4 )
   ( 4 GND )
@@ -192,7 +192,7 @@
   ( 6 ? )
  )
  ( /507CFFAB/50833106 pin_array_3x2 P206 CONN_3X2
-  ( 1 N-000072 )
+  ( 1 N-000070 )
   ( 2 /Channels/D5 )
   ( 3 /Channels/A5 )
   ( 4 GND )
@@ -202,7 +202,7 @@
  ( /507CFFA1/509562E1 TO92 Q401 2N7000
   ( 1 /LCD/BCKLIGHT )
   ( 2 GND )
-  ( 3 N-000059 )
+  ( 3 N-000060 )
  )
  ( /50805DC0 SM0603_Resistor R101 1.5k
   ( 1 GND )
@@ -218,19 +218,19 @@
  )
  ( /507CFFCF/5082A022 PIN_ARRAY_3X1 R301 100k
   ( 1 3V3 )
-  ( 2 N-000086 )
+  ( 2 N-000087 )
   ( 3 GND )
  )
  ( /507CFFCF/50829F28 SM0603_Resistor R302 100k
-  ( 1 N-000091 )
+  ( 1 N-000092 )
   ( 2 3V3 )
  )
  ( /507CFFCF/50829F1A SM0603_Resistor R303 100k
-  ( 1 N-000091 )
-  ( 2 N-000088 )
+  ( 1 N-000092 )
+  ( 2 N-000086 )
  )
  ( /507CFFCF/5082A5DD SM0603_Resistor R304 150
-  ( 1 N-000089 )
+  ( 1 N-000090 )
   ( 2 GND )
  )
  ( /507CFFA1/509562F9 SM0603_Resistor R401 22k
@@ -243,7 +243,11 @@
  )
  ( /507CFFA1/50956382 SM0603_Resistor R403 15
   ( 1 N-000057 )
-  ( 2 N-000058 )
+  ( 2 N-000059 )
+ )
+ ( /507CFFA1/5096C6F3 SM0805 R404 0
+  ( 1 3V3 )
+  ( 2 N-000057 )
  )
  ( /507CFF65/507D97D7 SM0603_Resistor R501 2.2k
   ( 1 3V3 )
@@ -257,9 +261,13 @@
   ( 1 3V3 )
   ( 2 N-000083 )
  )
+ ( /507CFFC3/5096C640 SM0805 R702 0
+  ( 1 N-000081 )
+  ( 2 N-000084 )
+ )
  ( /507CFFCF/5082F631 PIN_ARRAY_2X1 SP301 SPEAKER
-  ( 1 N-000087 )
-  ( 2 N-000093 )
+  ( 1 N-000091 )
+  ( 2 N-000094 )
  )
  ( /507CFFE5/50863887 PIN_ARRAY_2X1 SW601 SW_PUSH
   ( 1 GND )
@@ -286,7 +294,7 @@
   ( 2 /UI/BUTTON4 )
  )
  ( /507CFFC3/5082B661 PIN_ARRAY_2X1 SW701 SPST
-  ( 1 N-000081 )
+  ( 1 N-000082 )
   ( 2 N-000085 )
  )
  ( /5082272A PIN_ARRAY_1 TP101 TESTPOINT
@@ -308,13 +316,13 @@
   ( 1 /Audio_Out/DAC_SDI )
  )
  ( /507CFFCF/50820290 PIN_ARRAY_1 TP304 TESTPOINT
-  ( 1 N-000094 )
+  ( 1 N-000088 )
  )
  ( /507CFFCF/50832D56 PIN_ARRAY_1 TP305 TESTPOINT
-  ( 1 N-000087 )
+  ( 1 N-000091 )
  )
  ( /507CFFCF/50832D53 PIN_ARRAY_1 TP306 TESTPOINT
-  ( 1 N-000093 )
+  ( 1 N-000094 )
  )
  ( /507CFFA1/50859F75 PIN_ARRAY_1 TP401 TESTPOINT
   ( 1 /LCD/MOSI )
@@ -401,26 +409,26 @@
   ( 5 GND )
   ( 6 3V3 )
   ( 7 GND )
-  ( 8 N-000094 )
+  ( 8 N-000088 )
  )
  ( /507CFFCF/50875245 SO8E U302 LM4875
   ( 1 3V3 )
-  ( 2 N-000092 )
-  ( 3 N-000088 )
-  ( 4 N-000086 )
-  ( 5 N-000093 )
+  ( 2 N-000089 )
+  ( 3 N-000086 )
+  ( 4 N-000087 )
+  ( 5 N-000094 )
   ( 6 GND )
-  ( 7 N-000090 )
-  ( 8 N-000087 )
+  ( 7 N-000093 )
+  ( 8 N-000091 )
  )
  ( /507CFFA1/50859FCD MODULE U401 EADOGS102W-6
   ( 1 N-000056 )
-  ( 2 N-000059 )
-  ( 13 N-000059 )
-  ( 14 N-000058 )
+  ( 2 N-000060 )
+  ( 13 N-000060 )
+  ( 14 N-000059 )
   ( 15 N-000062 )
   ( 16 N-000061 )
-  ( 17 N-000060 )
+  ( 17 N-000058 )
   ( 18 N-000054 )
   ( 19 N-000055 )
   ( 20 GND )
@@ -443,20 +451,20 @@
   ( 7 GND )
   ( 8 3V3 )
  )
- ( /507CFFC3/5082AE06 $noname$ U701 LD1117V33-DB
+ ( /507CFFC3/5082AE06 TO220_VERT U701 LD1117V33-DB
   ( 1 GND )
   ( 2 3V3 )
-  ( 3 N-000082 )
+  ( 3 N-000081 )
  )
- ( /507CFFA1/5087517B $noname$ W401 TEST
+ ( /507CFFA1/5087517B TEST_POINT_2PADS W401 TEST
   ( 1 3V3 )
   ( 2 N-000057 )
  )
- ( /507CFFC3/50832DB7 $noname$ W701 TEST
+ ( /507CFFC3/50832DB7 TEST_POINT_2PADS W701 TEST
   ( 1 N-000084 )
-  ( 2 N-000082 )
+  ( 2 N-000081 )
  )
- ( /507DC34B $noname$ X101 12MHz
+ ( /507DC34B HC-49/US X101 12MHz
   ( 1 N-000026 )
   ( 2 N-000025 )
  )
@@ -665,6 +673,13 @@ $component R403
  R?-*
  SM1206
 $endlist
+$component R404
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
 $component R501
  R?
  SM0603
@@ -680,6 +695,13 @@ $component R502
  SM1206
 $endlist
 $component R701
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R702
  R?
  SM0603
  SM0805
