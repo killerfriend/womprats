@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Sat 03 Nov 2012 10:14:06 PM UTC
+# EESchema Netlist Version 1.1 created  Sun 04 Nov 2012 09:41:02 AM PST
 (
  ( /507DC16E SM0603_Capa C101 100n
   ( 1 3V3 )
@@ -80,19 +80,19 @@
   ( 1 3V3 )
   ( 2 GND )
  )
- ( /50805DBA $noname$ D101 LED
+ ( /50805DBA SM0603 D101 LED
   ( 1 N-000049 )
   ( 2 N-000030 )
  )
- ( /50820D8F $noname$ D102 LED
+ ( /50820D8F SM0603 D102 LED
   ( 1 N-000048 )
   ( 2 N-000016 )
  )
- ( /50820D91 $noname$ D103 LED
+ ( /50820D91 SM0603 D103 LED
   ( 1 N-000047 )
   ( 2 N-000012 )
  )
- ( /507CFFC3/5082B76F $noname$ D701 PWRLED
+ ( /507CFFC3/5082B76F SM0603 D701 PWRLED
   ( 1 N-000083 )
   ( 2 GND )
  )
