@@ -1,4 +1,4 @@
-update=Sun 04 Nov 2012 11:15:03 AM PST
+update=Sun 04 Nov 2012 12:05:36 PM PST
 version=1
 last_client=pcbnew
 [cvpcb]
@@ -102,3 +102,4 @@ LibName9=dip_sockets
 LibName10=pga_sockets
 LibName11=valves
 LibName12=audiosynth
+LibName13=LQFP48

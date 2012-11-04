@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Sun 04 Nov 2012 11:54:43 AM PST
+# EESchema Netlist Version 1.1 created  Sun 04 Nov 2012 01:39:45 PM PST
 (
  ( /507DC16E SM0603_Capa C101 100n
   ( 1 3V3 )
@@ -351,7 +351,7 @@
  ( /507CFFC3/5082B84F PIN_ARRAY_1 TP702 TESTPOINT
   ( 1 3V3 )
  )
- ( /5081FA32 MODULE U101 LPC1114FBD48/302
+ ( /5081FA32 LQFP48 U101 LPC1114FBD48/302
   ( 1 /UI/BUTTON2 )
   ( 2 ? )
   ( 3 N-000003 )
