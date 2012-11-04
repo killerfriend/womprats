@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 23 Oct 2012 07:57:16 PM PDT
+EESchema Schematic File Version 2  date Sat 03 Nov 2012 05:03:34 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,8 +37,8 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 5 7
 Title "I2C EEPROM of Audio Synth"
-Date "24 oct 2012"
-Rev "1.0"
+Date "4 nov 2012"
+Rev "1.1"
 Comp "Womprats"
 Comment1 "ECE411 Practicum"
 Comment2 ""

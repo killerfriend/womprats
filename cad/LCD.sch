@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 30 Oct 2012 09:30:33 AM PDT
+EESchema Schematic File Version 2  date Sat 03 Nov 2012 05:03:34 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,8 +37,8 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 4 7
 Title "LCD and associated circuitry for Audio Synth"
-Date "30 oct 2012"
-Rev "1.0"
+Date "4 nov 2012"
+Rev "1.1"
 Comp "Womprats"
 Comment1 "ECE411 Practicum"
 Comment2 ""
