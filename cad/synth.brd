@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date Sun 04 Nov 2012 03:46:13 PM PST
+PCBNEW-BOARD Version 1 date Sun 04 Nov 2012 04:19:54 PM PST
 
 # Created by Pcbnew(2012-jan-04)-stable
 
@@ -9,7 +9,7 @@ Ly 1FFF8001
 EnabledLayers 1FFF8001
 Links 165
 NoConn 165
-Di 9694 19223 34167 47901
+Di 9694 19473 34167 47901
 Ndraw 0
 Ntrack 0
 Nzone 0
@@ -21,7 +21,7 @@ $EndGENERAL
 $SHEETDESCR
 Sheet User 11000 8500
 Title ""
-Date "4 nov 2012"
+Date "5 nov 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -55,8 +55,8 @@ TextPcbSize 600 800
 EdgeModWidth 150
 TextModSize 600 600
 TextModWidth 120
-PadSize 600 600
-PadDrill 320
+PadSize 512 118
+PadDrill 0
 Pad2MaskClearance 100
 AuxiliaryAxisOrg 0 0
 PcbPlotParams (pcbplotparams (layerselection 32768) (usegerberextensions true) (excludeedgelayer true) (linewidth 60) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 0) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue true) (plotothertext true) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk false) (outputformat 1) (mirror false) (drillshape 1) (scaleselection 1) (outputdirectory ""))
@@ -3473,10 +3473,10 @@ Po 1870 0
 $EndPAD
 $EndMODULE  HC-49/US
 $MODULE lqfp48
-Po 26750 23750 0 15 5096FE3D 5096FE34 ~~
+Po 26500 24000 0 15 50970590 50970602 ~~
 Li lqfp48
 Cd LQFP-48
-Sc 5096FE34
+Sc 50970602
 AR /5081FA32
 Op 0 0 0
 T0 0 450 295 295 0 59 N V 21 N "U101"
@@ -3495,112 +3495,112 @@ Sh "4" R 118 512 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 44 "N-000049"
-Po -492 1870
+Po -522 1870
 $EndPAD
 $PAD
 Sh "5" R 118 512 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 31 "GND"
-Po -295 1870
+Po -315 1870
 $EndPAD
 $PAD
 Sh "6" R 118 512 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 35 "N-000025"
-Po -98 1870
+Po -108 1870
 $EndPAD
 $PAD
 Sh "7" R 118 512 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 36 "N-000026"
-Po 98 1870
+Po 108 1870
 $EndPAD
 $PAD
 Sh "8" R 118 512 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 30 "3V3"
-Po 295 1870
+Po 315 1870
 $EndPAD
 $PAD
 Sh "1" R 118 512 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 26 "/UI/BUTTON2"
-Po -1083 1870
+Po -1143 1870
 $EndPAD
 $PAD
 Sh "2" R 118 512 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po -886 1870
+Po -936 1870
 $EndPAD
 $PAD
 Sh "3" R 118 512 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 32 "N-000003"
-Po -689 1870
+Po -729 1870
 $EndPAD
 $PAD
 Sh "13" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 23 "/LCD/SCK"
-Po 1870 1083
+Po 1870 1143
 $EndPAD
 $PAD
 Sh "14" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 42 "N-000047"
-Po 1870 886
+Po 1870 936
 $EndPAD
 $PAD
 Sh "15" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 16 "/EEPROM/SCL"
-Po 1870 689
+Po 1870 729
 $EndPAD
 $PAD
 Sh "16" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 17 "/EEPROM/SDA"
-Po 1870 492
+Po 1870 522
 $EndPAD
 $PAD
 Sh "17" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 19 "/LCD/CD"
-Po 1870 295
+Po 1870 315
 $EndPAD
 $PAD
 Sh "18" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 14 "/Channels/D4"
-Po 1870 98
+Po 1870 108
 $EndPAD
 $PAD
 Sh "19" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 24 "/UI/BUTTON0"
-Po 1870 -98
+Po 1870 -108
 $EndPAD
 $PAD
 Sh "20" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 25 "/UI/BUTTON1"
-Po 1870 -295
+Po 1870 -315
 $EndPAD
 $PAD
 Sh "25" R 118 512 0 0 0
@@ -3663,112 +3663,112 @@ Sh "37" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 11 "/Channels/D1"
-Po -1870 -1083
+Po -1870 -1143
 $EndPAD
 $PAD
 Sh "38" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 21 "/LCD/MOSI"
-Po -1870 -886
+Po -1870 -936
 $EndPAD
 $PAD
 Sh "39" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 41 "N-000041"
-Po -1870 -689
+Po -1870 -729
 $EndPAD
 $PAD
 Sh "40" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 7 "/Channels/A3"
-Po -1870 -492
+Po -1870 -522
 $EndPAD
 $PAD
 Sh "41" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 31 "GND"
-Po -1870 -295
+Po -1870 -315
 $EndPAD
 $PAD
 Sh "42" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 9 "/Channels/A5"
-Po -1870 -98
+Po -1870 -108
 $EndPAD
 $PAD
 Sh "43" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 12 "/Channels/D2"
-Po -1870 98
+Po -1870 108
 $EndPAD
 $PAD
 Sh "44" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 30 "3V3"
-Po -1870 295
+Po -1870 315
 $EndPAD
 $PAD
 Sh "9" R 118 512 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 20 "/LCD/CE"
-Po 492 1870
+Po 522 1870
 $EndPAD
 $PAD
 Sh "10" R 118 512 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 43 "N-000048"
-Po 689 1870
+Po 729 1870
 $EndPAD
 $PAD
 Sh "11" R 118 512 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 27 "/UI/BUTTON3"
-Po 886 1870
+Po 936 1870
 $EndPAD
 $PAD
 Sh "12" R 118 512 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 28 "/UI/BUTTON4"
-Po 1083 1870
+Po 1143 1870
 $EndPAD
 $PAD
 Sh "21" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 15 "/Channels/D5"
-Po 1870 -492
+Po 1870 -522
 $EndPAD
 $PAD
 Sh "22" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 2 "/Audio_Out/DAC_SCK"
-Po 1870 -689
+Po 1870 -729
 $EndPAD
 $PAD
 Sh "23" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 1 "/Audio_Out/DAC_CS"
-Po 1870 -886
+Po 1870 -936
 $EndPAD
 $PAD
 Sh "24" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 29 "/UI/BUTTON5"
-Po 1870 -1083
+Po 1870 -1143
 $EndPAD
 $PAD
 Sh "33" R 118 512 0 0 0
@@ -3803,28 +3803,28 @@ Sh "45" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 22 "/LCD/RST"
-Po -1870 492
+Po -1870 522
 $EndPAD
 $PAD
 Sh "46" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 39 "N-000039"
-Po -1870 689
+Po -1870 729
 $EndPAD
 $PAD
 Sh "47" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 40 "N-000040"
-Po -1870 886
+Po -1870 936
 $EndPAD
 $PAD
 Sh "48" R 512 118 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 13 "/Channels/D3"
-Po -1870 1083
+Po -1870 1143
 $EndPAD
 $EndMODULE  lqfp48
 $TRACK
