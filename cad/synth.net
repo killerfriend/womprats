@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Sun 04 Nov 2012 03:04:53 PM PST
+# EESchema Netlist Version 1.1 created  Sun 04 Nov 2012 07:42:50 PM PST
 (
  ( /507DC16E SM0603_Capa C101 100n
   ( 1 3V3 )
@@ -396,7 +396,7 @@
   ( 7 GND )
   ( 8 3V3 )
  )
- ( /507CFFC3/5082AE06 TO220_VERT U701 LD1117V33-DB
+ ( /507CFFC3/5082AE06 TO220V U701 LD1117V33-DB
   ( 1 GND )
   ( 2 3V3 )
   ( 3 N-000077 )

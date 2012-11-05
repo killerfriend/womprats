@@ -1,4 +1,4 @@
-update=Sun 04 Nov 2012 03:04:28 PM PST
+update=Sun 04 Nov 2012 09:27:53 PM PST
 version=1
 last_client=pcbnew
 [cvpcb]
@@ -73,9 +73,9 @@ LibName30=valves
 LibName31=audiosynth
 [pcbnew]
 version=1
-PadDrlX=320
-PadDimH=600
-PadDimV=600
+PadDrlX=1250
+PadDimH=2000
+PadDimV=2000
 BoardThickness=630
 TxtPcbV=800
 TxtPcbH=600
@@ -87,7 +87,7 @@ DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=150
-LastNetListRead=
+LastNetListRead=synth.net
 [pcbnew/libraries]
 LibDir=
 LibName1=sockets
@@ -102,3 +102,4 @@ LibName9=dip_sockets
 LibName10=pga_sockets
 LibName11=valves
 LibName12=audiosynth
+LibName13=womprat
