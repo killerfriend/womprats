@@ -301,6 +301,63 @@ void SSP_Init( uint8_t portNum )
 ** Returned value:		None
 ** 
 *****************************************************************************/
+void SSP_Send8( uint8_t portNum, uint8_t *buf, uint32_t Length )
+{
+  uint32_t i;
+  uint8_t Dummy = Dummy;
+
+  for ( i = 0; i < Length; i++ )
+  {
+	if ( portNum == 0 )
+	{
+	/* Move on only if NOT busy and TX FIFO not full. */
+	  while ( (LPC_SSP0->SR & (SSPSR_TNF|SSPSR_BSY)) != SSPSR_TNF );
+	  LPC_SSP0->DR = *buf;
+	buf++;
+#if !LOOPBACK_MODE
+	  while ( (LPC_SSP0->SR & (SSPSR_BSY|SSPSR_RNE)) != SSPSR_RNE );
+	/* Whenever a byte is written, MISO FIFO counter increments, Clear FIFO
+	on MISO. Otherwise, when SSP0Receive() is called, previous data byte
+	is left in the FIFO. */
+	  Dummy = LPC_SSP0->DR;
+#else
+	/* Wait until the Busy bit is cleared. */
+	  while ( LPC_SSP0->SR & SSPSR_BSY );
+#endif
+  }
+	else
+	{
+	  /* Move on only if NOT busy and TX FIFO not full. */
+	  while ( (LPC_SSP1->SR & (SSPSR_TNF|SSPSR_BSY)) != SSPSR_TNF );
+	  LPC_SSP1->DR = *buf;
+	  buf++;
+#if !LOOPBACK_MODE
+	  while ( (LPC_SSP1->SR & (SSPSR_BSY|SSPSR_RNE)) != SSPSR_RNE );
+	  /* Whenever a byte is written, MISO FIFO counter increments, Clear FIFO
+	  on MISO. Otherwise, when SSP0Receive() is called, previous data byte
+	  is left in the FIFO. */
+	  Dummy = LPC_SSP1->DR;
+#else
+	  /* Wait until the Busy bit is cleared. */
+	  while ( LPC_SSP1->SR & SSPSR_BSY );
+#endif
+	}
+  }
+  return;
+}
+
+
+/*****************************************************************************
+** Function name:		SSP_Send
+**
+** Descriptions:		Send a block of data to the SSP port, the
+**						first parameter is the buffer pointer, the 2nd
+**						parameter is the block length.
+**
+** parameters:			port #, buffer pointer, and the block length
+** Returned value:		None
+**
+*****************************************************************************/
 void SSP_Send( uint8_t portNum, uint16_t *buf, uint32_t Length )
 {
   uint32_t i;
