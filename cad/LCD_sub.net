@@ -1,0 +1,204 @@
+# EESchema Netlist Version 1.1 created  Tue 06 Nov 2012 09:09:45 PM PST
+(
+ ( /5096C306 MODULE  U1 EADOGS102W-6 {Lib=EADOGS102W-6}
+  (    1 N-000018 )
+  (    2 N-000004 )
+  (   13 N-000004 )
+  (   14 N-000011 )
+  (   15 N-000007 )
+  (   16 N-000012 )
+  (   17 N-000014 )
+  (   18 N-000016 )
+  (   19 N-000008 )
+  (   20 GND )
+  (   21 GND )
+  (   22 3V3 )
+  (   23 3V3 )
+  (   24 N-000009 )
+  (   25 N-000010 )
+  (   26 N-000013 )
+  (   27 N-000015 )
+  (   28 N-000017 )
+ )
+ ( /5096C31E $noname  R2 15 {Lib=R}
+  (    1 N-000001 )
+  (    2 N-000018 )
+ )
+ ( /5096C336 $noname  R3 15 {Lib=R}
+  (    1 N-000011 )
+  (    2 N-000001 )
+ )
+ ( /5096C432 $noname  C3 1uF {Lib=C}
+  (    1 N-000007 )
+  (    2 GND )
+ )
+ ( /5096C473 $noname  C4 1uF {Lib=C}
+  (    1 N-000008 )
+  (    2 N-000012 )
+ )
+ ( /5096C485 $noname  C5 1uF {Lib=C}
+  (    1 N-000016 )
+  (    2 N-000014 )
+ )
+ ( /5096C4D5 $noname  TP1 TESTPOINT {Lib=TESTPOINT}
+  (    1 N-000009 )
+ )
+ ( /5096C4F5 $noname  TP2 TESTPOINT {Lib=TESTPOINT}
+  (    1 N-000010 )
+ )
+ ( /5096C505 $noname  TP3 TESTPOINT {Lib=TESTPOINT}
+  (    1 N-000013 )
+ )
+ ( /5096C514 $noname  TP4 TESTPOINT {Lib=TESTPOINT}
+  (    1 N-000015 )
+ )
+ ( /5096C523 $noname  TP5 TESTPOINT {Lib=TESTPOINT}
+  (    1 N-000017 )
+ )
+ ( /5096C775 $noname  C2 10n {Lib=C}
+  (    1 3V3 )
+  (    2 GND )
+ )
+ ( /5096C784 $noname  C1 100n {Lib=C}
+  (    1 3V3 )
+  (    2 GND )
+ )
+ ( /5096DB60 $noname  R1 0 {Lib=R}
+  (    1 3V3 )
+  (    2 N-000001 )
+ )
+ ( /5096E0DF $noname  P1 CONN_5X2 {Lib=CONN_5X2}
+  (    1 ? )
+  (    2 ? )
+  (    3 N-000010 )
+  (    4 N-000013 )
+  (    5 N-000009 )
+  (    6 N-000015 )
+  (    7 N-000004 )
+  (    8 N-000017 )
+  (    9 3V3 )
+  (   10 GND )
+ )
+ ( /5099ED00 $noname  P2 CONN_2 {Lib=CONN_2}
+  (    1 N-000001 )
+  (    2 3V3 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "" ""
+ R2 1
+ R1 2
+ R3 2
+ P2 1
+Net 4 "" ""
+ P1 7
+ U1 13
+ U1 2
+Net 5 "3V3" "3V3"
+ P1 9
+ P2 2
+ U1 22
+ U1 23
+ C2 1
+ C1 1
+ R1 1
+Net 6 "GND" "GND"
+ C3 2
+ U1 20
+ U1 21
+ C2 2
+ C1 2
+ P1 10
+Net 7 "" ""
+ C3 1
+ U1 15
+Net 8 "" ""
+ U1 19
+ C4 1
+Net 9 "" ""
+ U1 24
+ TP1 1
+ P1 5
+Net 10 "" ""
+ U1 25
+ P1 3
+ TP2 1
+Net 11 "" ""
+ U1 14
+ R3 1
+Net 12 "" ""
+ U1 16
+ C4 2
+Net 13 "" ""
+ P1 4
+ TP3 1
+ U1 26
+Net 14 "" ""
+ U1 17
+ C5 2
+Net 15 "" ""
+ P1 6
+ TP4 1
+ U1 27
+Net 16 "" ""
+ C5 1
+ U1 18
+Net 17 "" ""
+ U1 28
+ TP5 1
+ P1 8
+Net 18 "" ""
+ U1 1
+ R2 2
+}
+#End

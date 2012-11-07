@@ -1,0 +1,115 @@
+Cmp-Mod V01 Created by CvPcb (2012-oct-18)-testing date = Tue 06 Nov 2012 10:12:20 PM PST
+
+BeginCmp
+TimeStamp = /5096C784;
+Reference = C1;
+ValeurCmp = 100n;
+IdModule  = SM0603_Capa;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096C775;
+Reference = C2;
+ValeurCmp = 10n;
+IdModule  = SM0603_Capa;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096C432;
+Reference = C3;
+ValeurCmp = 1uF;
+IdModule  = SM0603_Capa;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096C473;
+Reference = C4;
+ValeurCmp = 1uF;
+IdModule  = SM0603_Capa;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096C485;
+Reference = C5;
+ValeurCmp = 1uF;
+IdModule  = SM0603_Capa;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096E0DF;
+Reference = P1;
+ValeurCmp = CONN_5X2;
+IdModule  = PIN_ARRAY_5x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5099ED00;
+Reference = P2;
+ValeurCmp = CONN_2;
+IdModule  = TEST_POINT_2PADS;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096DB60;
+Reference = R1;
+ValeurCmp = 0;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096C31E;
+Reference = R2;
+ValeurCmp = 15;
+IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096C336;
+Reference = R3;
+ValeurCmp = 15;
+IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096C4D5;
+Reference = TP1;
+ValeurCmp = TESTPOINT;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096C4F5;
+Reference = TP2;
+ValeurCmp = TESTPOINT;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096C505;
+Reference = TP3;
+ValeurCmp = TESTPOINT;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096C514;
+Reference = TP4;
+ValeurCmp = TESTPOINT;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096C523;
+Reference = TP5;
+ValeurCmp = TESTPOINT;
+IdModule  = PIN_ARRAY_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5096C306;
+Reference = U1;
+ValeurCmp = EADOGS102W-6;
+IdModule  = EA_DOGS_102;
+EndCmp
+
+EndListe
