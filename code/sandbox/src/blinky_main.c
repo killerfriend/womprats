@@ -21,9 +21,15 @@
 
 /* Main Program */
 
+void delayawhile()
+{
+	int i;
+	for (i = 0; i < 1440000; i++) ;
+	return;
+}
+
+
 int main (void) {
-   uint8_t* mesg;
-   int i;
   /* Basic chip initialization is taken care of in SystemInit() called
    * from the startup code. SystemInit() and chip settings are defined
    * in the CMSIS system_<part family>.c file.
@@ -42,31 +48,49 @@ int main (void) {
   GPIOInit();
   /* Set LED port pin to output */
   GPIOSetDir( LED_PORT, LED_BIT, 1 );
+  GPIOSetValue( LED_PORT, LED_BIT, LED_ON );
 
   GPIOSetDir( LCD_PORT, LCD_CE_BIT, 1);
   GPIOSetDir( LCD_PORT, LCD_CD_BIT, 1);
   GPIOSetDir( LCD_PORT, LCD_RESET_BIT, 1);
-
-  //reset the LCD (maybe?)
-  // active low, so this just sets the pin low and high quickly
-  GPIOSetValue( LCD_PORT, LCD_RESET_BIT, 0);
-  for (i=0;i<2000;i++) ;
-  GPIOSetValue( LCD_PORT, LCD_RESET_BIT, 1);
 
   GPIOSetValue( LCD_PORT, LCD_CE_BIT, 1);
 
   SSP_IOConfig(1);
   SSP_Init(1);
 
-  GPIOSetValue( LCD_PORT, LCD_CE_BIT, 1);
+  GPIOSetValue( LCD_PORT, LCD_CE_BIT, 0);
 
   GPIOSetValue( LCD_PORT, LCD_CD_BIT, 0);
 
-  uint8_t init = {0x040, 0x0a1, 0x0c0, 0x0a6, 0x0a2, 0x02f, 0x027, 0x081, 0x00e, 0x0fa, 0x090, 0x0af, 0x0a5 };
+  uint8_t init[] = {
+		  	  	  0x040,
+		  	  	  0x0a1,
+		  	  	  0x0c0,
+		  	  	  0x0a6,
+		  	  	  0x0a2,
+		  	  	  0x02f,
+		  	  	  0x027,
+		  	  	  0x081,
+		  	  	  0x00e,
+		  	  	  0x0fa,
+		  	  	  0x090,
+		  	  	  0x0af,
+		  	  	  0x0a5 };
 
-  SSP_Send8(1, init, sizeof(init));
+  SSP_Send8(LCD_PORT, init, sizeof(init));
+  GPIOSetValue( LCD_PORT, LCD_CE_BIT, 1);
 
+  delayawhile();
 
+  uint8_t j;
+  GPIOSetValue( LCD_PORT, LCD_CE_BIT, 0);
+  j = 0x0a4; SSP_Send8(LCD_PORT, &j, 1);
+  GPIOSetValue( LCD_PORT, LCD_CE_BIT, 1);
+
+  delayawhile();
+
+  GPIOSetValue( LCD_PORT, LCD_CE_BIT, 1);
 
   /* order of things to do
    *
@@ -96,15 +120,16 @@ int main (void) {
 
   uint8_t data;
 
+  data = 0x0a6;
   while (1)
   {
 	  //if((timer32_0_counter%LED_TOGGLE_TICKS) == (LED_TOGGLE_TICKS/2) ) {
-		  GPIOSetValue( LED_PORT, LED_BIT, LED_OFF );
-
-		  data = 0x3000;
-		  data |= (i & 0xFFF );
-		  SSP_Send8(1, &data, 1);
-		  GPIOSetValue( LED_PORT, LED_BIT, LED_ON );
+	  GPIOSetValue( LCD_PORT, LCD_CE_BIT, 0);
+	  data = data ^ 1;
+	  SSP_Send8(LCD_PORT, &data, 1);
+	  GPIOSetValue( LCD_PORT, LCD_CE_BIT, 1);
+	  delayawhile();
+		 // SSP_Send8(1, &data, 1);
 	  //}
 	  //__WFI();
   }
