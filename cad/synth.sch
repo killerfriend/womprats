@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 05 Nov 2012 08:06:33 AM PST
+EESchema Schematic File Version 2  date Thu 08 Nov 2012 03:13:00 PM PST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr User 11000 8500
 encoding utf-8
 Sheet 1 7
 Title "Audio Synth"
-Date "4 nov 2012"
+Date "8 nov 2012"
 Rev "1.1"
 Comp "Womprats"
 Comment1 "ECE411 Practicum"
@@ -45,6 +45,12 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	7050 2600 7850 2600
+Wire Wire Line
+	7850 2600 7850 2350
+Wire Wire Line
+	7850 2350 8400 2350
 Wire Wire Line
 	5550 750  7050 750 
 Wire Wire Line
@@ -84,8 +90,6 @@ Wire Wire Line
 	7650 1550 7350 1550
 Wire Wire Line
 	7350 1550 7350 4250
-Wire Wire Line
-	7050 2600 7100 2600
 Wire Wire Line
 	7050 4150 7300 4150
 Wire Wire Line
@@ -147,8 +151,6 @@ Wire Wire Line
 Wire Wire Line
 	7050 5300 7100 5300
 Wire Wire Line
-	7050 3100 7850 3100
-Wire Wire Line
 	8400 2800 7050 2800
 Wire Wire Line
 	3350 3850 3350 3800
@@ -194,10 +196,6 @@ Wire Wire Line
 	3200 2950 3450 2950
 Wire Wire Line
 	8400 2900 7050 2900
-Wire Wire Line
-	8400 2350 7850 2350
-Wire Wire Line
-	7850 2350 7850 3100
 Wire Wire Line
 	7050 5400 7100 5400
 Wire Wire Line
@@ -263,8 +261,6 @@ Wire Wire Line
 Wire Wire Line
 	7150 2700 7150 1150
 Wire Wire Line
-	7100 2600 7100 950 
-Wire Wire Line
 	9500 4500 9550 4500
 Wire Wire Line
 	9500 4300 9550 4300
@@ -300,6 +296,10 @@ Connection ~ 6600 950
 Connection ~ 6850 1150
 Wire Wire Line
 	7150 1150 6250 1150
+Wire Wire Line
+	7100 950  7100 3100
+Wire Wire Line
+	7100 3100 7050 3100
 Text Notes 1550 1050 0    60   ~ 0
 JTAG
 NoConn ~ 7050 6000

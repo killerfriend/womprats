@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Sun 04 Nov 2012 07:42:50 PM PST
+# EESchema Netlist Version 1.1 created  Thu 08 Nov 2012 03:14:14 PM PST
 (
  ( /507DC16E SM0603_Capa C101 100n
   ( 1 3V3 )
@@ -9,7 +9,7 @@
   ( 2 GND )
  )
  ( /507DC362 SM0603_Capa C103 18pF
-  ( 1 N-000025 )
+  ( 1 N-000026 )
   ( 2 GND )
  )
  ( /507DC171 SM0603_Capa C104 10n
@@ -21,7 +21,7 @@
   ( 2 GND )
  )
  ( /507DC367 SM0603_Capa C106 18pF
-  ( 1 N-000026 )
+  ( 1 N-000003 )
   ( 2 GND )
  )
  ( /507CFFCF/50805B99 SM0603_Capa C301 100n
@@ -61,15 +61,15 @@
   ( 2 GND )
  )
  ( /50805DBA SM0603 D101 LED
-  ( 1 N-000049 )
+  ( 1 N-000050 )
   ( 2 N-000030 )
  )
  ( /50820D8F SM0603 D102 LED
-  ( 1 N-000048 )
+  ( 1 N-000049 )
   ( 2 N-000016 )
  )
  ( /50820D91 SM0603 D103 LED
-  ( 1 N-000047 )
+  ( 1 N-000048 )
   ( 2 N-000012 )
  )
  ( /507CFFC3/5082B76F SM0603 D701 PWRLED
@@ -116,12 +116,12 @@
  )
  ( /507DCC24 PIN_ARRAY_3X1 K101 CONN_3
   ( 1 GND )
-  ( 2 N-000040 )
+  ( 2 N-000045 )
   ( 3 N-000039 )
  )
  ( /507DCD09 PIN_ARRAY_5x2 P101 CONN_5X2
   ( 1 ? )
-  ( 2 N-000041 )
+  ( 2 N-000040 )
   ( 3 GND )
   ( 4 N-000027 )
   ( 5 GND )
@@ -129,7 +129,7 @@
   ( 7 ? )
   ( 8 ? )
   ( 9 GND )
-  ( 10 N-000003 )
+  ( 10 N-000004 )
  )
  ( /507CFFAB/508310F2 pin_array_3x2 P201 CONN_3X2
   ( 1 N-000073 )
@@ -278,13 +278,13 @@
   ( 2 N-000075 )
  )
  ( /5082272A PIN_ARRAY_1 TP101 TESTPOINT
-  ( 1 N-000049 )
+  ( 1 N-000050 )
  )
  ( /50822728 PIN_ARRAY_1 TP102 TESTPOINT
-  ( 1 N-000048 )
+  ( 1 N-000049 )
  )
  ( /50822724 PIN_ARRAY_1 TP103 TESTPOINT
-  ( 1 N-000047 )
+  ( 1 N-000048 )
  )
  ( /507CFFCF/508202CB PIN_ARRAY_1 TP301 TESTPOINT
   ( 1 /Audio_Out/DAC_CS )
@@ -319,18 +319,18 @@
  ( /5081FA32 lqfp48 U101 LPC1114FBD48/302
   ( 1 /UI/BUTTON2 )
   ( 2 ? )
-  ( 3 N-000003 )
-  ( 4 N-000049 )
+  ( 3 N-000004 )
+  ( 4 N-000050 )
   ( 5 GND )
-  ( 6 N-000025 )
-  ( 7 N-000026 )
+  ( 6 N-000026 )
+  ( 7 N-000003 )
   ( 8 3V3 )
   ( 9 /LCD/CE )
-  ( 10 N-000048 )
+  ( 10 /Audio_Out/DAC_CS )
   ( 11 /UI/BUTTON3 )
   ( 12 /UI/BUTTON4 )
   ( 13 /LCD/SCK )
-  ( 14 N-000047 )
+  ( 14 N-000048 )
   ( 15 /EEPROM/SCL )
   ( 16 /EEPROM/SDA )
   ( 17 /LCD/CD )
@@ -339,7 +339,7 @@
   ( 20 /UI/BUTTON1 )
   ( 21 /Channels/D5 )
   ( 22 /Audio_Out/DAC_SCK )
-  ( 23 /Audio_Out/DAC_CS )
+  ( 23 N-000049 )
   ( 24 /UI/BUTTON5 )
   ( 25 ? )
   ( 26 ? )
@@ -355,7 +355,7 @@
   ( 36 /Channels/D0 )
   ( 37 /Channels/D1 )
   ( 38 /LCD/MOSI )
-  ( 39 N-000041 )
+  ( 39 N-000040 )
   ( 40 /Channels/A3 )
   ( 41 GND )
   ( 42 /Channels/A5 )
@@ -363,7 +363,7 @@
   ( 44 3V3 )
   ( 45 /LCD/RST )
   ( 46 N-000039 )
-  ( 47 N-000040 )
+  ( 47 N-000045 )
   ( 48 /Channels/D3 )
  )
  ( /507CFFCF/50805AB3 SO8E U301 MCP4921
@@ -406,8 +406,8 @@
   ( 2 N-000077 )
  )
  ( /507DC34B HC-49/US X101 12MHz
-  ( 1 N-000026 )
-  ( 2 N-000025 )
+  ( 1 N-000003 )
+  ( 2 N-000026 )
  )
 )
 *

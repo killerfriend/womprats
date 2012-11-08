@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 05 Nov 2012 08:06:33 AM PST
+EESchema Schematic File Version 2  date Thu 08 Nov 2012 03:13:00 PM PST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr User 11000 8500
 encoding utf-8
 Sheet 3 7
 Title "Audio Output Stage of Audio Synth"
-Date "4 nov 2012"
+Date "8 nov 2012"
 Rev "1.1"
 Comp "Womprats"
 Comment1 "ECE411 Practicum"
