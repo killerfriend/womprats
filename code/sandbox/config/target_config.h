@@ -16,7 +16,9 @@
 #define LED_OFF 0		// Level to set port to turn off led
 #define LED_TOGGLE_TICKS 100 // 100 ticks = 1 Hz flash rate
 
-#define LCD_PORT 1
+#define LCD_SPI_PORT 1
+
+#define LCD_GPIO_PORT 1
 #define LCD_CE_BIT 8
 #define LCD_CD_BIT 9
 #define LCD_RESET_BIT 5
