@@ -45,7 +45,7 @@ int main(void) {
 	SSP_Init(0);
 	while (1) {
 		//if((timer32_0_counter%LED_TOGGLE_TICKS) == (LED_TOGGLE_TICKS/2) ) {
-		GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
+		//GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
 		i += dir;
 		if (i < 0) {
 			i = 0;
@@ -59,7 +59,7 @@ int main(void) {
 		data = 0x3000;
 		data |= (i & 0xFFF);
 		SSP_Send(0, &data, 1);
-		GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
+		//GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
 		//}
 		//__WFI();
 	}

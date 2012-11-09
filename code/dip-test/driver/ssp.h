@@ -38,7 +38,7 @@
 /* When test serial SEEPROM(LOOPBACK_MODE=0, TX_RX_ONLY=0), set USE_CS to 0. */
 /* When LOOPBACK_MODE=1 or TX_RX_ONLY=1, set USE_CS to 1. */
 
-#define USE_CS			0
+#define USE_CS			1
 #define SSP_DEBUG		0
 
 /* SPI read and write buffer size */
