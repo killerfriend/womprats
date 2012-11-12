@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 2 date Wed 07 Nov 2012 12:34:09 PM PST
+PCBNEW-BOARD Version 2 date Sat 10 Nov 2012 08:25:26 PM PST
 
 # Created by Pcbnew(2012-oct-18)-testing
 
@@ -9,8 +9,8 @@ LayerCount 2
 EnabledLayers 1FFF8001
 Links 37
 NoConn 0
-Di 170.079999 30.379999 228.700001 119.480001
-Ndraw 7
+Di 170.104999 30.404999 228.675001 119.455001
+Ndraw 6
 Ntrack 145
 Nzone 0
 BoardThickness 1.6
@@ -21,7 +21,7 @@ $EndGENERAL
 $SHEETDESCR
 Sheet A3 16535 11693
 Title ""
-Date "7 nov 2012"
+Date "11 nov 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -58,9 +58,10 @@ TextModWidth 0.15
 PadSize 4.064 4.064
 PadDrill 3.175
 Pad2MaskClearance 0
+SolderMaskMinWidth 0
 AuxiliaryAxisOrg 0 0
 VisibleElements 7FFFFFFF
-PcbPlotParams (pcbplotparams (layerselection 268468224) (usegerberextensions true) (excludeedgelayer true) (linewidth 152400) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 2) (psnegative false) (psa4output false) (plotreference true) (plotvalue true) (plotothertext true) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk false) (outputformat 1) (mirror false) (drillshape 0) (scaleselection 1) (outputdirectory ""))
+PcbPlotParams (pcbplotparams (layerselection 268468225) (usegerberextensions true) (excludeedgelayer true) (linewidth 152400) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 2) (psnegative false) (psa4output false) (plotreference true) (plotvalue true) (plotothertext true) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk false) (outputformat 1) (mirror false) (drillshape 0) (scaleselection 1) (outputdirectory ""))
 $EndSETUP
 
 $EQUIPOT
@@ -934,6 +935,18 @@ Ne 2 "GND"
 Po 0 0
 $EndPAD
 $EndMODULE 1pin
+$DRAWSEGMENT
+Po 0 170.18 119.38 170.18 30.48 0.15
+De 28 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 228.6 119.38 170.18 119.38 0.15
+De 28 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 228.6 30.48 228.6 119.38 0.15
+De 28 0 900 0 0
+$EndDRAWSEGMENT
 $TEXTPCB
 Te "LCD_Daughter v1.0"
 nl "11/7/12"
@@ -945,22 +958,6 @@ Te "WOMPRATS"
 Po 198.882 104.394 2.032 1.524 0.29972 0
 De 15 1 0 Normal
 $EndTEXTPCB
-$DRAWSEGMENT
-Po 0 228.6 119.38 228.6 30.48 0.2
-De 27 0 900 0 0
-$EndDRAWSEGMENT
-$DRAWSEGMENT
-Po 0 172.72 119.38 228.6 119.38 0.2
-De 27 0 900 0 0
-$EndDRAWSEGMENT
-$DRAWSEGMENT
-Po 0 170.18 119.38 172.72 119.38 0.2
-De 27 0 900 0 0
-$EndDRAWSEGMENT
-$DRAWSEGMENT
-Po 0 170.18 30.48 170.18 119.38 0.2
-De 27 0 900 0 0
-$EndDRAWSEGMENT
 $DRAWSEGMENT
 Po 0 228.6 30.48 170.18 30.48 0.15
 De 28 0 900 0 0
