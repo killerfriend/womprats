@@ -12,10 +12,10 @@
 #include "driver_config.h"
 #include "LPC11xx.h"
 #include "target_config.h"
-#include "ssp.h"
 #include "gpio.h"
 #include "timer32.h"
 #include <stdint.h>
+#include "dac.h"
 /* Main Program */
 
 int main(void) {
@@ -35,14 +35,17 @@ int main(void) {
 	/* Initialize GPIO (sets up clock) */
 	GPIOInit();
 
-	/* Set LED port pin to output */
+
 	LPC_IOCON->R_PIO0_11 |= 1;
+
+	/* Set LED port pin to output */
 	GPIOSetDir(LED_PORT, LED_BIT, 1);
+	
 	int i = 0;
+
 	int dir = 28;
 	uint16_t data;
-	SSP_IOConfig(0);
-	SSP_Init(0);
+	dac_init();
 	while (1) {
 		//if((timer32_0_counter%LED_TOGGLE_TICKS) == (LED_TOGGLE_TICKS/2) ) {
 		//GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
@@ -58,7 +61,7 @@ int main(void) {
 
 		data = 0x3000;
 		data |= (i & 0xFFF);
-		SSP_Send(0, &data, 1);
+		dac_send(data);
 		//GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
 		//}
 		//__WFI();
