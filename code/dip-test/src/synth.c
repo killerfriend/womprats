@@ -86,7 +86,7 @@ void update_osc(int num)
 	 * latest channel defintion. */
 	if(osc->curpos == 0) {
 		
-		osc->slope = 2 * chan->freq * chan->amp / SYNTH_SAMPLE_RATE;
+		osc->slope = chan->freq * chan->amp / SYNTH_SAMPLE_RATE;
 		osc->amp = chan->amp;
 		osc->func = chan->func;
 	}
@@ -133,6 +133,11 @@ uint16_t sum_osc()
 				sum -= osc->amp;
 			break;
 		case SYNTH_TRI:
+			if(osc->curpos < osc->amp / 2) {
+				sum += 4 * osc->curpos - osc->amp;
+			} else {
+				sum += -4 * osc->curpos + 3 * osc->amp;
+			}
 			break;
 			
 		}
