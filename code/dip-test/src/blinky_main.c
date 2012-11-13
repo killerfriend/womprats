@@ -15,7 +15,7 @@
 #include "gpio.h"
 #include "timer32.h"
 #include <stdint.h>
-#include "dac.h"
+#include "synth.h"
 /* Main Program */
 
 int main(void) {
@@ -43,28 +43,23 @@ int main(void) {
 	
 	int i = 0;
 
-	int dir = 28;
-	uint16_t data;
-	dac_init();
-	while (1) {
-		//if((timer32_0_counter%LED_TOGGLE_TICKS) == (LED_TOGGLE_TICKS/2) ) {
-		//GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
-		i += dir;
-		if (i < 0) {
-			i = 0;
-			dir = -dir;
-		}
-		if (i > 0xFFF) {
-			i = 0xFFF;
-			dir = -dir;
-		}
+	synth_init();
+	synth_channels[0].freq = 50;
+	synth_channels[0].amp = 2048;
+	synth_channels[0].func = SYNTH_SAW;
 
-		data = 0x3000;
-		data |= (i & 0xFFF);
-		dac_send(data);
-		//GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
-		//}
-		//__WFI();
+	synth_channels[1].freq = 100;
+	synth_channels[1].amp = 2048;
+	synth_channels[1].func = SYNTH_SAW;
+
+	synth_channels[1].freq = 200;
+	synth_channels[1].amp = 2048;
+	synth_channels[1].func = SYNTH_SAW;
+
+	synth_channels[1].freq = 400;
+	synth_channels[1].amp = 2048;
+	synth_channels[1].func = SYNTH_SAW;
+	while (1) {
 	}
 	while (1) /* Loop forever */
 	{
