@@ -19,6 +19,8 @@ int dac_init()
 
 int dac_send(uint16_t value)
 {
-	SSP_Send(0, &value, 1);
+	uint16_t word = 0x3000;
+	word |= (value & 0x0fff);
+	SSP_Send(0, &word, 1);
 	return FALSE;
 }
