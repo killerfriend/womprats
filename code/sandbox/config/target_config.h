@@ -24,9 +24,12 @@
 #define LCD_RESET_BIT 5
 
 #define UI_BUTTONS_PORT 2
-#define UI_BUTTON_1 4
-#define UI_BUTTON_2 5
-
+#define UI_BUTTON_UP 4
+#define UI_BUTTON_DOWN 5
+#define UI_BUTTON_LEFT 6
+#define UI_BUTTON_RIGHT 7
+#define UI_BUTTON_OK 8
+#define UI_BUTTON_AUX 9
 
 /*********************************************************************************
 **                            End Of File

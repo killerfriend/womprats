@@ -5,6 +5,7 @@
  *      Author: rattboi
  */
 
+#include <string.h>
 #include "driver_config.h"
 #include "target_config.h"
 #include "gpio.h"
@@ -42,6 +43,11 @@ void draw_menu (stMenu *menu) {
 
 			}
 		}
+		dog_SetHLine(0,102,0);
+		dog_SetHLine(0,102,63);
+		dog_SetVLine(0,0,63);
+		dog_SetVLine(101,0,63);
+
 	} while( dog_NextPage() );
 }
 
@@ -49,17 +55,17 @@ void fill_main_menu (stMenu *menu)
 {
 		memset(menu,0,sizeof(stMenu));
 
-		strcpy(menu->options[0].name,"CPU Mhz");
-			strcpy(menu->options[0].sub_options[0].name,"180");
-			strcpy(menu->options[0].sub_options[1].name,"200");
-			strcpy(menu->options[0].sub_options[2].name,"220");
+		strcpy(menu->options[0].name,"Wave");
+			strcpy(menu->options[0].sub_options[0].name,"Sqr");
+			strcpy(menu->options[0].sub_options[1].name,"Tri");
+			strcpy(menu->options[0].sub_options[2].name,"Saw");
 			menu->options[0].num=3;
 			menu->options[0].selected = 0; // Default to 132
 
-		strcpy(menu->options[1].name,"Load Rom");
-		strcpy(menu->options[2].name,"Continue Playing");
-		strcpy(menu->options[3].name,"Reset Game (Saves SRAM)");
-		strcpy(menu->options[4].name, "Load State");
+		strcpy(menu->options[1].name,"Set LFO");
+		strcpy(menu->options[2].name,"Map Channels");
+		strcpy(menu->options[3].name,"Save Settings");
+		strcpy(menu->options[4].name,"Reset");
 
 		menu->num = 5;
 		menu->selected = 0;
@@ -126,7 +132,13 @@ int run_menu(stMenu *menu)
 	int state;
 	static int laststate = 0;
 
-	state = getbit(UI_BUTTONS_PORT, UI_BUTTON_1) | getbit(UI_BUTTONS_PORT, UI_BUTTON_2) << 1;
+	state = getbit(UI_BUTTONS_PORT, UI_BUTTON_UP) |
+			getbit(UI_BUTTONS_PORT, UI_BUTTON_DOWN) << 1 |
+			getbit(UI_BUTTONS_PORT, UI_BUTTON_LEFT) << 2 |
+			getbit(UI_BUTTONS_PORT, UI_BUTTON_RIGHT) << 3 |
+			getbit(UI_BUTTONS_PORT, UI_BUTTON_OK) << 4 |
+			getbit(UI_BUTTONS_PORT, UI_BUTTON_AUX) << 5;
+
 	if (state != laststate)
 	{
 		laststate = state;
@@ -135,6 +147,20 @@ int run_menu(stMenu *menu)
 		if ((state & 1) == 0)
 			menu->selected=(menu->selected-1);
 		if (menu->selected<0) menu->selected=menu->num-1;
+
+		 if (menu->options[menu->selected].num) {
+
+   			if ((state & 4) == 0)
+   				menu->options[menu->selected].selected=(menu->options[menu->selected].selected-1);
+   			else if ((state & 8) == 0)
+   				menu->options[menu->selected].selected=(menu->options[menu->selected].selected+1) %
+		 		  										 							menu->options[menu->selected].num;
+
+			if (menu->options[menu->selected].selected<0) menu->options[menu->selected].selected=
+		 		  										 							menu->options[menu->selected].num-1;
+		 }
+
 		draw_menu(menu);
 	}
+	return 0;
 }

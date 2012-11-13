@@ -20,6 +20,7 @@
 #include <string.h>
 #include "menu.h"
 #include "lcd_lib/dogm128.h"
+#include "image.h"
 
 /* Main Program */
 
@@ -44,6 +45,13 @@ int main (void) {
 
   dog_Init(0);
 
+  dog_StartPage();
+  do{
+	  dog_SetBitmap(0,63,womprat,102,64);
+  } while(dog_NextPage());
+
+  dog_Delay(2000);
+
   /* Initialize GPIO (sets up clock) */
   GPIOInit();
   /* Set LED port pin to output */
@@ -51,8 +59,12 @@ int main (void) {
   GPIOSetValue( LED_PORT, LED_BIT, LED_OFF );
 
   // Set buttons as inputs
-  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_1, 0);
-  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_2, 0);
+  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_UP, 0);
+  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_DOWN, 0);
+  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_LEFT, 0);
+  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_RIGHT, 0);
+  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_OK, 0);
+  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_AUX, 0);
 
   for (;;)
   {
