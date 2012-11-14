@@ -64,7 +64,8 @@ int synth_init()
 
 	/* Enable the system tick timer at the sampling frequency */
 	/* To get a refresh tick of 9600Hz, use a divisor of 4999 */
-	SysTick->LOAD = 4999;
+
+	SysTick->LOAD = 48000000 / SYNTH_SAMPLE_RATE - 1;
 	SysTick->VAL = 0;
 	SysTick->CTRL = SysTick_CTRL_ENABLE_Msk |
 					SysTick_CTRL_TICKINT_Msk |

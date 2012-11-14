@@ -130,7 +130,7 @@ void SSP_IOConfig( uint8_t portNum )
 {
   LPC_SYSCON->PRESETCTRL |= (0x1<<0);
 	LPC_SYSCON->SYSAHBCLKCTRL |= (0x1<<11);
-	LPC_SYSCON->SSP0CLKDIV = 0x04;			/* Divided by 2 */
+	LPC_SYSCON->SSP0CLKDIV = 0x01;			/* Divided by 2 */
   LPC_IOCON->PIO0_8           &= ~0x07;	/*  SSP I/O config */
   LPC_IOCON->PIO0_8           |= 0x01;		/* SSP MISO */
   LPC_IOCON->PIO0_9           &= ~0x07;	

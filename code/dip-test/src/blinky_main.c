@@ -44,21 +44,21 @@ int main(void) {
 
 
 	synth_init();
-	synth_channels[0].freq = 440;
+	/*synth_channels[0].freq = 50;
 	synth_channels[0].amp = 65000;
 	synth_channels[0].func = SYNTH_TRI;
 
-	/*synth_channels[1].freq = 100;
+	synth_channels[1].freq = 100;
 	synth_channels[1].amp = 65000;
-	synth_channels[1].func = SYNTH_TRI;
+	synth_channels[1].func = SYNTH_TRI;*/
 
-	synth_channels[2].freq = 200;
+	synth_channels[2].freq = 880;
 	synth_channels[2].amp = 65000;
 	synth_channels[2].func = SYNTH_TRI;
 
-	synth_channels[3].freq = 400;
+	synth_channels[3].freq = 440;
 	synth_channels[3].amp = 65000;
-	synth_channels[3].func = SYNTH_TRI;*/
+	synth_channels[3].func = SYNTH_TRI;
 	while (1) {
 	}
 	while (1) /* Loop forever */
