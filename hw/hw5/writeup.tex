@@ -42,7 +42,7 @@
 \newcommand{\mathfrc}[1]{\text{\textfrc{#1}}}
 
 \section{Overview}
-Below is the specification of the Audio Synthesizer:
+The audio synthesizer is able to generate an audio output based on the user input.  The functionality of the circuit can be broken down into several subcomponents.  These include a microcontroller to interface with the external components, a power supply, EEPROM to dynamically store/load pre-defined user settings, a LCD output, a DAC, and an audio amplifier to provide more output power to the speaker.
 
 
 \section{T-16 Audio Synthesizer Level 0 Diagram}
@@ -154,6 +154,64 @@ Below is the specification of the Audio Synthesizer:
 \hline
 \end{tabular}
 
+\section{EEPROM UML Use Cases}
 
+\subsection{Save Synth State}
+\begin{tabular}{|p{1in}|p{5in}|}
+\hline
+\textbf{Use Case} & Save\\
+\hline
+\textbf{Description} & Saves the current synthesizer state into the synthesizer core memory.\\
+\hline
+\textbf{Actors} & I$^2$C, EEPROM, synthesizer core\\
+\hline
+\textbf{Assumptions} & There will be the correct amount of power supplied to the EEPROM and microcontroller.  In addition, there must be usable storage space to save in EEPROM.\\
+\hline
+\textbf{Issues} & EEPROM is not yet fully implemented and the exact location to the the memory is not yet defined.\\
+\hline
+\textbf{Steps} & \begin{enumerate}
+\item Read the current state of the synthesizer.
+\item Iterate over every byte of state data and send to the EEPROM via I$^2$C.
+\end{enumerate}\\
+\hline
+\end{tabular}
+
+\subsection{Load Synth State}
+\begin{tabular}{|p{1in}|p{5in}|}
+\hline
+\textbf{Use Case} & Load\\
+\hline
+\textbf{Description} & Loads pre-saved synthesizer state into synthesizer core memory.\\
+\hline
+\textbf{Actors} & I$^{2}$C, EEPROM, synthesizer core\\
+\hline
+\textbf{Assumptions} & There will be the correct amount of power supplied to the EEPROM and microcontroller.  In addition, there will be a valid state to load.\\
+\hline
+\textbf{Issues} & asdf\\
+\hline
+\textbf{Steps} & \begin{enumerate}
+\item
+\end{enumerate}\\
+\hline
+\end{tabular}
+
+\subsection{Load Splash Screen Image}
+\begin{tabular}{|p{1in}|p{5in}|}
+\hline
+\textbf{Use Case} & Splash Screen Image\\
+\hline
+\textbf{Description} & Loads the Womprats Logo splash screen into memory.\\
+\hline
+\textbf{Actors} & LCD driver, EEPROM, I$^2$C\\
+\hline
+\textbf{Assumptions} & There will be the correct amount of power supplied to the EEPROM and microcontroller.  In addition, the image bits to be loaded will always remain intact.\\
+\hline
+\textbf{Issues} & asdf\\
+\hline
+\textbf{Steps} & \begin{enumerate}
+\item
+\end{enumerate}\\
+\hline
+\end{tabular}
 
 \end{document}
