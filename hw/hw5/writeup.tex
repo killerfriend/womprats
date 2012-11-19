@@ -44,7 +44,6 @@
 \section{Overview}
 The audio synthesizer is able to generate an audio output based on the user input.  The functionality of the circuit can be broken down into several subcomponents.  These include a microcontroller to interface with the external components, a power supply, EEPROM to dynamically store/load pre-defined user settings, a LCD output, a DAC, and an audio amplifier to provide more output power to the speaker.
 
-
 \section{T-16 Audio Synthesizer Level 0 Diagram}
 \centerimage{\includegraphics[width=5in]{synth0.png}}{Level 0 Diagram}{fullzero}
 
@@ -52,17 +51,22 @@ The audio synthesizer is able to generate an audio output based on the user inpu
 \hline
 \emph{Module} & T-16 Audio Synthesizer \\
 \hline
-\emph{Inputs}& Lorem Ipsum\\
+\emph{Inputs}& 5VDC Power: Unregulated 5 VDC power from a wall-wart power supply.\\
+	     & Channel Interface: Six analog/digital paired signals that modify parameters that control the synthesizer software. \\
+      	     & UI Buttons: Up/Down/Left/Right/Ok/Aux buttons that allow you to navigate the Menu UI on the LCD and modify tunable parameters in the synthesizer software.\\
+	     & Volume Control: Master output volume control of the internal speaker.\\
 \hline
-\emph{Outputs}& Dolor Sic \\ 
+\emph{Outputs}& Audio: \\ 
+	      & LCD: Shows the Menu user interface which presents the user with controllable parameters that affect the sound synthesis. It also presents the logo on startup. \\
 \hline
-\emph{Functionality}& Bacon\\
+\emph{Functionality}& Does stuff \\
 \hline
 \end{tabular}
 
 \section{T-16 Audio Synthesizer Level 1 Diagram}
 \centerimage{\includegraphics[width=5in]{synth1.png}}{Level 1 Diagram}{fullone}
 
+\newpage
 
 \section{LCD Level 0 Diagram}
 \centerimage{\includegraphics[width=5in]{lcd.png}}{Level 0 Diagram}{LCD}
@@ -71,11 +75,14 @@ The audio synthesizer is able to generate an audio output based on the user inpu
 \hline
 \emph{Module} & LCD \\
 \hline
-\emph{Inputs}& Lorem Ipsum\\
+\emph{Inputs}& SPI: Receives image data from microcontroller.\\
+	     & PWM: Backlight brightness control 0-100\% duty cycle.\\
+	     & Power: 3.3 VDC Power.\\
 \hline
-\emph{Outputs}& Dolor Sic \\ 
+\emph{Outputs}& Image: Black and white image on 102x64 raster LCD.\\
+	      & Backlight: LED light to illuminate the LCD.\\ 
 \hline
-\emph{Functionality}& Bacon\\
+\emph{Functionality}& Display the user interface and state of the synthesizer.\\
 \hline
 \end{tabular}
 
@@ -86,11 +93,13 @@ The audio synthesizer is able to generate an audio output based on the user inpu
 \hline
 \emph{Module} & Power Supply \\
 \hline
-\emph{Inputs}& Lorem Ipsum\\
+\emph{Inputs}& 5VDC: Unregulated power from 5 VDC wall-wart power supply.\\
+	     & Switch: On/Off Power Switch.\\
 \hline
-\emph{Outputs}& Dolor Sic \\ 
+\emph{Outputs}& 3v3DC: Regulated 3.3 VDC Power.\\
+	      & Status: LED to display if the input power is available.\\ 
 \hline
-\emph{Functionality}& Bacon\\
+\emph{Functionality}& The power supply provides regulated 3.3 VDC power to all the subsystems of the audio synthesizer.\\
 \hline
 \end{tabular}
 
@@ -101,11 +110,12 @@ The audio synthesizer is able to generate an audio output based on the user inpu
 \hline
 \emph{Module} & EEPROM \\
 \hline
-\emph{Inputs}& Lorem Ipsum\\
+\emph{Inputs}& Power: 3.3 VDC Power\\
+	     & I2C In: Read data from microcontroller \\
 \hline
-\emph{Outputs}& Dolor Sic \\ 
+\emph{Outputs}& I2C Out: Write data to microcontroller \\ 
 \hline
-\emph{Functionality}& Bacon\\
+\emph{Functionality}& Holds user settings for the synthesizer state, as well as the Womprats logo for startup\\
 \hline
 \end{tabular}
 
@@ -116,11 +126,16 @@ The audio synthesizer is able to generate an audio output based on the user inpu
 \hline
 \emph{Module} & Microcontroller \\
 \hline
-\emph{Inputs}& Lorem Ipsum\\
+\emph{Inputs}& Power: 3.3 VDC Power\\
+	     & I2C: Retrieve data stored in EEPROM\\
+	     & UI Buttons: Up/Down/Left/Right/OK/Aux button controls for UI menu interface and entering audio synthesizer settings.\\
+	     & Channel Interface: Six analog and digital signal lines that supply parameter control to the audio synthesizer.\\
 \hline
-\emph{Outputs}& Dolor Sic \\ 
+\emph{Outputs}& SPI$_0$: Send digital audio samples to DAC.\\
+	      & SPI$_1$: Send image data to LCD.\\
+	      & I2C: Store data in EEPROM.\\ 
 \hline
-\emph{Functionality}& Bacon\\
+\emph{Functionality}& Implements a software synthesizer that generates an audio signal, shows it's current settings via an LCD screen, is controllable through tunable parameters in the UI and from analog/digital signals on its channel inputs. The tunable parameters are stored in an EEPROM memory that is recalled on startup.\\
 \hline
 \end{tabular}
 
@@ -131,11 +146,12 @@ The audio synthesizer is able to generate an audio output based on the user inpu
 \hline
 \emph{Module} & DAC \\
 \hline
-\emph{Inputs}& Lorem Ipsum\\
+\emph{Inputs}& SPI$_0$: Audio samples received from the microcontroller\\
+	     & Power: 3.3 VDC power\\
 \hline
-\emph{Outputs}& Dolor Sic \\ 
+\emph{Outputs}& Audio: 0-3.3V audio signal \\ 
 \hline
-\emph{Functionality}& Bacon\\
+\emph{Functionality}& The DAC takes the digital audio sample from the microcontroller and converts an analog 0-3.3V audio signal.\\
 \hline
 \end{tabular}
 
@@ -146,11 +162,14 @@ The audio synthesizer is able to generate an audio output based on the user inpu
 \hline
 \emph{Module} & Audio Amplifier \\
 \hline
-\emph{Inputs}& Lorem Ipsum\\
+\emph{Inputs} & Power: 3.3 VDC Power\\
+	      & Audio: 0-3.3V audio signal from DAC\\
+	      & Volume: Controls the audio output volume. Logarithmic control.\\
 \hline
-\emph{Outputs}& Dolor Sic \\ 
+\emph{Outputs}& Line out: Unamplified audio output to external line-out.\\ 
+	      & Speaker: Amplified audio output to internal speaker.\\
 \hline
-\emph{Functionality}& Bacon\\
+\emph{Functionality}& Provide an amplified audio out that can be heard over the internal speaker or line-out to an external audio device.\\
 \hline
 \end{tabular}
 
