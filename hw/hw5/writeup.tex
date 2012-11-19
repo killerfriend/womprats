@@ -186,12 +186,14 @@ The audio synthesizer is able to generate an audio output based on the user inpu
 \hline
 \textbf{Assumptions} & There will be the correct amount of power supplied to the EEPROM and microcontroller.  In addition, there must be usable storage space to save in EEPROM.\\
 \hline
-\textbf{Issues} & EEPROM is not yet fully implemented and the exact location to the the memory is not yet defined.\\
-\hline
 \textbf{Steps} & \begin{enumerate}
-\item Read the current state of the synthesizer.
+\item Receive synth state data pointer from synth core.
 \item Iterate over every byte of state data and send to the EEPROM via I$^2$C.
 \end{enumerate}\\
+\hline
+\textbf{Issues} & Synth state has yet to be defined.\\
+& Funtionality has yet to be implemented.\\
+& EEPROM memory map has yet to be defined.\\
 \hline
 \end{tabular}
 
@@ -206,11 +208,14 @@ The audio synthesizer is able to generate an audio output based on the user inpu
 \hline
 \textbf{Assumptions} & There will be the correct amount of power supplied to the EEPROM and microcontroller.  In addition, there will be a valid state to load.\\
 \hline
-\textbf{Issues} & asdf\\
-\hline
 \textbf{Steps} & \begin{enumerate}
-\item
+\item Read synth state data from I$^2$C EEPROM.
+\item Pass synth state data pointer to synth core.
 \end{enumerate}\\
+\hline
+\textbf{Issues} & Synth state has yet to be defined.\\
+& Funtionality has yet to be implemented.\\
+& EEPROM memory map has yet to be defined.\\
 \hline
 \end{tabular}
 
@@ -225,11 +230,14 @@ The audio synthesizer is able to generate an audio output based on the user inpu
 \hline
 \textbf{Assumptions} & There will be the correct amount of power supplied to the EEPROM and microcontroller.  In addition, the image bits to be loaded will always remain intact.\\
 \hline
-\textbf{Issues} & asdf\\
-\hline
 \textbf{Steps} & \begin{enumerate}
-\item
+\item Read logo data from I$^2$C EEPROM.
+\item Pass logo data to LCD driver
 \end{enumerate}\\
+\hline
+\textbf{Issues} & How the logo data is loaded into EEPROM has yet to be determined.\\
+& Funtionality has yet to be implemented.\\
+& EEPROM memory map has yet to be defined.\\
 \hline
 \end{tabular}
 
