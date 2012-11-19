@@ -20,6 +20,7 @@
 %Arial font with the Arev font, which has math mode support so that
 %math functions match the look and feel of the rest of the document
 \usepackage[T1]{fontenc}
+\usepackage{float}
 %\usepackage{arev}
 
 %Commented out by Andy Goetz on 10-13-09, replace by different code
@@ -70,7 +71,7 @@
 
 % Center Image Command
 \newcommand{\centerimage}[3]{
-\begin{figure}[ht!]  
+\begin{figure}[H]  
 \begin{center}
 #1
 \caption{#2}
