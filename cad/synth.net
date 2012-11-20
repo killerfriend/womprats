@@ -1,0 +1,607 @@
+# EESchema Netlist Version 1.1 created  Thu 08 Nov 2012 03:14:14 PM PST
+(
+ ( /507DC16E SM0603_Capa C101 100n
+  ( 1 3V3 )
+  ( 2 GND )
+ )
+ ( /507DB28A SM0603_Capa C102 10n
+  ( 1 3V3 )
+  ( 2 GND )
+ )
+ ( /507DC362 SM0603_Capa C103 18pF
+  ( 1 N-000026 )
+  ( 2 GND )
+ )
+ ( /507DC171 SM0603_Capa C104 10n
+  ( 1 3V3 )
+  ( 2 GND )
+ )
+ ( /507DB280 SM0603_Capa C105 100n
+  ( 1 3V3 )
+  ( 2 GND )
+ )
+ ( /507DC367 SM0603_Capa C106 18pF
+  ( 1 N-000003 )
+  ( 2 GND )
+ )
+ ( /507CFFCF/50805B99 SM0603_Capa C301 100n
+  ( 1 3V3 )
+  ( 2 GND )
+ )
+ ( /507CFFCF/50805B95 SM0603_Capa C302 10n
+  ( 1 3V3 )
+  ( 2 GND )
+ )
+ ( /507CFFCF/5082956C SM0603_Capa C303 1.5uF
+  ( 1 N-000087 )
+  ( 2 N-000083 )
+ )
+ ( /507CFFCF/50829A5D SM0603_Capa C304 1uF
+  ( 1 3V3 )
+  ( 2 GND )
+ )
+ ( /507CFFCF/5082957A SM0603_Capa C305 1uF
+  ( 1 N-000080 )
+  ( 2 GND )
+ )
+ ( /507CFFCF/5082A5C8 PIN_ARRAY_2X1 C306 100uF
+  ( 1 N-000084 )
+  ( 2 N-000085 )
+ )
+ ( /507CFF65/507D9A3B SM0603_Capa C501 100nF
+  ( 1 3V3 )
+  ( 2 GND )
+ )
+ ( /507CFFC3/5082AE7E SM0603_Capa C701 10uF
+  ( 1 N-000077 )
+  ( 2 GND )
+ )
+ ( /507CFFC3/5082AE32 SM0603_Capa C702 10uF
+  ( 1 3V3 )
+  ( 2 GND )
+ )
+ ( /50805DBA SM0603 D101 LED
+  ( 1 N-000050 )
+  ( 2 N-000030 )
+ )
+ ( /50820D8F SM0603 D102 LED
+  ( 1 N-000049 )
+  ( 2 N-000016 )
+ )
+ ( /50820D91 SM0603 D103 LED
+  ( 1 N-000048 )
+  ( 2 N-000012 )
+ )
+ ( /507CFFC3/5082B76F SM0603 D701 PWRLED
+  ( 1 N-000076 )
+  ( 2 GND )
+ )
+ ( /507CFFAB/50831761 SM1210 F201 0ZCA0005FF2E
+  ( 1 N-000073 )
+  ( 2 3V3 )
+ )
+ ( /507CFFAB/5083308A SM1210 F202 0ZCA0005FF2E
+  ( 1 N-000074 )
+  ( 2 3V3 )
+ )
+ ( /507CFFAB/508330A6 SM1210 F203 0ZCA0005FF2E
+  ( 1 N-000070 )
+  ( 2 3V3 )
+ )
+ ( /507CFFAB/508330DD SM1210 F204 0ZCA0005FF2E
+  ( 1 N-000060 )
+  ( 2 3V3 )
+ )
+ ( /507CFFAB/508330F1 SM1210 F205 0ZCA0005FF2E
+  ( 1 N-000064 )
+  ( 2 3V3 )
+ )
+ ( /507CFFAB/50833105 SM1210 F206 0ZCA0005FF2E
+  ( 1 N-000071 )
+  ( 2 3V3 )
+ )
+ ( /507CFFC3/5082AEA1 SM1812L F701 FUSE
+  ( 1 N-000075 )
+  ( 2 N-000079 )
+ )
+ ( /507CFFCF/508750E3 PIN_ARRAY_3X1 J301 JACK_2P
+  ( 1 N-000084 )
+  ( 2 N-000088 )
+  ( 3 GND )
+ )
+ ( /507CFFC3/5082B09B PIN_ARRAY_3X1 J701 BARREL_JACK
+  ( 1 N-000078 )
+  ( 2 GND )
+  ( 3 GND )
+ )
+ ( /507DCC24 PIN_ARRAY_3X1 K101 CONN_3
+  ( 1 GND )
+  ( 2 N-000045 )
+  ( 3 N-000039 )
+ )
+ ( /507DCD09 PIN_ARRAY_5x2 P101 CONN_5X2
+  ( 1 ? )
+  ( 2 N-000040 )
+  ( 3 GND )
+  ( 4 N-000027 )
+  ( 5 GND )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 ? )
+  ( 9 GND )
+  ( 10 N-000004 )
+ )
+ ( /507CFFAB/508310F2 pin_array_3x2 P201 CONN_3X2
+  ( 1 N-000073 )
+  ( 2 /Channels/D0 )
+  ( 3 /Channels/A0 )
+  ( 4 GND )
+  ( 5 ? )
+  ( 6 ? )
+ )
+ ( /507CFFAB/5083308B pin_array_3x2 P202 CONN_3X2
+  ( 1 N-000074 )
+  ( 2 /Channels/D1 )
+  ( 3 /Channels/A1 )
+  ( 4 GND )
+  ( 5 ? )
+  ( 6 ? )
+ )
+ ( /507CFFAB/508330A5 pin_array_3x2 P203 CONN_3X2
+  ( 1 N-000070 )
+  ( 2 /Channels/D2 )
+  ( 3 /Channels/A2 )
+  ( 4 GND )
+  ( 5 ? )
+  ( 6 ? )
+ )
+ ( /507CFFAB/508330DE pin_array_3x2 P204 CONN_3X2
+  ( 1 N-000060 )
+  ( 2 /Channels/D3 )
+  ( 3 /Channels/A3 )
+  ( 4 GND )
+  ( 5 ? )
+  ( 6 ? )
+ )
+ ( /507CFFAB/508330F0 pin_array_3x2 P205 CONN_3X2
+  ( 1 N-000064 )
+  ( 2 /Channels/D4 )
+  ( 3 /Channels/A4 )
+  ( 4 GND )
+  ( 5 ? )
+  ( 6 ? )
+ )
+ ( /507CFFAB/50833106 pin_array_3x2 P206 CONN_3X2
+  ( 1 N-000071 )
+  ( 2 /Channels/D5 )
+  ( 3 /Channels/A5 )
+  ( 4 GND )
+  ( 5 ? )
+  ( 6 ? )
+ )
+ ( /507CFFA1/5096E971 PIN_ARRAY_5x2 P401 CONN_5X2
+  ( 1 ? )
+  ( 2 ? )
+  ( 3 /LCD/SCK )
+  ( 4 /LCD/CD )
+  ( 5 /LCD/MOSI )
+  ( 6 /LCD/RST )
+  ( 7 N-000056 )
+  ( 8 /LCD/CE )
+  ( 9 3V3 )
+  ( 10 GND )
+ )
+ ( /507CFFA1/509562E1 SOT23 Q401 2N7000
+  ( 1 /LCD/BCKLIGHT )
+  ( 2 GND )
+  ( 3 N-000056 )
+ )
+ ( /50805DC0 SM0603_Resistor R101 1.5k
+  ( 1 GND )
+  ( 2 N-000030 )
+ )
+ ( /50820D8E SM0603_Resistor R102 1.5k
+  ( 1 GND )
+  ( 2 N-000016 )
+ )
+ ( /50820D92 SM0603_Resistor R103 1.5k
+  ( 1 GND )
+  ( 2 N-000012 )
+ )
+ ( /507CFFCF/5082A022 PIN_ARRAY_3X1 R301 100k
+  ( 1 3V3 )
+  ( 2 N-000082 )
+  ( 3 GND )
+ )
+ ( /507CFFCF/50829F28 SM0603_Resistor R302 100k
+  ( 1 N-000088 )
+  ( 2 3V3 )
+ )
+ ( /507CFFCF/50829F1A SM0603_Resistor R303 100k
+  ( 1 N-000088 )
+  ( 2 N-000081 )
+ )
+ ( /507CFFCF/5082A5DD SM0603_Resistor R304 150
+  ( 1 N-000084 )
+  ( 2 GND )
+ )
+ ( /507CFFA1/509562F9 SM0603_Resistor R401 22k
+  ( 1 /LCD/BCKLIGHT )
+  ( 2 GND )
+ )
+ ( /507CFF65/507D97D7 SM0603_Resistor R501 2.2k
+  ( 1 3V3 )
+  ( 2 /EEPROM/SCL )
+ )
+ ( /507CFF65/507D97E1 SM0603_Resistor R502 2.2k
+  ( 1 3V3 )
+  ( 2 /EEPROM/SDA )
+ )
+ ( /507CFFC3/5082B77A SM0603_Resistor R701 1.5k
+  ( 1 3V3 )
+  ( 2 N-000076 )
+ )
+ ( /507CFFC3/5096C640 SM0805 R702 0
+  ( 1 N-000077 )
+  ( 2 N-000079 )
+ )
+ ( /507CFFCF/5082F631 PIN_ARRAY_2X1 SP301 SPEAKER
+  ( 1 N-000086 )
+  ( 2 N-000085 )
+ )
+ ( /507CFFE5/50863887 PIN_ARRAY_2X1 SW601 SW_PUSH
+  ( 1 GND )
+  ( 2 /UI/BUTTON5 )
+ )
+ ( /507CFFE5/508637BA PIN_ARRAY_2X1 SW602 SW_PUSH
+  ( 1 GND )
+  ( 2 /UI/BUTTON0 )
+ )
+ ( /507CFFE5/5086384B PIN_ARRAY_2X1 SW603 SW_PUSH
+  ( 1 GND )
+  ( 2 /UI/BUTTON1 )
+ )
+ ( /507CFFE5/50863869 PIN_ARRAY_2X1 SW604 SW_PUSH
+  ( 1 GND )
+  ( 2 /UI/BUTTON3 )
+ )
+ ( /507CFFE5/5086385A PIN_ARRAY_2X1 SW605 SW_PUSH
+  ( 1 GND )
+  ( 2 /UI/BUTTON2 )
+ )
+ ( /507CFFE5/50863878 PIN_ARRAY_2X1 SW606 SW_PUSH
+  ( 1 GND )
+  ( 2 /UI/BUTTON4 )
+ )
+ ( /507CFFC3/5082B661 PIN_ARRAY_2X1 SW701 SPST
+  ( 1 N-000078 )
+  ( 2 N-000075 )
+ )
+ ( /5082272A PIN_ARRAY_1 TP101 TESTPOINT
+  ( 1 N-000050 )
+ )
+ ( /50822728 PIN_ARRAY_1 TP102 TESTPOINT
+  ( 1 N-000049 )
+ )
+ ( /50822724 PIN_ARRAY_1 TP103 TESTPOINT
+  ( 1 N-000048 )
+ )
+ ( /507CFFCF/508202CB PIN_ARRAY_1 TP301 TESTPOINT
+  ( 1 /Audio_Out/DAC_CS )
+ )
+ ( /507CFFCF/508202C6 PIN_ARRAY_1 TP302 TESTPOINT
+  ( 1 /Audio_Out/DAC_SCK )
+ )
+ ( /507CFFCF/508202C2 PIN_ARRAY_1 TP303 TESTPOINT
+  ( 1 /Audio_Out/DAC_SDI )
+ )
+ ( /507CFFCF/50820290 PIN_ARRAY_1 TP304 TESTPOINT
+  ( 1 N-000087 )
+ )
+ ( /507CFFCF/50832D56 PIN_ARRAY_1 TP305 TESTPOINT
+  ( 1 N-000086 )
+ )
+ ( /507CFFCF/50832D53 PIN_ARRAY_1 TP306 TESTPOINT
+  ( 1 N-000085 )
+ )
+ ( /507CFF65/507D9B4D PIN_ARRAY_1 TP501 TESTPOINT
+  ( 1 /EEPROM/SCL )
+ )
+ ( /507CFF65/507D9B5B PIN_ARRAY_1 TP502 TESTPOINT
+  ( 1 /EEPROM/SDA )
+ )
+ ( /507CFFC3/5082B848 PIN_ARRAY_1 TP701 TESTPOINT
+  ( 1 N-000079 )
+ )
+ ( /507CFFC3/5082B84F PIN_ARRAY_1 TP702 TESTPOINT
+  ( 1 3V3 )
+ )
+ ( /5081FA32 lqfp48 U101 LPC1114FBD48/302
+  ( 1 /UI/BUTTON2 )
+  ( 2 ? )
+  ( 3 N-000004 )
+  ( 4 N-000050 )
+  ( 5 GND )
+  ( 6 N-000026 )
+  ( 7 N-000003 )
+  ( 8 3V3 )
+  ( 9 /LCD/CE )
+  ( 10 /Audio_Out/DAC_CS )
+  ( 11 /UI/BUTTON3 )
+  ( 12 /UI/BUTTON4 )
+  ( 13 /LCD/SCK )
+  ( 14 N-000048 )
+  ( 15 /EEPROM/SCL )
+  ( 16 /EEPROM/SDA )
+  ( 17 /LCD/CD )
+  ( 18 /Channels/D4 )
+  ( 19 /UI/BUTTON0 )
+  ( 20 /UI/BUTTON1 )
+  ( 21 /Channels/D5 )
+  ( 22 /Audio_Out/DAC_SCK )
+  ( 23 N-000049 )
+  ( 24 /UI/BUTTON5 )
+  ( 25 ? )
+  ( 26 ? )
+  ( 27 ? )
+  ( 28 /Audio_Out/DAC_SDI )
+  ( 29 N-000027 )
+  ( 30 /Channels/A4 )
+  ( 31 ? )
+  ( 32 /Channels/A0 )
+  ( 33 /Channels/A1 )
+  ( 34 /LCD/BCKLIGHT )
+  ( 35 /Channels/A2 )
+  ( 36 /Channels/D0 )
+  ( 37 /Channels/D1 )
+  ( 38 /LCD/MOSI )
+  ( 39 N-000040 )
+  ( 40 /Channels/A3 )
+  ( 41 GND )
+  ( 42 /Channels/A5 )
+  ( 43 /Channels/D2 )
+  ( 44 3V3 )
+  ( 45 /LCD/RST )
+  ( 46 N-000039 )
+  ( 47 N-000045 )
+  ( 48 /Channels/D3 )
+ )
+ ( /507CFFCF/50805AB3 SO8E U301 MCP4921
+  ( 1 3V3 )
+  ( 2 /Audio_Out/DAC_CS )
+  ( 3 /Audio_Out/DAC_SCK )
+  ( 4 /Audio_Out/DAC_SDI )
+  ( 5 GND )
+  ( 6 3V3 )
+  ( 7 GND )
+  ( 8 N-000087 )
+ )
+ ( /507CFFCF/50875245 SO8E U302 LM4875
+  ( 1 3V3 )
+  ( 2 N-000083 )
+  ( 3 N-000081 )
+  ( 4 N-000082 )
+  ( 5 N-000085 )
+  ( 6 GND )
+  ( 7 N-000080 )
+  ( 8 N-000086 )
+ )
+ ( /507CFF65/507D8FAF SO8E U501 AT24C128C
+  ( 1 GND )
+  ( 2 GND )
+  ( 3 GND )
+  ( 4 GND )
+  ( 5 /EEPROM/SDA )
+  ( 6 /EEPROM/SCL )
+  ( 7 GND )
+  ( 8 3V3 )
+ )
+ ( /507CFFC3/5082AE06 TO220V U701 LD1117V33-DB
+  ( 1 GND )
+  ( 2 3V3 )
+  ( 3 N-000077 )
+ )
+ ( /507CFFC3/50832DB7 TEST_POINT_2PADS W701 TEST
+  ( 1 N-000079 )
+  ( 2 N-000077 )
+ )
+ ( /507DC34B HC-49/US X101 12MHz
+  ( 1 N-000003 )
+  ( 2 N-000026 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C101
+ SM*
+ C?
+ C1-1
+$endlist
+$component C102
+ SM*
+ C?
+ C1-1
+$endlist
+$component C103
+ SM*
+ C?
+ C1-1
+$endlist
+$component C104
+ SM*
+ C?
+ C1-1
+$endlist
+$component C105
+ SM*
+ C?
+ C1-1
+$endlist
+$component C106
+ SM*
+ C?
+ C1-1
+$endlist
+$component C301
+ SM*
+ C?
+ C1-1
+$endlist
+$component C302
+ SM*
+ C?
+ C1-1
+$endlist
+$component C303
+ SM*
+ C?
+ C1-1
+$endlist
+$component C304
+ SM*
+ C?
+ C1-1
+$endlist
+$component C305
+ SM*
+ C?
+ C1-1
+$endlist
+$component C306
+ SM*
+ C?
+ C1-1
+$endlist
+$component C501
+ SM*
+ C?
+ C1-1
+$endlist
+$component C701
+ SM*
+ C?
+ C1-1
+$endlist
+$component C702
+ SM*
+ C?
+ C1-1
+$endlist
+$component D101
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D102
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D103
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D701
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component Q401
+ TO92*
+$endlist
+$component R101
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R102
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R103
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R302
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R303
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R304
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R401
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R501
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R502
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R701
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R702
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
