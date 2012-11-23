@@ -56,7 +56,7 @@ int eeprom_write(uint16_t dest, const void *src, size_t n)
 
 	/* calculate address */
 		uint8_t addr = 0xa0;
-		uint8_t page = (dest >> 8) & 7;
+		uint8_t page = (dest >> 8) & 0x07;
 		uint8_t word = dest & 0xff;
 		addr |= (page << 1);
 
@@ -68,7 +68,7 @@ int eeprom_write(uint16_t dest, const void *src, size_t n)
 	I2CMasterBuffer[2] = ((uint8_t*)src)[0];
 	I2CEngine();
 
-	for ( i = 0; i < 0x200000; i++ );	/* Delay after write */
+	for ( i = 0; i < EEPROM_WRITE_WAIT; i++ );	/* Delay after write */
 
 	return 1;
 }

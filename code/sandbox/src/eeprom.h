@@ -13,6 +13,9 @@
 #include <stdint.h>
 #include "type.h"
 
+/* wait cycles = 5ms = 0.005s / (1 / 48MHz) = 240000 = 0x3A980 CPU clock cycles */
+#define EEPROM_WRITE_WAIT  0x3A980
+
 /**
  * \brief Set up the eeprom device
  *
