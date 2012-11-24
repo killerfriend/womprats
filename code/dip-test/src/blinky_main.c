@@ -16,6 +16,9 @@
 #include "gpio.h"
 #include "timer32.h"
 #include <stdint.h>
+#include "synth.h"
+#include "adc.h"
+
 /* Main Program */
 
 int main(void) {
@@ -27,7 +30,7 @@ int main(void) {
 	/* Initialize 32-bit timer 0. TIME_INTERVAL is defined as 10mS */
 	/* You may also want to use the Cortex SysTick timer to do this */
 	init_timer32(0, TIME_INTERVAL);
-	/* Enable timer 0. Our interrupt handler will begin incrementing
+	/* Enable timer 0. nOur interrupt handler will begin incrementing
 	 * the TimeTick global each time timer 0 matches and resets.
 	 */
 	enable_timer32(0);
@@ -38,30 +41,24 @@ int main(void) {
 	/* Set LED port pin to output */
 	LPC_IOCON->R_PIO0_11 |= 1;
 	GPIOSetDir(LED_PORT, LED_BIT, 1);
-	int i = 0;
-	int dir = 28;
-	uint16_t data;
-	SSP_IOConfig(0);
-	SSP_Init(0);
-	while (1) {
-		//if((timer32_0_counter%LED_TOGGLE_TICKS) == (LED_TOGGLE_TICKS/2) ) {
-		//GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
-		i += dir;
-		if (i < 0) {
-			i = 0;
-			dir = -dir;
-		}
-		if (i > 0xFFF) {
-			i = 0xFFF;
-			dir = -dir;
-		}
 
-		data = 0x3000;
-		data |= (i & 0xFFF);
-		SSP_Send(0, &data, 1);
-		//GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
-		//}
-		//__WFI();
+
+
+	synth_init();
+
+
+	int i;
+	for (i = 0; i < 6; i++) {
+		synth_channels[i].freq = 100 * i;
+		synth_channels[i].amp = 4096;
+		synth_channels[i].func = SYNTH_TRI;
+	}
+
+	while (1) {
+		int tmp = 500 * ADCValue[1]/512;
+		for (i = 0; i < 6; i++)
+			synth_channels[i].freq = tmp*(i+1);
+
 	}
 	while (1) /* Loop forever */
 	{

@@ -20,6 +20,8 @@
  * use without further testing or modification.
 ****************************************************************************/
 #include "driver_config.h"
+#include "target_config.h"
+#include "gpio.h"
 #if CONFIG_ENABLE_DRIVER_ADC==1
 #include "adc.h"
 
@@ -30,7 +32,7 @@ volatile uint32_t ADCIntDone = 0;
 #endif
 volatile uint32_t OverRunCounter = 0;
 
-#if BURST_MODE
+#if CONFIG_ADC_ENABLE_BURST_MODE==1
 volatile uint32_t channel_flag = 0; 
 #endif
 
@@ -49,23 +51,8 @@ void ADC_IRQHandler (void)
   uint32_t regVal, i;
 
   regVal = LPC_ADC->STAT;		/* Read ADC will clear the interrupt */
-  if ( regVal & 0x0000FF00 )	/* check OVERRUN error first */
-  {
-	OverRunCounter++;
-	for ( i = 0; i < ADC_NUM; i++ )
-	{
-	  regVal = (regVal & 0x0000FF00) >> 0x08;
-	  /* if overrun, just read ADDR to clear */
-	  /* regVal variable has been reused. */
-	  if ( regVal & (0x1 << i) )
-	  {
-		regVal = LPC_ADC->DR[i];
-	  }
-	}
-	LPC_ADC->CR &= 0xF8FFFFFF;	/* stop ADC now */
-	ADCIntDone = 1;
-	return;	
-  }
+
+
     
   if ( regVal & ADC_ADINT )
   {
@@ -74,23 +61,28 @@ void ADC_IRQHandler (void)
 	  if ( (regVal&0xFF) & (0x1 << i) )
 	  {
 		ADCValue[i] = ( LPC_ADC->DR[i] >> 6 ) & 0x3FF;
+		ADCValue[i] = ADCValue[i] >> 1;
 	  }
 	}
 #if CONFIG_ADC_ENABLE_BURST_MODE==1
-	channel_flag |= (regVal & 0xFF);
-	if ( (channel_flag & 0xFF) == 0xFF )
+	channel_flag &= ~0xff;
+	channel_flag |= (regVal & 0xff);
+	if ( (channel_flag & 0xFF) == ADC_EN_MASK)
 	{
 	  /* All the bits in have been set, it indicates all the ADC 
 	  channels have been converted. */
 	  LPC_ADC->CR &= 0xF8FFFFFF;	/* stop ADC now */
 	  channel_flag = 0; 
 	  ADCIntDone = 1;
+	  //GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
 	}
 #else
 	LPC_ADC->CR &= 0xF8FFFFFF;	/* stop ADC now */ 
 	ADCIntDone = 1;
 #endif
   }
+
+
   return;
 }
 #endif
@@ -107,7 +99,7 @@ void ADC_IRQHandler (void)
 void ADCInit( uint32_t ADC_Clk )
 {
   uint32_t i;
-
+  ADCIntDone = 1;
   /* Disable Power down bit to the ADC block. */  
   LPC_SYSCON->PDRUNCFG &= ~(0x1<<4);
 
@@ -119,35 +111,46 @@ void ADCInit( uint32_t ADC_Clk )
 	ADCValue[i] = 0x0;
   }
   /* Unlike some other pings, for ADC test, all the pins need
-  to set to analog mode. Bit 7 needs to be cleared according 
+  to set to analog mode. Bit 7 needs to be cleared according
   to design team. */
-  LPC_IOCON->R_PIO0_11 &= ~0x8F; /*  ADC I/O config */
-  LPC_IOCON->R_PIO0_11 |= 0x02;  /* ADC IN0 */
-  LPC_IOCON->R_PIO1_0  &= ~0x8F;	
-  LPC_IOCON->R_PIO1_0  |= 0x02;  /* ADC IN1 */
-  LPC_IOCON->R_PIO1_1  &= ~0x8F;	
-  LPC_IOCON->R_PIO1_1  |= 0x02;  /* ADC IN2 */
-  LPC_IOCON->R_PIO1_2 &= ~0x8F;	
-  LPC_IOCON->R_PIO1_2 |= 0x02; /* ADC IN3 */
-#ifdef __SWD_DISABLED
-  LPC_IOCON->SWDIO_PIO1_3   &= ~0x8F;	
-  LPC_IOCON->SWDIO_PIO1_3   |= 0x02;  /* ADC IN4 */
-#endif
+
+
+#ifdef ADC_EN_AD0
   LPC_IOCON->R_PIO0_11   = 0x02;	// Select AD0 pin function
+#endif
+#ifdef ADC_EN_AD1
   LPC_IOCON->R_PIO1_0    = 0x02;	// Select AD1 pin function
+#endif
+#ifdef ADC_EN_AD2
   LPC_IOCON->R_PIO1_1    = 0x02;	// Select AD2 pin function
+#endif
+#ifdef ADC_EN_AD3
   LPC_IOCON->R_PIO1_2    = 0x02;	// Select AD3 pin function
-//  LPC_IOCON->ARM_SWDIO_PIO1_3    = 0x02;	// Select AD4 pin function
+#endif
+#ifdef ADC_EN_AD4
+  LPC_IOCON->ARM_SWDIO_PIO1_3    = 0x02;	// Select AD4 pin function
+#endif
+#ifdef ADC_EN_AD5
   LPC_IOCON->PIO1_4    = 0x01;	// Select AD5 pin function
+#endif
+#ifdef ADC_EN_AD6
   LPC_IOCON->PIO1_10   = 0x01;	// Select AD6 pin function
+#endif
+#ifdef ADC_EN_AD7
   LPC_IOCON->PIO1_11   = 0x01;	// Select AD7 pin function
+#endif
 
   LPC_ADC->CR = ((SystemCoreClock/LPC_SYSCON->SYSAHBCLKDIV)/ADC_Clk-1)<<8;
 
   /* If POLLING, no need to do the following */
 #if CONFIG_ADC_ENABLE_ADC_IRQHANDLER==1
   NVIC_EnableIRQ(ADC_IRQn);
-  LPC_ADC->INTEN = 0x1FF;		/* Enable all interrupts */
+#ifndef  CONFIG_ADC_ENABLE_BURST_MODE
+  LPC_ADC->INTEN = 0x100;
+#else
+  LPC_ADC->INTEN = 0;
+#endif
+  LPC_ADC->INTEN |= ADC_EN_MASK;
 #endif
   return;
 }
@@ -211,13 +214,15 @@ uint32_t ADCRead( uint8_t channelNum )
 *****************************************************************************/
 void ADCBurstRead( void )
 {
-  if ( LPC_ADC->CR & (0x7<<24) )
-  {
-	LPC_ADC->CR &= ~(0x7<<24);
-  }
+	ADCIntDone = 0;
+	//GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
+	if ( LPC_ADC->CR & (0x7<<24) ) {
+		LPC_ADC->CR &= ~(0x7<<24);
+	}
   /* Read all channels, 0 through 7. Be careful that if the ADCx pins is shared
   with SWD CLK or SWD IO. */
-  LPC_ADC->CR |= (0xFF);
+  LPC_ADC->CR &= ~0xff;
+  LPC_ADC->CR |= ADC_EN_MASK;
   LPC_ADC->CR |= (0x1<<16);		/* Set burst mode and start A/D convert */
   return;						/* the ADC reading is done inside the 
 								handler, return 0. */
