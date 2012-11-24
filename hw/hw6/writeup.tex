@@ -81,9 +81,13 @@ Andy \textsc{Goetz}, Bradon \textsc{Kanyid}, Jackson \textsc{Pugh}, and Kevin \t
 
 \section{Overview}
 
-The T-16 Audio Synthesizer is designed to generate an audio output based on multiple channel inputs, as well as tuneable parameters that are controllable from the user interface.  The functionality can be broken down into several independent sub-modules.  These include a microcontroller to synthesize the audio signal, as well as act as a central communications hub for the other sub-modules, a regulated power supply, an EEPROM memory to dynamically store and load pre-defined user settings and miscellaneous data, an LCD to present the user interface, a DAC to convert the synthesizer's digital audio samples into an analog audio output, and an audio amplifier to provide more output power to an internal speaker and offer a master volume control.
+The T-16 Audio Synthesizer is designed to generate an audio output based on multiple channel inputs, as well as tuneable parameters that are controllable from the user interface.  The functionality can be broken down into several independent sub-modules.  These include a microcontroller to synthesize the audio signal, as well as act as a central communications hub for the other sub-modules, a regulated power supply, an EEPROM memory to dynamically store and load pre-defined user settings and miscellaneous data, an LCD to present the user interface, a DAC to convert the synthesizer's digital audio samples into an analog audio output, and an audio amplifier to provide more output power to an internal speaker and offer a master volume control. 
 
 \centerimage{\includegraphics[width=5in]{synth1.png}}{Level 1 Diagram}{fullone}
+
+This document outlines the test approach for the T-16 amplifier. It is
+broken down into unit tests, as well as integration and acceptance
+tests.
 
 \section{Unit Tests}
 \subsection{LCD Tests}
@@ -190,5 +194,21 @@ The T-16 Audio Synthesizer is designed to generate an audio output based on mult
 \textbf{Functionality}& Provide an amplified audio out that can be heard over the internal speaker or line-out to an external audio device.\\
 \hline
 \end{tabular}
+
+\section{Integration Tests}
+
+
+\section{Acceptance Tests}
+The primary goal of the T-16 audio amplifier is to demonstrate the
+engineering skills of its team members in an interview
+situation. Several acceptance tests have been outlined below:
+
+\subsection{Temperature Test}
+The completed T-16 Synthesizer must not rise above $10^\circ$ Celsius
+while the internal amplifier is in use.
+\subsection{Untrained User}
+A completely untrained user must be able to make cool sounds with the
+T-16 Synthesizer within 5 minutes of picking up the device for the
+first time. 
 
 \end{document}
