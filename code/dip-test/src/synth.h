@@ -54,6 +54,7 @@ struct synth_channel_info {
 };
 
 /* array of channel information.  */
+
 volatile struct synth_channel_info synth_channels[SYNTH_NUM_CHAN];
 
 

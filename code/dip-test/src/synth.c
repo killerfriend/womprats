@@ -26,15 +26,15 @@ struct synth_oscillator {
 	enum synth_function func;
 };
 
+
 static int max_amp;
 static int min_amp;
-
-
 
 static struct synth_oscillator oscillators[SYNTH_NUM_CHAN];
 
 void SysTick_Handler(void)
 {
+
 GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
 	int i;
 	int oscdone = 0;
@@ -52,13 +52,13 @@ GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
 
 	dac_send(sum_osc());
 GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
-}
 
 
 int synth_init()
 {
 	int i;
 	ADCInit( ADC_CLK );
+
 	/* Inititalize channel and oscillator structs */
 	for (i = 0; i < SYNTH_NUM_CHAN; i++) {
 		
@@ -76,6 +76,7 @@ int synth_init()
 	}
 	max_amp = 0;
 	min_amp = 0;
+
 	/* Initialize the SPI DAC */
 	dac_init();
 	dac_send(0);
@@ -103,6 +104,7 @@ void update_osc(int num)
 	
 	/* if we are at the end of the waveform period, grab the
 	 * latest channel defintion. */
+
 	if(osc->curpos == 0 && chan->freq > 0 && chan->amp > 0) {
 		max_amp -= osc->amp;
 		min_amp -= osc->func > 0 ? osc->amp : 0;
@@ -143,6 +145,7 @@ uint16_t sum_osc()
 		struct synth_oscillator * osc = oscillators + i;
 
 		/* if the oscillator is disabled, do not add it to the sum */
+
 		if (synth_channels[i].amp == 0) {
 			continue;
 // If the button is just not being pressed, add baseline value to sum
@@ -171,6 +174,7 @@ uint16_t sum_osc()
 			
 		}
 	}
+
 
 
 

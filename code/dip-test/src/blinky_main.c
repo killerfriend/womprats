@@ -12,13 +12,10 @@
 #include "driver_config.h"
 #include "LPC11xx.h"
 #include "target_config.h"
-#include "ssp.h"
 #include "gpio.h"
 #include "timer32.h"
 #include <stdint.h>
 #include "synth.h"
-#include "adc.h"
-
 /* Main Program */
 
 int main(void) {
@@ -38,9 +35,12 @@ int main(void) {
 	/* Initialize GPIO (sets up clock) */
 	GPIOInit();
 
-	/* Set LED port pin to output */
+
 	LPC_IOCON->R_PIO0_11 |= 1;
+
+	/* Set LED port pin to output */
 	GPIOSetDir(LED_PORT, LED_BIT, 1);
+
 
 
 
