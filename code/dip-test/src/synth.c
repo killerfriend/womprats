@@ -35,15 +35,15 @@ static struct synth_oscillator oscillators[SYNTH_NUM_CHAN];
 void SysTick_Handler(void)
 {
 
-GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
+
 	int i;
 	int oscdone = 0;
-
+	GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
 	for(i = 0; i < SYNTH_NUM_CHAN; i++) {
 		update_osc(i);
 		oscdone |= oscillators[i].curpos == 0
-				&& synth_channels[i].freq > 0
-				&& synth_channels[i].amp > 0;
+			&& synth_channels[i].freq > 0
+			&& synth_channels[i].amp > 0;
 	}
 
 	if(ADCIntDone) {
@@ -51,9 +51,9 @@ GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
 	}
 
 	dac_send(sum_osc());
-GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
+	GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
 
-
+} 
 int synth_init()
 {
 	int i;
@@ -87,8 +87,8 @@ int synth_init()
 	SysTick->LOAD = 48000000 / SYNTH_SAMPLE_RATE - 1;
 	SysTick->VAL = 0;
 	SysTick->CTRL = SysTick_CTRL_ENABLE_Msk |
-					SysTick_CTRL_TICKINT_Msk |
-					SysTick_CTRL_CLKSOURCE_Msk;
+		SysTick_CTRL_TICKINT_Msk |
+		SysTick_CTRL_CLKSOURCE_Msk;
 
 
 	return FALSE;

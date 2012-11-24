@@ -16,6 +16,7 @@
 #include "timer32.h"
 #include <stdint.h>
 #include "synth.h"
+#include "adc.h"
 /* Main Program */
 
 int main(void) {
@@ -50,7 +51,7 @@ int main(void) {
 	int i;
 	for (i = 0; i < 6; i++) {
 		synth_channels[i].freq = 100 * i;
-		synth_channels[i].amp = 4096;
+		synth_channels[i].amp = 32768 >> i;
 		synth_channels[i].func = SYNTH_TRI;
 	}
 

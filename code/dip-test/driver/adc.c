@@ -48,6 +48,7 @@ volatile uint32_t channel_flag = 0;
 ******************************************************************************/
 void ADC_IRQHandler (void) 
 {
+  ADCIntDone = 1;
   uint32_t regVal, i;
 
   regVal = LPC_ADC->STAT;		/* Read ADC will clear the interrupt */
@@ -80,6 +81,7 @@ void ADC_IRQHandler (void)
 	LPC_ADC->CR &= 0xF8FFFFFF;	/* stop ADC now */ 
 	ADCIntDone = 1;
 #endif
+
   }
 
 
