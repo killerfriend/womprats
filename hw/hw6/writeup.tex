@@ -215,6 +215,23 @@ This test will use the burst write command to write a full burst length (16 byte
 \hline
 \end{tabular}
 
+\subsubsection{DAC Overview}
+The DAC used in the T-16 audio synthesizer is controlled by a SPI
+interface. It takes a 12bit value from the microcontroller, and
+converts it into an analog value from 0 to 3.3 volts. It important
+that the microcontroller can output values to the SPI DAC. 
+
+\subsubsection{Required Equipment}
+\begin{itemize}
+  \item T-16 Audio Synthesizer Board
+  \item Oscilloscope
+  \item 5 volt DC power supply
+\end{itemize}
+
+\subsubsection{DAC Test}
+The microcontroller must be able to output a simple sawtooth signal to
+the DAC, visible on its output signal. 
+
 \subsection{Audio Amplifier Tests}
 \centerimage{\includegraphics[width=3in]{audioamp.png}}{Level 0 Diagram}{audio}
 
