@@ -10,6 +10,7 @@
 %this one. It has contains the style sheet for ECE111, and is needed
 %to standardize the layout of LateX documents created for the class.
 \usepackage{ShumanNotes} 
+\usepackage{multirow}
 \usepackage{tikz}
 \usepackage{program}
 \usepackage{listings}
@@ -251,5 +252,33 @@ while the internal amplifier is in use.
 A completely untrained user must be able to make cool sounds with the
 T-16 Synthesizer within 5 minutes of picking up the device for the
 first time. 
+\newpage
+\section {Test Forms}
 
+\begin{tabular}{|p{1.3in}|p{3in}|p{.8in}|p{.5in}|}
+  \hline
+  \textbf{Test Case Name:} & Example Test & \textbf{Test ID \#:} & 1\\
+  \hline
+  \textbf{Description:} & The Quick Brown Fox Jumps Over the Lazy Dog. & \textbf{Type:} & blackbox \\
+  \hline
+  \multicolumn{4}{|l|}{\textbf{Tester Information}} \\ 
+  \hline
+  \textbf{Name of Tester:} & & \textbf{Date:} & \\
+  \hline
+  \textbf{Hardware Ver:} & T-16 v1.0 & \textbf{Time:} & \\
+  \hline
+  \textbf{Setup:} & \multicolumn{3}{l|}{Lorem Ipsum} \\
+  \hline
+\end{tabular}
+\begin{tabular}{|p{.3in}|p{1in}|p{1.3in}|p{.25in}|p{.25in}|p{.3in}|p{1.7in}|}
+  \hline
+  \textbf{Step} & \textbf{Action} & \textbf{Expected Result} & \textbf{Pass} & \textbf{Fail} & \textbf{N/A} & \textbf{Comments} \\
+  \hline
+  1 & asdfasdfasd & fdasdfasdf & & & &\\
+  \hline
+  2 & asdfasdfasd & fdasdfasdf & & & &\\
+  \hline
+  3 & asdfasdfasd & fdasdfasdf & & & &\\
+  \hline
+\end{tabular}
 \end{document}
