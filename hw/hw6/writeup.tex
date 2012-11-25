@@ -126,7 +126,7 @@ tests.
 \end{tabular}
 
 \subsubsection{Power Supply Overview}
-The purpose of the power supply is to provide a constant, regulated 3.3 VDC power to the audio synthesizer components.  It includes a 2A protection fuse to limit any high current damage.
+The purpose of the power supply is to provide a constant, regulated 3.3 VDC power to the audio synthesizer subcomponents.  It includes a 2A protection fuse to prevent any high current damage.
 \subsubsection{Required Equipment}
 \begin{itemize}
 \item Audio synth board
@@ -136,7 +136,7 @@ The purpose of the power supply is to provide a constant, regulated 3.3 VDC powe
 \subsubsection{Fuse Test}
 The fuse test verifies that the power supply will burn the fuse and stop supplying power if the current is greater than 2A.  
 \subsubsection{Voltage Ripple Test}
-The voltage ripple test determines the amount of ripple generated from the output of the power supply.
+The voltage ripple test determines the amount of ripple generated from the output of the power supply.  
 
 \subsection{EEPROM Tests}
 \centerimage{\includegraphics[width=3in]{eeprom.png}}{Level 0 Diagram}{eeprom}
@@ -234,10 +234,16 @@ The purpose of the audio amplifier is to provide an amplified audio signal to th
 \subsubsection{Frequency Test}
 The frequency test determines the maximum input audio frequency that can be processed without significant output signal distortion.
 \subsubsection{Line-out Test}
-The line-out test verifies that the internal speaker turns off when the line-out is in-use.
+The line-out test verifies that the internal speaker turns off when the line-out is in-use.  When the line-out is removed, the internal speaker should turn on again.
+\subsubsection{Volume Control Test}
+The volume control test verifies the volume knob increases/decreases the output volume of the audio amplifier.  The volume should be off when the knob is twisted in the off position and reach the loudest noise level when the knob is twisted in the fully on position.
 
 \section{Integration Tests}
+\subsection{Power-On Self-Test}
+The power-on self-test verifies the output power from the power supply is correctly biasing each submodule.  Each submodule will be connected to the power supply and measured to ensure it is operating correctly.
 
+\subsection{DAC-Audio Amplifier Test}
+The DAC-audio amplifier test verifies the DAC feeds the proper input values to the audio amplifier.  The audio amplifier should playback the correct analog input signal without any new artifacts or distortions.
 
 \section{Acceptance Tests}
 The primary goal of the T-16 audio amplifier is to demonstrate the
