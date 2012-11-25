@@ -126,7 +126,7 @@ tests.
 \end{tabular}
 
 \subsubsection{Power Supply Overview}
-The purpose of the Power Supply is to provide a constant, regulated 3.3 VDC power to the audio synthesizer components.  It includes a 2A protection fuse to limit any high current damage.
+The purpose of the power supply is to provide a constant, regulated 3.3 VDC power to the audio synthesizer components.  It includes a 2A protection fuse to limit any high current damage.
 \subsubsection{Required Equipment}
 \begin{itemize}
 \item Audio synth board
@@ -134,11 +134,9 @@ The purpose of the Power Supply is to provide a constant, regulated 3.3 VDC powe
 \item Oscilloscope
 \end{itemize}
 \subsubsection{Fuse Test}
-This is a description
+The fuse test verifies that the power supply will burn the fuse and stop supplying power if the current is greater than 2A.  
 \subsubsection{Voltage Ripple Test}
-This is a description
-\subsubsection{Temperature Test}
-This is a description
+The voltage ripple test determines the amount of ripple generated from the output of the power supply.
 
 \subsection{EEPROM Tests}
 \centerimage{\includegraphics[width=3in]{eeprom.png}}{Level 0 Diagram}{eeprom}
@@ -234,11 +232,9 @@ The purpose of the audio amplifier is to provide an amplified audio signal to th
 \item Oscilloscope
 \end{itemize}
 \subsubsection{Frequency Test}
-This is a description
-\subsubsection{Headphone Test}
-This is a description
-\subsubsection{Temperature Test}
-This is a description
+The frequency test determines the maximum input audio frequency that can be processed without significant output signal distortion.
+\subsubsection{Line-out Test}
+The line-out test verifies that the internal speaker turns off when the line-out is in-use.
 
 \section{Integration Tests}
 
