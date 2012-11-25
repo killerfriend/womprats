@@ -30,16 +30,21 @@ void draw_menu (stMenu *menu) {
 
 			for (j=menu->options[i].num-1; j>=0 ; j--) {	/* Suboptions from right to left */
 
-				dog_DrawStrP(menu->options[i].sub_options[j].x,
-							 menu->options[i].sub_options[j].y,
+				menuSubOption *sOption = &(menu->options[i].sub_options[j]);
+
+				if (sOption->type)
+					sprintf(sOption->name, "%03d", sOption->value);
+
+				dog_DrawStrP(sOption->x,
+							 sOption->y,
 							 p,
-							 menu->options[i].sub_options[j].name);
+							 sOption->name);
 
 				if (j==menu->options[i].selected)
-					dog_XorBox(menu->options[i].sub_options[j].x-1,
-								 menu->options[i].sub_options[j].y,
-								 menu->options[i].sub_options[j].ex,
-								 menu->options[i].sub_options[j].ey);
+					dog_XorBox(sOption->x-1,
+								 sOption->y,
+								 sOption->ex,
+								 sOption->ey);
 
 			}
 		}
@@ -60,9 +65,15 @@ void fill_main_menu (stMenu *menu)
 			strcpy(menu->options[0].sub_options[1].name,"Tri");
 			strcpy(menu->options[0].sub_options[2].name,"Saw");
 			menu->options[0].num=3;
-			menu->options[0].selected = 0; // Default to 132
+			menu->options[0].selected = 0;
 
 		strcpy(menu->options[1].name,"Set LFO");
+			strcpy(menu->options[1].sub_options[0].name,"000");
+			menu->options[1].sub_options[0].value = 100;
+			menu->options[1].sub_options[0].type = 1;
+			menu->options[1].num=1;
+			menu->options[1].selected = 0;
+
 		strcpy(menu->options[2].name,"Map Channels");
 		strcpy(menu->options[3].name,"Save Settings");
 		strcpy(menu->options[4].name,"Reset");

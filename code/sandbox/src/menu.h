@@ -13,6 +13,8 @@ typedef struct
  	int x,y;
  	int ex,ey;
  	char name[8];
+ 	int value;
+ 	int type;
 } menuSubOption;
 
 typedef struct

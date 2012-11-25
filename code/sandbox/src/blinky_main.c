@@ -1,5 +1,4 @@
-/*****************************************************************************
- *   blinky.c:  LED blinky C file for NXP LPC11xx Family Microprocessors
+/***************************************************************************** *   blinky.c:  LED blinky C file for NXP LPC11xx Family Microprocessors
  *
  *   Copyright(C) 2008, NXP Semiconductor
  *   All rights reserved.
@@ -26,6 +25,37 @@
 
 stMenu mainmenu;
 
+void drawWomprat()
+{
+	dog_StartPage();
+	do{
+	  dog_SetBitmap(0,64,womprat,102,64);
+	} while(dog_NextPage());
+
+	dog_Delay(2000);
+
+	return;
+}
+
+void SetupButtons()
+{
+	// Set buttons as inputs
+	GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_UP, 0);
+	GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_DOWN, 0);
+	GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_LEFT, 0);
+	GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_RIGHT, 0);
+	GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_OK, 0);
+	GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_AUX, 0);
+	return;
+}
+
+void SetupLEDs()
+{
+  /* Set LED port pin to output */
+  GPIOSetDir( LED_PORT, LED_BIT, 1 );
+  GPIOSetValue( LED_PORT, LED_BIT, LED_OFF );
+}
+
 int main (void) {
   /* Basic chip initialization is taken care of in SystemInit() called
    * from the startup code. SystemInit() and chip settings are defined
@@ -45,29 +75,18 @@ int main (void) {
 
   dog_Init(0);
 
-  dog_StartPage();
-  do{
-	  dog_SetBitmap(0,63,womprat,102,64);
-  } while(dog_NextPage());
-
-  dog_Delay(2000);
+  drawWomprat();
 
   /* Initialize GPIO (sets up clock) */
   GPIOInit();
-  /* Set LED port pin to output */
-  GPIOSetDir( LED_PORT, LED_BIT, 1 );
-  GPIOSetValue( LED_PORT, LED_BIT, LED_OFF );
 
-  // Set buttons as inputs
-  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_UP, 0);
-  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_DOWN, 0);
-  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_LEFT, 0);
-  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_RIGHT, 0);
-  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_OK, 0);
-  GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_AUX, 0);
+  SetupButtons();
+  SetupLEDs();
 
   for (;;)
   {
 	  run_menu(&mainmenu);
+	  mainmenu.options[1].sub_options[0].value = (mainmenu.options[1].sub_options[0].value + 1) % 1000;
+	  draw_menu(&mainmenu);
   }
 }
