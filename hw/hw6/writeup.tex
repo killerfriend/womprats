@@ -138,55 +138,21 @@ Explain how the equipment will be intialized for field use (for replication purp
 \hline
 \textbf{Functionality}& The power supply provides regulated 3.3 VDC power to all the subsystems of the audio synthesizer.\\
 \hline
-\textbf{Test No.}& PS-UT-01\\
-\hline
 \end{tabular}
 
-\begin{tabular}{|p{1in}|p{5in}|}
-\hline
-\textbf{Module} & Power Supply \\
-\hline
-\textbf{Inputs}& 5VDC: Unregulated power from 5 VDC wall-wart power supply.\\
-	     & Switch: On/Off Power Switch.\\
-\hline
-\textbf{Outputs}& 3v3DC: Regulated 3.3 VDC Power.\\
-	      & Status: LED to display if the input power is available.\\ 
-\hline
-\textbf{Functionality}& The power supply fuse circuitry is able to detect high current and safely prevent damage by burning the protection fuse.\\
-\hline
-\textbf{Test No.}& PS-UT-02\\
-\hline
-\end{tabular}
-
-\begin{tabular}{|p{1in}|p{5in}|}
-\hline
-\textbf{Module} & Power Supply \\
-\hline
-\textbf{Inputs}& 5VDC: Unregulated power from 5 VDC wall-wart power supply.\\
-	     & Switch: On/Off Power Switch.\\
-\hline
-\textbf{Outputs}& 3v3DC: Regulated 3.3 VDC Power.\\
-\hline
-\textbf{Functionality}& Determine the voltage ripple generated from the power supply output.\\
-\hline
-\textbf{Test No.}& PS-UT-03\\
-\hline
-\end{tabular}
-
-\begin{tabular}{|p{1in}|p{5in}|}
-\hline
-\textbf{Module} & Power Supply \\
-\hline
-\textbf{Inputs}& 5VDC: Unregulated power from 5 VDC wall-wart power supply.\\
-	     & Switch: On/Off Power Switch.\\
-\hline
-\textbf{Outputs}& Temperature: Heat created by the voltage regulator.\\
-\hline
-\textbf{Functionality}& Determine the temperature dissipated by the power supply.\\
-\hline
-\textbf{Test No.}& PS-UT-04\\
-\hline
-\end{tabular}
+\subsubsection{Power Supply Overview}
+This is a description
+\subsubsection{Required Equipment}
+\begin{itemize}
+\item Audio synth board
+\item ...
+\end{itemize}
+\subsubsection{Fuse Test}
+This is a description
+\subsubsection{Voltage Ripple Test}
+This is a description
+\subsubsection{Temperature Test}
+This is a description
 
 \subsection{EEPROM Tests}
 \centerimage{\includegraphics[width=3in]{eeprom.png}}{Level 0 Diagram}{eeprom}
@@ -270,77 +236,24 @@ This is a description
 	      & Speaker: Amplified audio output to internal speaker.\\
 \hline
 \textbf{Functionality}& Provide an amplified audio out that can be heard over the internal speaker or line-out to an external audio device.\\
-\textbf{Test No.}& Amp-UT-01\\
 \hline
 \hline
 \end{tabular}
+\subsubsection{Audio Amplifier Overview}
+This is a description
+\subsubsection{Required Equipment}
+\begin{itemize}
+\item Audio synth board
+\item ...
+\end{itemize}
+\subsubsection{Frequency Test}
+This is a description
 
-\begin{tabular}{|p{1in}|p{5in}|}
-\hline
-\textbf{Module} & Audio Amplifier \\
-\hline
-\textbf{Inputs} & Power: 3.3 VDC Power\\
-	      & Audio: 0-3.3V audio signal from DAC\\
-	      & Volume: Controls the audio output volume. Logarithmic control.\\
-\hline
-\textbf{Outputs}& Frequency: Frequency of the line out and speaker output.\\
-\hline
-\textbf{Functionality}& Determine the operating frequency range of the audio amplifier.\\
-\hline
-\textbf{Test No.}& Amp-UT-02\\
-\hline
-\end{tabular}
+\subsubsection{Headphone Test}
+This is a description
 
-\begin{tabular}{|p{1in}|p{5in}|}
-\hline
-\textbf{Module} & Audio Amplifier \\
-\hline
-\textbf{Inputs} & Power: 3.3 VDC Power\\
-	      & Audio: 0-3.3V audio signal from DAC\\
-	      & Volume: Controls the audio output volume. Logarithmic control.\\
-                 & Headphone Jack: Headphone is plugged into the headphone jack.\\
-\hline
-\textbf{Outputs}& Headphone: Audio signal outputs only to the headphone/line out and disables the speaker output.\\
-\hline
-\textbf{Functionality}& Verify the headphone detection circuitry works as designed.\\
-\hline
-\textbf{Test No.}& Amp-UT-03\\
-\hline
-\end{tabular}
-
-\begin{tabular}{|p{1in}|p{5in}|}
-\hline
-\textbf{Module} & Audio Amplifier \\
-\hline
-\textbf{Inputs} & Power: 3.3 VDC Power\\
-	      & Audio: 0-3.3V audio signal from DAC\\
-	      & Volume: Controls the audio output volume. Logarithmic control.\\
-\hline
-\textbf{Outputs}& Volume: Loudness.\\
-\hline
-\textbf{Functionality}& Verify the volume control works.\\
-\hline
-\textbf{Test No.}& Amp-UT-04\\
-\hline
-\end{tabular}
-
-\begin{tabular}{|p{1in}|p{5in}|}
-\hline
-\textbf{Module} & Audio Amplifier \\
-\hline
-\textbf{Inputs} & Power: 3.3 VDC Power\\
-	      & Audio: 0-3.3V audio signal from DAC\\
-	      & Volume: Controls the audio output volume. Logarithmic control.\\
-\hline
-\textbf{Outputs}& Temperature: Heat created by the audio amplifier IC.\\
-\hline
-\textbf{Functionality}& Determine the temperature dissipated by the audio amplifier.\\
-\hline
-\textbf{Test No.}& Amp-UT-04\\
-\hline
-
-\end{tabular}
-
+\subsubsection{Temperature Test}
+This is a description
 
 \section{Integration Tests}
 
