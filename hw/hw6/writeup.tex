@@ -89,21 +89,6 @@ This document outlines the test approach for the T-16 amplifier. It is
 broken down into unit tests, as well as integration and acceptance
 tests.
 
-\section{Introduction}
-\subsection{Objectives}
-Brief description at a high level of the scope, approach, resources and schedule of the testing activities involved. Provide a concise summary of the test plan objectives, the products to be delivered, major work activities, major work products, major milestones, required resources, and master high-level schedules, budget, and effort requirements.)
-
-\section{Pretest Preparation}
-\subsection{Test Equipment}
-\begin{itemize}
-\item A
-\item B
-\item ...
-\end{itemize}
-
-\subsection{Test Setup and Calibration}
-Explain how the equipment will be intialized for field use (for replication purposes)
-
 \section{Unit Tests}
 \subsection{LCD Tests}
 \centerimage{\includegraphics[width=3in]{lcd.png}}{Level 0 Diagram}{LCD}
@@ -141,11 +126,12 @@ Explain how the equipment will be intialized for field use (for replication purp
 \end{tabular}
 
 \subsubsection{Power Supply Overview}
-This is a description
+The purpose of the Power Supply is to provide a constant, regulated 3.3 VDC power to the audio synthesizer components.  It includes a 2A protection fuse to limit any high current damage.
 \subsubsection{Required Equipment}
 \begin{itemize}
 \item Audio synth board
-\item ...
+\item DC Lab Power Supply
+\item Oscilloscope
 \end{itemize}
 \subsubsection{Fuse Test}
 This is a description
@@ -240,18 +226,17 @@ This is a description
 \hline
 \end{tabular}
 \subsubsection{Audio Amplifier Overview}
-This is a description
+The purpose of the audio amplifier is to provide an amplified audio signal to the internal speakers or a line-out to an external audio device.  It receives a 0-3.3 VDC signal and has an external volume control to adjust the output volume.  If the line-out is being used, the internal speaker will turn off.
 \subsubsection{Required Equipment}
 \begin{itemize}
 \item Audio synth board
-\item ...
+\item DC Lab Power Supply
+\item Oscilloscope
 \end{itemize}
 \subsubsection{Frequency Test}
 This is a description
-
 \subsubsection{Headphone Test}
 This is a description
-
 \subsubsection{Temperature Test}
 This is a description
 
