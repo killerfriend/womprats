@@ -51,8 +51,8 @@ int main(void) {
 	int i;
 	for (i = 0; i < 6; i++) {
 		synth_channels[i].freq = 100 * i;
-		synth_channels[i].amp = 32768 >> i;
-		synth_channels[i].func = SYNTH_TRI;
+		synth_channels[i].amp = 1 << (16 - i);
+		synth_channels[i].func = SYNTH_SAW;
 	}
 
 	while (1) {

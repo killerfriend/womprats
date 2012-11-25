@@ -50,7 +50,6 @@ void ADC_IRQHandler (void)
 {
   ADCIntDone = 1;
   uint32_t regVal, i;
-
   regVal = LPC_ADC->STAT;		/* Read ADC will clear the interrupt */
 
 
@@ -61,6 +60,7 @@ void ADC_IRQHandler (void)
 	{
 	  if ( (regVal&0xFF) & (0x1 << i) )
 	  {
+		ADCValue[i] = LPC_ADC->GDR;
 		ADCValue[i] = ( LPC_ADC->DR[i] >> 6 ) & 0x3FF;
 		ADCValue[i] = ADCValue[i] >> 1;
 	  }
@@ -75,7 +75,7 @@ void ADC_IRQHandler (void)
 	  LPC_ADC->CR &= 0xF8FFFFFF;	/* stop ADC now */
 	  channel_flag = 0; 
 	  ADCIntDone = 1;
-	  //GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
+	  GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
 	}
 #else
 	LPC_ADC->CR &= 0xF8FFFFFF;	/* stop ADC now */ 
@@ -217,7 +217,7 @@ uint32_t ADCRead( uint8_t channelNum )
 void ADCBurstRead( void )
 {
 	ADCIntDone = 0;
-	//GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
+	GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
 	if ( LPC_ADC->CR & (0x7<<24) ) {
 		LPC_ADC->CR &= ~(0x7<<24);
 	}
