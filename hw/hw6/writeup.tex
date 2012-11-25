@@ -109,6 +109,19 @@ tests.
 \hline
 \end{tabular}
 
+\subsubsection{UI Overview}
+The purpose of the UI is to provide an interface to display the synthesizer's current state and modify the parameters that control the synthesizer state and mapping of the physical channel interface to virtual instruments. 
+\subsubsection{Required Equipment}
+\begin{itemize}
+\item Audio synth board
+\item DC Lab Power Supply
+\item LCD Daughterboard
+\end{itemize}
+\subsubsection{Button Test}
+The button test verifies that each button state (button up/button down) related to the UI (Up/Down/Left/Right/Ok/Aux) is properly being detected by the CPU. This can be seen through the debug menu, which is entered by powering up while holding any button down. 
+\subsubsection{LCD Test}
+The LCD test verifies that the LCD is able to display all LCD memory contents and is physically working. This is available via the debug menu, which is entered by powering up while holding any button down.
+
 \subsection{Power Supply Tests}
 \centerimage{\includegraphics[width=3in]{pwrsply.png}}{Level 0 Diagram}{PSU}
 
@@ -186,6 +199,24 @@ This test will use the burst write command to write a full burst length (16 byte
 \hline
 \end{tabular}
 
+\subsubsection{Microcontroller Overview}
+The microcontroller used in the T-16 audio synthesizer is an NXP
+LPC1114. It is an arm Cortex M0 microcontroller.
+
+\subsubsection{Equipment Required}
+\begin{itemize}
+  \item T-16 synthesizer board
+  \item JTAG Programmer
+  \item CodeRed Development Environment 
+\end{itemize}
+
+\subsubsection{Programming Test} 
+The T-16 audio synthesizer must be able to be programmed via its JTAG port. 
+
+\subsubsection{Diagnostic Test}
+The Diagnostic LEDs of the microcontroller must be blinked, to
+demonstrate that the test code works.
+
 \subsection{DAC Tests}
 \centerimage{\includegraphics[width=3in]{dac.png}}{Level 0 Diagram}{dac}
 
@@ -202,6 +233,23 @@ This test will use the burst write command to write a full burst length (16 byte
 \hline
 \end{tabular}
 
+\subsubsection{DAC Overview}
+The DAC used in the T-16 audio synthesizer is controlled by a SPI
+interface. It takes a 12bit value from the microcontroller, and
+converts it into an analog value from 0 to 3.3 volts. It important
+that the microcontroller can output values to the SPI DAC. 
+
+\subsubsection{Required Equipment}
+\begin{itemize}
+  \item T-16 Audio Synthesizer Board
+  \item Oscilloscope
+  \item 5 volt DC power supply
+\end{itemize}
+
+\subsubsection{DAC Test}
+The microcontroller must be able to output a simple sawtooth signal to
+the DAC, visible on its output signal.
+
 \subsection{Audio Amplifier Tests}
 \centerimage{\includegraphics[width=3in]{audioamp.png}}{Level 0 Diagram}{audio}
 
@@ -217,7 +265,6 @@ This test will use the burst write command to write a full burst length (16 byte
 	      & Speaker: Amplified audio output to internal speaker.\\
 \hline
 \textbf{Functionality}& Provide an amplified audio out that can be heard over the internal speaker or line-out to an external audio device.\\
-\hline
 \hline
 \end{tabular}
 \subsubsection{Audio Amplifier Overview}
