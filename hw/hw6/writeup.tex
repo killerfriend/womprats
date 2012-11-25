@@ -95,11 +95,11 @@ Brief description at a high level of the scope, approach, resources and schedule
 
 \section{Pretest Preparation}
 \subsection{Test Equipment}
-\begin{enum}
+\begin{itemize}
 \item A
 \item B
 \item ...
-\end{enum}
+\end{itemize}
 
 \subsection{Test Setup and Calibration}
 Explain how the equipment will be intialized for field use (for replication purposes)
@@ -203,6 +203,21 @@ Explain how the equipment will be intialized for field use (for replication purp
 \textbf{Functionality}& Holds user settings for the synthesizer state, as well as the Womprats logo for startup\\
 \hline
 \end{tabular}
+\subsubsection{EEPROM Overview}
+The purpose of the EEPROM is to store non-volatile memory so that the Microcontroller can keep settings and store the logo data between power cycles. The Microcontroller talks to the EEPROM via I$^2$C through either burst or byte reads and writes.
+\subsubsection{Required Equipment}
+\begin{itemize}
+\item Audio synth board
+\item JTAG programmer for Microcontroller
+\end{itemize}
+\subsubsection{Write Byte Test}
+This is a description
+\subsubsection{Write Burst Test}
+This is a description
+\subsubsection{Read Byte Test}
+This is a description
+\subsubsection{Read Burst Test}
+This is a description
 
 \subsection{Microcontroller Tests}
 \centerimage{\includegraphics[width=3in]{microcont.png}}{Level 0 Diagram}{micro}
