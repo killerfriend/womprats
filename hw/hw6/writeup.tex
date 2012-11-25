@@ -161,14 +161,10 @@ The purpose of the EEPROM is to store non-volatile memory so that the Microcontr
 \item Audio synth board
 \item JTAG programmer for Microcontroller
 \end{itemize}
-\subsubsection{Write Byte Test}
-This is a description
-\subsubsection{Write Burst Test}
-This is a description
-\subsubsection{Read Byte Test}
-This is a description
-\subsubsection{Read Burst Test}
-This is a description
+\subsubsection{Read/Write Byte Test}
+This test will use the byte write command to write, then use the read byte command to read from the same address. Then, compare the value written to the value read to ensure they are the equal.
+\subsubsection{Read/Write Burst Test}
+This test will use the burst write command to write a full burst length (16 bytes) to the EEPROM. Then, do a burst read command at the same address. Compare value written with value read to ensure they are equal.
 
 \subsection{Microcontroller Tests}
 \centerimage{\includegraphics[width=3in]{microcont.png}}{Level 0 Diagram}{micro}
@@ -238,7 +234,16 @@ The frequency test determines the maximum input audio frequency that can be proc
 The line-out test verifies that the internal speaker turns off when the line-out is in-use.
 
 \section{Integration Tests}
-
+\subsection{Display Womprat on LCD screen}
+\subsubsection{Required Equipment}
+\begin{itemize}
+\item Audio synthesizer board
+\item Wall-wart for synth board
+\item LCD daughter board
+\item JTAG programmer for Microcontroller
+\end{itemize}
+\subsubsection{Description}
+The purpose of this test is to ensure that the interface between the EEPROM, the Microcontroller, and the LCD daughterboard work properly. The test involves reading the Womprat logo from the EEPROM into the Microcontroller and then sending the logo data to the LCD screen to display the logo. This will test the I$^2$C driver for the EEPROM, the SPI driver for the LCD screen, and also will ensure that the hardware involved is functional.
 
 \section{Acceptance Tests}
 The primary goal of the T-16 audio amplifier is to demonstrate the
