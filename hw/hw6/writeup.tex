@@ -199,6 +199,24 @@ This test will use the burst write command to write a full burst length (16 byte
 \hline
 \end{tabular}
 
+\subsubsection{Microcontroller Overview}
+The microcontroller used in the T-16 audio synthesizer is an NXP
+LPC1114. It is an arm Cortex M0 microcontroller.
+
+\subsubsection{Equipment Required}
+\begin{itemize}
+  \item T-16 synthesizer board
+  \item JTAG Programmer
+  \item CodeRed Development Environment 
+\end{itemize}
+
+\subsubsection{Programming Test} 
+The T-16 audio synthesizer must be able to be programmed via its JTAG port. 
+
+\subsubsection{Diagnostic Test}
+The Diagnostic LEDs of the microcontroller must be blinked, to
+demonstrate that the test code works.
+
 \subsection{DAC Tests}
 \centerimage{\includegraphics[width=3in]{dac.png}}{Level 0 Diagram}{dac}
 
@@ -230,7 +248,7 @@ that the microcontroller can output values to the SPI DAC.
 
 \subsubsection{DAC Test}
 The microcontroller must be able to output a simple sawtooth signal to
-the DAC, visible on its output signal. 
+the DAC, visible on its output signal.
 
 \subsection{Audio Amplifier Tests}
 \centerimage{\includegraphics[width=3in]{audioamp.png}}{Level 0 Diagram}{audio}
