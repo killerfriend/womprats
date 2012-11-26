@@ -402,6 +402,7 @@ The purpose of this test is to ensure that the interface between the EEPROM, the
   3 & Write random value to random address between 000 and FFF, then read back from same address & The value read is the same as the value written & & & &\\
   \hline
 \end{tabular}
+
 \newpage
 
 \begin{tabular}{|p{1.3in}|p{3in}|p{.8in}|p{.5in}|}
@@ -425,15 +426,45 @@ The purpose of this test is to ensure that the interface between the EEPROM, the
   \hline
 \end{tabular}
 
+
+
+\begin{tabular}{|p{1.3in}|p{3in}|p{.8in}|p{.5in}|}
+  \hline
+  \textbf{Test Case Name:} & Fuse Test & \textbf{Test ID \#:} & 1\\
+  \hline
+  \textbf{Description:} & The fuse test verifies the power supply will burn the fuse and stop supplying power if the
+current exceeds 2A. & \textbf{Type:} & blackbox \\
+  \hline
+  \multicolumn{4}{|l|}{\textbf{Tester Information}} \\ 
+  \hline
+  \textbf{Name of Tester:} & & \textbf{Date:} & \\
+  \hline
+  \textbf{Hardware Ver:} & T-16 v1.0 & \textbf{Time:} & \\
+  \hline
+  \textbf{Setup:} & \multicolumn{3}{l|}{Properly bias the power supply and ensure it is outputting 3.3 VDC.} \\
+  \hline
+\end{tabular}
+
 \begin{tabular}{|p{.3in}|p{1in}|p{1.3in}|p{.25in}|p{.25in}|p{.3in}|p{1.7in}|}
   \hline
   \textbf{Step} & \textbf{Action} & \textbf{Expected Result} & \textbf{Pass} & \textbf{Fail} & \textbf{N/A} & \textbf{Comments} \\
   \hline
+
   1 & Write a small test program to set the output of the DAC to values ranging between 0 and 4095.  &  & & & &\\
   \hline
   2 & Attach an oscilloscope to the VOUT test point of the T-16 circuit board.  & A ramp function should be visible on the oscilloscope.& & & &\\
   \hline
   \multicolumn{3}{|l|} {\textbf{Overall Test result:}}& & & & \\
+  \hline
+\end{tabular}
+
+
+
+  1 & asdfasdfasd & fdasdfasdf & & & &\\
+  \hline
+  2 & asdfasdfasd & fdasdfasdf & & & &\\
+  \hline
+  3 & asdfasdfasd & fdasdfasdf & & & &\\
   \hline
 \end{tabular}
 
