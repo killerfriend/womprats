@@ -345,31 +345,30 @@ T-16 Synthesizer within 5 minutes of picking up the device for the
 first time. 
 \newpage
 \section {Test Forms}
-
 \begin{tabular}{|p{1.3in}|p{3in}|p{.8in}|p{.5in}|}
   \hline
-  \textbf{Test Case Name:} & Example Test & \textbf{Test ID \#:} & 1\\
+  \textbf{Test Case Name:} & Display Womprat on LCD screen & \textbf{Test ID \#:} & 1\\
   \hline
-  \textbf{Description:} & The Quick Brown Fox Jumps Over the Lazy Dog. & \textbf{Type:} & blackbox \\
+  \textbf{Description:} &
+The purpose of this test is to ensure that the interface between the EEPROM, the Microcontroller, and the LCD daughterboard work properly. The test involves reading the Womprat logo from the EEPROM into the Microcontroller and then sending the logo data to the LCD screen to display the logo. This will test the I$^2$C driver for the EEPROM, the SPI driver for the LCD screen, and also will ensure that the hardware involved is functional.
+  & \textbf{Type:} & whitebox \\
   \hline
   \multicolumn{4}{|l|}{\textbf{Tester Information}} \\ 
   \hline
-  \textbf{Name of Tester:} & & \textbf{Date:} & \\
+  \textbf{Name of Tester:} & Kevin Riedl& \textbf{Date:} & \\
   \hline
   \textbf{Hardware Ver:} & T-16 v1.0 & \textbf{Time:} & \\
   \hline
-  \textbf{Setup:} & \multicolumn{3}{l|}{Lorem Ipsum} \\
+  \textbf{Setup:} & \multicolumn{3}{|p{4.3in}|}{Properly powered Audio synth board plugged into LCD daughter board and JTAG} \\
   \hline
 \end{tabular}
 \begin{tabular}{|p{.3in}|p{1in}|p{1.3in}|p{.25in}|p{.25in}|p{.3in}|p{1.7in}|}
   \hline
   \textbf{Step} & \textbf{Action} & \textbf{Expected Result} & \textbf{Pass} & \textbf{Fail} & \textbf{N/A} & \textbf{Comments} \\
   \hline
-  1 & asdfasdfasd & fdasdfasdf & & & &\\
+  1 & Power Board (switch on) & LCD displaying Womprat logo and startup screen& & & & \\
   \hline
-  2 & asdfasdfasd & fdasdfasdf & & & &\\
-  \hline
-  3 & asdfasdfasd & fdasdfasdf & & & &\\
+  \multicolumn{3}{|l|} {\textbf{Overall Test result:}}& & & & \\
   \hline
 \end{tabular}
 
