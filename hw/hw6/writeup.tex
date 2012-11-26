@@ -345,6 +345,7 @@ T-16 Synthesizer within 5 minutes of picking up the device for the
 first time. 
 \newpage
 \section {Test Forms}
+\subsection {Integration Tests}
 \begin{tabular}{|p{1.3in}|p{3in}|p{.8in}|p{.5in}|}
   \hline
   \textbf{Test Case Name:} & Display Womprat on LCD screen & \textbf{Test ID \#:} & 1\\
@@ -372,30 +373,33 @@ The purpose of this test is to ensure that the interface between the EEPROM, the
   \hline
 \end{tabular}
 
+\subsection{Unit Tests}
 \begin{tabular}{|p{1.3in}|p{3in}|p{.8in}|p{.5in}|}
   \hline
-  \textbf{Test Case Name:} & Example Test & \textbf{Test ID \#:} & 1\\
+  \textbf{Test Case Name:} & EEPROM Read/Write Byte Test & \textbf{Test ID \#:} & 2\\
   \hline
-  \textbf{Description:} & The Quick Brown Fox Jumps Over the Lazy Dog. & \textbf{Type:} & blackbox \\
+  \textbf{Description:} &
+  This test is to verify that the EEPROM memory is both readable and writeable. To test this, we write a random (known) value to the EEPROM and then attempt to read back this known value. If the values are the same, we know that the memory write and read was successful. We need to do this in a few places in memory to verify that addressing is also working. 
+  & \textbf{Type:} & blackbox \\
   \hline
   \multicolumn{4}{|l|}{\textbf{Tester Information}} \\ 
   \hline
-  \textbf{Name of Tester:} & & \textbf{Date:} & \\
+  \textbf{Name of Tester:} & Bradon Kanyid & \textbf{Date:} & \\
   \hline
   \textbf{Hardware Ver:} & T-16 v1.0 & \textbf{Time:} & \\
   \hline
-  \textbf{Setup:} & \multicolumn{3}{l|}{Lorem Ipsum} \\
+  \textbf{Setup:} & \multicolumn{3}{l|}{Properly powered Audio synth board and JTAG interface} \\
   \hline
 \end{tabular}
 \begin{tabular}{|p{.3in}|p{1in}|p{1.3in}|p{.25in}|p{.25in}|p{.3in}|p{1.7in}|}
   \hline
   \textbf{Step} & \textbf{Action} & \textbf{Expected Result} & \textbf{Pass} & \textbf{Fail} & \textbf{N/A} & \textbf{Comments} \\
   \hline
-  1 & asdfasdfasd & fdasdfasdf & & & &\\
+  1 & Write random value to address 000, then read from address 000. & The value read is the same as the value written & & & &\\
   \hline
-  2 & asdfasdfasd & fdasdfasdf & & & &\\
+  2 & Write random value to address FFF, then read from address FFF. & The value read is the same as the value written & & & &\\
   \hline
-  3 & asdfasdfasd & fdasdfasdf & & & &\\
+  3 & Write random value to random address between 000 and FFF, then read back from same address & The value read is the same as the value written & & & &\\
   \hline
 \end{tabular}
 \end{document}
