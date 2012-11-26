@@ -320,6 +320,7 @@ The DAC-audio amplifier test verifies the DAC feeds the proper input values to t
 \end{itemize}
 
 \subsection{Display Womprat on LCD screen}
+The purpose of this test is to ensure that the interface between the EEPROM, the Microcontroller, and the LCD daughterboard work properly. The test involves reading the Womprat logo from the EEPROM into the Microcontroller and then sending the logo data to the LCD screen to display the logo. This will test the I$^2$C driver for the EEPROM, the SPI driver for the LCD screen, and also will ensure that the hardware involved is functional.
 \subsubsection{Required Equipment}
 \begin{itemize}
 \item Audio synthesizer board
@@ -327,8 +328,6 @@ The DAC-audio amplifier test verifies the DAC feeds the proper input values to t
 \item LCD daughter board
 \item JTAG programmer for Microcontroller
 \end{itemize}
-\subsubsection{Description}
-The purpose of this test is to ensure that the interface between the EEPROM, the Microcontroller, and the LCD daughterboard work properly. The test involves reading the Womprat logo from the EEPROM into the Microcontroller and then sending the logo data to the LCD screen to display the logo. This will test the I$^2$C driver for the EEPROM, the SPI driver for the LCD screen, and also will ensure that the hardware involved is functional.
 
 
 \section{Acceptance Tests}
@@ -340,9 +339,9 @@ situation. Several acceptance tests have been outlined below:
 The completed T-16 Synthesizer must not rise above $10^\circ$ Celsius
 while the internal amplifier is in use.
 \subsection{Untrained User}
-A completely untrained user must be able to make cool sounds with the
-T-16 Synthesizer within 5 minutes of picking up the device for the
-first time. 
+	The purpse of this test is to make sure that the finished product is easy
+	for an untrained person to pick up and start using. The maximum amount of
+	time they should take to figure out how it works is 5 minutes.
 \newpage
 \section {Test Forms}
 \subsection {Integration Tests}
@@ -363,7 +362,7 @@ The purpose of this test is to ensure that the interface between the EEPROM, the
   \textbf{Setup:} & \multicolumn{3}{|p{4.3in}|}{Properly powered Audio synth board plugged into LCD daughter board and JTAG} \\
   \hline
 \end{tabular}
-\begin{tabular}{|p{.3in}|p{1in}|p{1.3in}|p{.25in}|p{.25in}|p{.3in}|p{1.7in}|}
+\begin{tabular}{|p{.3in}|p{1.1in}|p{1.2in}|p{.25in}|p{.25in}|p{.3in}|p{1.7in}|}
   \hline
   \textbf{Step} & \textbf{Action} & \textbf{Expected Result} & \textbf{Pass} & \textbf{Fail} & \textbf{N/A} & \textbf{Comments} \\
   \hline
@@ -391,7 +390,7 @@ The purpose of this test is to ensure that the interface between the EEPROM, the
   \textbf{Setup:} & \multicolumn{3}{l|}{Properly powered Audio synth board and JTAG interface} \\
   \hline
 \end{tabular}
-\begin{tabular}{|p{.3in}|p{1in}|p{1.3in}|p{.25in}|p{.25in}|p{.3in}|p{1.7in}|}
+\begin{tabular}{|p{.3in}|p{1.1in}|p{1.2in}|p{.25in}|p{.25in}|p{.3in}|p{1.7in}|}
   \hline
   \textbf{Step} & \textbf{Action} & \textbf{Expected Result} & \textbf{Pass} & \textbf{Fail} & \textbf{N/A} & \textbf{Comments} \\
   \hline
@@ -400,6 +399,8 @@ The purpose of this test is to ensure that the interface between the EEPROM, the
   2 & Write random value to address FFF, then read from address FFF. & The value read is the same as the value written & & & &\\
   \hline
   3 & Write random value to random address between 000 and FFF, then read back from same address & The value read is the same as the value written & & & &\\
+  \hline
+  \multicolumn{3}{|l|} {\textbf{Overall Test result:}}& & & & \\
   \hline
 \end{tabular}
 \newpage
@@ -425,7 +426,7 @@ The purpose of this test is to ensure that the interface between the EEPROM, the
   \hline
 \end{tabular}
 
-\begin{tabular}{|p{.3in}|p{1in}|p{1.3in}|p{.25in}|p{.25in}|p{.3in}|p{1.7in}|}
+\begin{tabular}{|p{.3in}|p{1.1in}|p{1.2in}|p{.25in}|p{.25in}|p{.3in}|p{1.7in}|}
   \hline
   \textbf{Step} & \textbf{Action} & \textbf{Expected Result} & \textbf{Pass} & \textbf{Fail} & \textbf{N/A} & \textbf{Comments} \\
   \hline
@@ -437,5 +438,40 @@ The purpose of this test is to ensure that the interface between the EEPROM, the
   \hline
 \end{tabular}
 
+\newpage
+
+\subsection{Acceptance Tests}
+\begin{tabular}{|p{1.3in}|p{3in}|p{.8in}|p{.5in}|}
+  \hline
+  \textbf{Test Case Name:} & Untrained User Test & \textbf{Test ID \#:} & 4\\
+  \hline
+  \textbf{Description:} &
+
+	The purpse of this test is to make sure that the finished product is easy
+	for an untrained person to pick up and start using. The maximum amount of
+	time they should take to figure out how it works is 5 minutes.
+
+  & \textbf{Type:} & blackbox \\
+  \hline
+  \multicolumn{4}{|l|}{\textbf{Tester Information}} \\ 
+  \hline
+  \textbf{Name of Tester:} &  & \textbf{Date:} & \\
+  \hline
+  \textbf{Hardware Ver:} & T-16 v1.0 & \textbf{Time:} & \\
+  \hline
+  \textbf{Setup:} & \multicolumn{3}{l|}{Finished Audio synth board in working enclosure and Properly powered} \\
+  \hline
+\end{tabular}
+\begin{tabular}{|p{.3in}|p{1.1in}|p{1.2in}|p{.25in}|p{.25in}|p{.3in}|p{1.7in}|}
+  \hline
+  \textbf{Step} & \textbf{Action} & \textbf{Expected Result} & \textbf{Pass} & \textbf{Fail} & \textbf{N/A} & \textbf{Comments} \\
+  \hline
+  1 & Provide untratined user with completed synth & Untrained user will have completed synth & & & &\\
+  \hline
+  2 & Tell the untrained user to figure out how the synth works and start a 5 minute countdown & User will figure out how the synth works within 5 minutes & & & &\\
+  \hline
+  \multicolumn{3}{|l|} {\textbf{Overall Test result:}}& & & & \\
+  \hline
+\end{tabular}
 
 \end{document}
