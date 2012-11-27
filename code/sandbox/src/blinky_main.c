@@ -23,7 +23,6 @@
 
 /* Main Program */
 
-stMenu mainmenu;
 
 void drawWomprat()
 {
@@ -61,8 +60,22 @@ int main (void) {
    * from the startup code. SystemInit() and chip settings are defined
    * in the CMSIS system_<part family>.c file.
    */
+  stMenu chan1menu,chan2menu,chan3menu,chan4menu;
+  stMenu *channelMenus[4];
+  stMenu *currentMenu;
+  int menuIndex = 0;
 
-  fill_main_menu(&mainmenu);
+  fill_chan_menu(&chan1menu,1);
+  fill_chan_menu(&chan2menu,2);
+  fill_chan_menu(&chan3menu,3);
+  fill_chan_menu(&chan4menu,4);
+
+  channelMenus[0] = &chan1menu;
+  channelMenus[1] = &chan2menu;
+  channelMenus[2] = &chan3menu;
+  channelMenus[3] = &chan4menu;
+
+  currentMenu = channelMenus[menuIndex];
 
 	/* Initialize 32-bit timer 0. TIME_INTERVAL is defined as 10mS */
   /* You may also want to use the Cortex SysTick timer to do this */
@@ -85,8 +98,7 @@ int main (void) {
 
   for (;;)
   {
-	  run_menu(&mainmenu);
-	  mainmenu.options[1].sub_options[0].value = (mainmenu.options[1].sub_options[0].value + 1) % 1000;
-	  draw_menu(&mainmenu);
+	  run_menu(channelMenus, &menuIndex);
+	  //draw_menu(&chan1menu);
   }
 }

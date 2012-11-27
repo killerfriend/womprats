@@ -6,6 +6,8 @@
  */
 
 #include <string.h>
+#include <stdint.h>
+#include <stdio.h>
 #include "driver_config.h"
 #include "target_config.h"
 #include "gpio.h"
@@ -56,32 +58,35 @@ void draw_menu (stMenu *menu) {
 	} while( dog_NextPage() );
 }
 
-void fill_main_menu (stMenu *menu)
+void fill_chan_menu (stMenu *menu, int channel)
 {
-		memset(menu,0,sizeof(stMenu));
+	char scratch[10];
 
-		strcpy(menu->options[0].name,"Wave");
-			strcpy(menu->options[0].sub_options[0].name,"Sqr");
-			strcpy(menu->options[0].sub_options[1].name,"Tri");
-			strcpy(menu->options[0].sub_options[2].name,"Saw");
-			menu->options[0].num=3;
-			menu->options[0].selected = 0;
+	memset(menu,0,sizeof(stMenu));
 
-		strcpy(menu->options[1].name,"Set LFO");
-			strcpy(menu->options[1].sub_options[0].name,"000");
-			menu->options[1].sub_options[0].value = 100;
-			menu->options[1].sub_options[0].type = 1;
-			menu->options[1].num=1;
-			menu->options[1].selected = 0;
+	sprintf(scratch,"Channel %d", channel);
 
-		strcpy(menu->options[2].name,"Map Channels");
-		strcpy(menu->options[3].name,"Save Settings");
-		strcpy(menu->options[4].name,"Reset");
+	strcpy(menu->options[0].name,scratch);
 
-		menu->num = 5;
-		menu->selected = 0;
+	strcpy(menu->options[1].name,"Wave");
+		strcpy(menu->options[1].sub_options[0].name,"Sqr");
+		strcpy(menu->options[1].sub_options[1].name,"Tri");
+		strcpy(menu->options[1].sub_options[2].name,"Saw");
+		menu->options[1].num=3;
+		menu->options[1].selected = 0;
 
-		precalc_menu(menu,4,4);
+	strcpy(menu->options[2].name,"Button");
+		strcpy(menu->options[2].sub_options[0].name,"Mom");
+		strcpy(menu->options[2].sub_options[1].name,"Hold");
+		menu->options[2].num=2;
+		menu->options[2].selected = 0;
+
+	strcpy(menu->options[3].name,"Save Settings");
+	strcpy(menu->options[4].name,"Reset");
+	menu->num = 5;
+	menu->selected = 1;
+
+	precalc_menu(menu,3,3);
 }
 
 void precalc_menu (stMenu *menu,int y_spacing,int x_spacing) {
@@ -138,8 +143,11 @@ inline static _Bool getbit(uint32_t port, uint32_t bit)
     return !! LPC_GPIO[port]->MASKED_ACCESS[1 << bit];
 }
 
-int run_menu(stMenu *menu)
+int run_menu(stMenu *menus[], int *menuIndex)
 {
+	stMenu *menu;
+	menu = menus[*menuIndex];
+
 	int state;
 	static int laststate = 0;
 
@@ -153,23 +161,35 @@ int run_menu(stMenu *menu)
 	if (state != laststate)
 	{
 		laststate = state;
-		if ((state & 2) == 0)
+
+		if ((state & BTN_DN_MASK) == 0)
+		{
 			menu->selected=(menu->selected+1)%menu->num;
-		if ((state & 1) == 0)
+			if (menu->selected > menu->num || menu->selected == 0) menu->selected=1;
+		}
+		if ((state & BTN_UP_MASK) == 0)
+		{
 			menu->selected=(menu->selected-1);
-		if (menu->selected<0) menu->selected=menu->num-1;
+			if (menu->selected < 1) menu->selected=menu->num-1;
+		}
 
-		 if (menu->options[menu->selected].num) {
+		if (menu->options[menu->selected].num)
+   			if ((state & BTN_OK_MASK) == 0)
+   				menu->options[menu->selected].selected=(menu->options[menu->selected].selected+1) % menu->options[menu->selected].num;
 
-   			if ((state & 4) == 0)
-   				menu->options[menu->selected].selected=(menu->options[menu->selected].selected-1);
-   			else if ((state & 8) == 0)
-   				menu->options[menu->selected].selected=(menu->options[menu->selected].selected+1) %
-		 		  										 							menu->options[menu->selected].num;
+		if ((state & BTN_LT_MASK) == 0)
+		{
+			if (*menuIndex > 0)
+				*menuIndex = *menuIndex - 1;
+			menu = menus[*menuIndex];
+		}
 
-			if (menu->options[menu->selected].selected<0) menu->options[menu->selected].selected=
-		 		  										 							menu->options[menu->selected].num-1;
-		 }
+		if ((state & BTN_RT_MASK) == 0)
+		{
+			if (*menuIndex < (NUM_MENUS - 1))
+				*menuIndex = *menuIndex + 1;
+			menu = menus[*menuIndex];
+		}
 
 		draw_menu(menu);
 	}
