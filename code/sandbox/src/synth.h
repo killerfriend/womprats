@@ -9,7 +9,7 @@
 #define SYNTH_H_
 
 #define SYNTH_NUM_CHAN 6
-#define SYNTH_SAMPLE_RATE 9600
+#define SYNTH_SAMPLE_RATE 19200
 #define SYNTH_BITWIDTH 12
 
 /**

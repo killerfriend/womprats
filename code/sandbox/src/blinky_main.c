@@ -51,12 +51,13 @@ int main(void) {
 	int i;
 	for (i = 0; i < 6; i++) {
 		synth_channels[i].freq = 100 * i;
-		synth_channels[i].amp = 1 << (16 - i);
-		synth_channels[i].func = SYNTH_SAW;
+		synth_channels[i].amp = 1 << (20 - i);
+		synth_channels[i].func = SYNTH_SQUARE;
 	}
 
 	while (1) {
 		int tmp = 500 * ADCValue[1]/512;
+		tmp = tmp < 10 ? 0 : tmp;
 		for (i = 0; i < 6; i++)
 			synth_channels[i].freq = tmp*(i+1);
 
