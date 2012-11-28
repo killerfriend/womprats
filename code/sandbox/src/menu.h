@@ -17,6 +17,10 @@ typedef struct
  	int type;
 } menuSubOption;
 
+#define MNU_TYPE_EXCL    0
+#define MNU_TYPE_PERCENT 1
+#define MNU_TYPE_FREQ    2
+
 typedef struct
 {
  	int x,y; /* Start X,Y */

@@ -14,6 +14,8 @@
 #include "lcd_lib/dogm128.h"
 #include "menu.h"
 
+int modifyMode = 0;
+
 void draw_menu (stMenu *menu) {
 
 	DOG_PGM_P p;
@@ -34,8 +36,18 @@ void draw_menu (stMenu *menu) {
 
 				menuSubOption *sOption = &(menu->options[i].sub_options[j]);
 
-				if (sOption->type)
-					sprintf(sOption->name, "%03d", sOption->value);
+				switch(sOption->type)
+				{
+				case MNU_TYPE_PERCENT:
+					sprintf(sOption->name, "%03d%%", sOption->value);
+					break;
+				case MNU_TYPE_FREQ:
+					sprintf(sOption->name, "%04d", sOption->value);
+					break;
+
+				default:
+					break;
+				}
 
 				dog_DrawStrP(sOption->x,
 							 sOption->y,
@@ -43,10 +55,11 @@ void draw_menu (stMenu *menu) {
 							 sOption->name);
 
 				if (j==menu->options[i].selected)
-					dog_XorBox(sOption->x-1,
-								 sOption->y,
-								 sOption->ex,
-								 sOption->ey);
+					if ((menu->options[i].num != 1) || (menu->options[i].num == 1 && menu->selected==i && modifyMode))
+						dog_XorBox(sOption->x-1,
+									 sOption->y,
+									 sOption->ex,
+									 sOption->ey);
 
 			}
 		}
@@ -82,7 +95,13 @@ void fill_chan_menu (stMenu *menu, int channel)
 		menu->options[2].selected = 0;
 
 	strcpy(menu->options[3].name,"Save Settings");
-	strcpy(menu->options[4].name,"Reset");
+	strcpy(menu->options[4].name,"Modify");
+		strcpy(menu->options[4].sub_options[0].name,"001%");
+		menu->options[4].sub_options[0].type=MNU_TYPE_PERCENT;
+		menu->options[4].sub_options[0].value=1;
+		menu->options[4].num=1;
+		menu->options[4].selected=0;
+
 	menu->num = 5;
 	menu->selected = 1;
 
@@ -148,6 +167,8 @@ int run_menu(stMenu *menus[], int *menuIndex)
 	stMenu *menu;
 	menu = menus[*menuIndex];
 
+	menuSubOption *subOpt;
+
 	int state;
 	static int laststate = 0;
 
@@ -162,33 +183,73 @@ int run_menu(stMenu *menus[], int *menuIndex)
 	{
 		laststate = state;
 
-		if ((state & BTN_DN_MASK) == 0)
+		switch(modifyMode)
 		{
-			menu->selected=(menu->selected+1)%menu->num;
-			if (menu->selected > menu->num || menu->selected == 0) menu->selected=1;
-		}
-		if ((state & BTN_UP_MASK) == 0)
-		{
-			menu->selected=(menu->selected-1);
-			if (menu->selected < 1) menu->selected=menu->num-1;
-		}
+		case 0:
+			if ((state & BTN_DN_MASK) == 0)
+			{
+				menu->selected=(menu->selected+1)%menu->num;
+				if (menu->selected > menu->num || menu->selected == 0) menu->selected=1;
+			}
+			if ((state & BTN_UP_MASK) == 0)
+			{
+				menu->selected=(menu->selected-1);
+				if (menu->selected < 1) menu->selected=menu->num-1;
+			}
 
-		if (menu->options[menu->selected].num)
-   			if ((state & BTN_OK_MASK) == 0)
-   				menu->options[menu->selected].selected=(menu->options[menu->selected].selected+1) % menu->options[menu->selected].num;
+			if (menu->options[menu->selected].num)
+				if ((state & BTN_OK_MASK) == 0)
+					menu->options[menu->selected].selected=(menu->options[menu->selected].selected+1) % menu->options[menu->selected].num;
 
-		if ((state & BTN_LT_MASK) == 0)
-		{
-			if (*menuIndex > 0)
-				*menuIndex = *menuIndex - 1;
-			menu = menus[*menuIndex];
-		}
+			if ((state & BTN_LT_MASK) == 0)
+			{
+				if (*menuIndex > 0)
+					*menuIndex = *menuIndex - 1;
+				menu = menus[*menuIndex];
+			}
 
-		if ((state & BTN_RT_MASK) == 0)
-		{
-			if (*menuIndex < (NUM_MENUS - 1))
-				*menuIndex = *menuIndex + 1;
-			menu = menus[*menuIndex];
+			if ((state & BTN_RT_MASK) == 0)
+			{
+				if (*menuIndex < (NUM_MENUS - 1))
+					*menuIndex = *menuIndex + 1;
+				menu = menus[*menuIndex];
+			}
+
+			if ((state & BTN_AU_MASK) == 0)
+			{
+				if (menu->options[menu->selected].num == 1)
+					if (menu->options[menu->selected].sub_options[0].type != MNU_TYPE_EXCL)
+						modifyMode ^= 1;
+			}
+			break;
+		case 1:
+			subOpt = &(menu->options[menu->selected].sub_options[0]);
+
+			if ((state & BTN_UP_MASK) == 0)
+				if (subOpt->type  == MNU_TYPE_PERCENT)
+					if (subOpt->value < 100)
+						subOpt->value += 1;
+
+			if ((state & BTN_DN_MASK) == 0)
+				if (subOpt->type == MNU_TYPE_PERCENT)
+					if (subOpt->value > 0)
+						subOpt->value -= 1;
+
+			if ((state & BTN_RT_MASK) == 0)
+				if (subOpt->type  == MNU_TYPE_PERCENT)
+					if (subOpt->value <= 90)
+						subOpt->value += 10;
+
+			if ((state & BTN_LT_MASK) == 0)
+				if (subOpt->type == MNU_TYPE_PERCENT)
+					if (subOpt->value >= 10)
+						subOpt->value -= 10;
+
+			if ((state & BTN_AU_MASK) == 0)
+			{
+				modifyMode ^= 1;
+			}
+			break;
 		}
 
 		draw_menu(menu);
