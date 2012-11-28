@@ -232,8 +232,8 @@ void init_timer32(uint8_t timer_num, uint32_t TimerInterval)
     LPC_IOCON->PIO1_6 |= 0x02;	/* Timer0_32 MAT0 */
     LPC_IOCON->PIO1_7 &= ~0x07;
     LPC_IOCON->PIO1_7 |= 0x02;	/* Timer0_32 MAT1 */
-    LPC_IOCON->PIO0_1 &= ~0x07;	
-    LPC_IOCON->PIO0_1 |= 0x02;	/* Timer0_32 MAT2 */
+//    LPC_IOCON->PIO0_1 &= ~0x07;
+//    LPC_IOCON->PIO0_1 |= 0x02;	/* Timer0_32 MAT2 */
 #ifdef __JTAG_DISABLED
     LPC_IOCON->JTAG_TDI_PIO0_11 &= ~0x07;	
     LPC_IOCON->JTAG_TDI_PIO0_11 |= 0x03;	/* Timer0_32 MAT3 */

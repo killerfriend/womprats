@@ -38,7 +38,7 @@
 /* When test serial SEEPROM(LOOPBACK_MODE=0, TX_RX_ONLY=0), set USE_CS to 0. */
 /* When LOOPBACK_MODE=1 or TX_RX_ONLY=1, set USE_CS to 1. */
 
-#define USE_CS			0
+#define USE_CS			1
 #define SSP_DEBUG		0
 
 /* SPI read and write buffer size */
@@ -111,7 +111,7 @@ extern void SSP0_IRQHandler (void);
 extern void SSP1_IRQHandler (void);
 extern void SSP_IOConfig( uint8_t portNum );
 extern void SSP_Init( uint8_t portNum );
-extern void SSP_Send( uint8_t portNum, uint8_t *Buf, uint32_t Length );
+extern void SSP_Send( uint8_t portNum, uint16_t *Buf, uint32_t Length );
 extern void SSP_Receive( uint8_t portNum, uint8_t *buf, uint32_t Length );
 
 #endif
