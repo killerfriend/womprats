@@ -53,6 +53,9 @@ void SetupLEDs()
   /* Set LED port pin to output */
   GPIOSetDir( LED_PORT, LED_BIT, 1 );
   GPIOSetValue( LED_PORT, LED_BIT, LED_OFF );
+
+  GPIOSetDir( 1, 1, 1);
+  GPIOSetValue( 1, 1, 1);
 }
 
 int main (void) {
@@ -86,19 +89,23 @@ int main (void) {
   enable_timer32(0);
   UARTInit(9600);
 
-  dog_Init(0);
-
-  drawWomprat();
-
   /* Initialize GPIO (sets up clock) */
   GPIOInit();
 
+  LPC_IOCON->R_PIO1_1 &= ~(3);
+  LPC_IOCON->R_PIO1_1 |= (1);
+
   SetupButtons();
   SetupLEDs();
+
+  dog_Init(0);
+  drawWomprat();
 
   for (;;)
   {
 	  run_menu(channelMenus, &menuIndex);
 	  //draw_menu(&chan1menu);
+
   }
 }
+
