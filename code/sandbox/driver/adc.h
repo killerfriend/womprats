@@ -35,6 +35,65 @@
 #endif
 
 
+// Define the ADC enables
+#ifdef ADC_EN_AD0
+#define ADC_STATE_AD0 1
+#else
+#define ADC_STATE_AD0 0
+#endif
+
+#ifdef ADC_EN_AD1
+#define ADC_STATE_AD1 1
+#else
+#define ADC_STATE_AD1 0
+#endif
+
+#ifdef ADC_EN_AD2
+#define ADC_STATE_AD2 1
+#else
+#define ADC_STATE_AD2 0
+#endif
+
+#ifdef ADC_EN_AD3
+#define ADC_STATE_AD3 1
+#else
+#define ADC_STATE_AD3 0
+#endif
+
+#ifdef ADC_EN_AD4
+#define ADC_STATE_AD4 1
+#else
+#define ADC_STATE_AD4 0
+#endif
+
+#ifdef ADC_EN_AD5
+#define ADC_STATE_AD5 1
+#else
+#define ADC_STATE_AD5 0
+#endif
+
+#ifdef ADC_EN_AD6
+#define ADC_STATE_AD6 1
+#else
+#define ADC_STATE_AD6 0
+#endif
+
+#ifdef ADC_EN_AD7
+#define ADC_STATE_AD7 1
+#else
+#define ADC_STATE_AD7 0
+#endif
+
+// enable mask for burst mode
+#define ADC_EN_MASK ((ADC_STATE_AD7 << 7) | \
+		(ADC_STATE_AD6 << 6) | \
+		(ADC_STATE_AD5 << 5) | \
+		(ADC_STATE_AD4 << 4) | \
+		(ADC_STATE_AD3 << 3) | \
+		(ADC_STATE_AD2 << 2) | \
+		(ADC_STATE_AD1 << 1) | \
+		(ADC_STATE_AD0 << 0))
+
 
 #define ADC_OFFSET		0x10
 #define ADC_INDEX		4
@@ -44,7 +103,7 @@
 #define ADC_ADINT		0x00010000
 
 #define ADC_NUM			8			/* for LPC11xx */
-#define ADC_CLK			2400000		/* set to 2.4Mhz */
+#define ADC_CLK			1000000		/* set to 1Mhz */
 
 #ifndef CONFIG_ADC_DEFAULT_ADC_IRQHANDLER
 #define CONFIG_ADC_DEFAULT_ADC_IRQHANDLER 1

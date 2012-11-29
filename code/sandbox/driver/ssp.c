@@ -130,7 +130,7 @@ void SSP_IOConfig( uint8_t portNum )
 {
   LPC_SYSCON->PRESETCTRL |= (0x1<<0);
 	LPC_SYSCON->SYSAHBCLKCTRL |= (0x1<<11);
-	LPC_SYSCON->SSP0CLKDIV = 0x02;			/* Divided by 2 */
+	LPC_SYSCON->SSP0CLKDIV = 0x01;			/* Divided by 2 */
   LPC_IOCON->PIO0_8           &= ~0x07;	/*  SSP I/O config */
   LPC_IOCON->PIO0_8           |= 0x01;		/* SSP MISO */
   LPC_IOCON->PIO0_9           &= ~0x07;	
@@ -147,8 +147,10 @@ void SSP_IOConfig( uint8_t portNum )
 	LPC_IOCON->PIO2_11 = 0x01;	/* P2.11 function 1 is SSP clock, need to 
 								combined with IOCONSCKLOC register setting */
 #else
-	LPC_IOCON->SCK_LOC = 0x02;
-	LPC_IOCON->PIO0_6 = 0x02;	/* P0.6 function 2 is SSP clock, need to 
+
+	LPC_IOCON->SCK_LOC = 0x2;
+	LPC_IOCON->PIO0_6 &= ~(0b111);
+	LPC_IOCON->PIO0_6 |= 0x02;/* P0.6 function 2 is SSP clock, need to
 								combined with IOCONSCKLOC register setting */
 #endif
 #endif	/* endif __JTAG_DISABLED */  
@@ -210,10 +212,10 @@ void SSP_Init( uint8_t portNum )
   if ( portNum == 0 )
   {
   /* Set DSS data to 8-bit, Frame format SPI, CPOL = 0, CPHA = 0, and SCR is 15 */
-	LPC_SSP0->CR0 = 0x0707;
+	LPC_SSP0->CR0 = 0x000F;
 
   /* SSPCPSR clock prescale register, master mode, minimum divisor is 0x02 */
-	LPC_SSP0->CPSR = 0x2;
+	LPC_SSP0->CPSR = 16;
 
   for ( i = 0; i < FIFOSIZE; i++ )
   {
@@ -297,7 +299,7 @@ void SSP_Init( uint8_t portNum )
 ** Returned value:		None
 ** 
 *****************************************************************************/
-void SSP_Send( uint8_t portNum, uint8_t *buf, uint32_t Length )
+void SSP_Send( uint8_t portNum, uint16_t *buf, uint32_t Length )
 {
   uint32_t i;
   uint8_t Dummy = Dummy;

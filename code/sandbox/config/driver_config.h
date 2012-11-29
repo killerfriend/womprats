@@ -10,16 +10,16 @@
 
 #include <LPC11xx.h>
 
-#define CONFIG_ENABLE_DRIVER_CRP						0
+#define CONFIG_ENABLE_DRIVER_CRP						1
 #define CONFIG_CRP_SETTING_NO_CRP						1
 
 #define CONFIG_ENABLE_DRIVER_ADC						1
 #define CONFIG_ADC_ENABLE_ADC_IRQHANDLER				1
-#define CONFIG_ADC_ENABLE_BURST_MODE					0
+#define CONFIG_ADC_ENABLE_BURST_MODE					1
 #define CONFIG_ADC_ENABLE_DEBUG_MODE					1
 
 #define CONFIG_ENABLE_DRIVER_CAN						0
-#define CONFIG_ENABLE_DRIVER_CLKCONFIG					1
+#define CONFIG_ENABLE_DRIVER_CLKCONFIG					0
 #define CONFIG_ENABLE_DRIVER_PRINTF						0
 #define CONFIG_ENABLE_DRIVER_GPIO						1
 #define CONFIG_ENABLE_DRIVER_I2C						1
@@ -36,6 +36,18 @@
 #define CONFIG_ENABLE_DRIVER_WDT						0
 
 #define CONFIG_TIMER32_DEFAULT_TIMER32_0_IRQHANDLER		1
-#define CONFIG_I2C_DEFAULT_I2C_IRQHANDLER				1
+
+// These defines determine if each ADC should be turned on.
+//#define ADC_EN_AD0
+#define ADC_EN_AD1
+//#define ADC_EN_AD2
+//#define ADC_EN_AD3
+// #define ADC_EN_AD4 // Be careful, this pin is shared with SWDIO
+//#define ADC_EN_AD5
+//#define ADC_EN_AD6
+#define ADC_EN_AD7
+
+
+
  /* DRIVER_CONFIG_H_ */
 #endif

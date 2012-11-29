@@ -50,7 +50,9 @@ extern "C" {
 #if defined (__USE_CMSIS)
 #include "system_LPC11xx.h"
 #endif
-
+#include "target_config.h"
+#include "driver_config.h"
+#include "gpio.h"
 //*****************************************************************************
 #if defined (__cplusplus)
 extern "C" {
@@ -371,8 +373,12 @@ void SysTick_Handler(void)
 __attribute__ ((section(".after_vectors")))
 void IntDefaultHandler(void)
 {
+	GPIOInit();
+	GPIOSetDir(LED0_PORT, LED0_BIT, 1);
     while(1)
     {
+	    GPIOSetValue(LED0_PORT, LED0_BIT, LED_OFF);
+	    GPIOSetValue(LED0_PORT, LED0_BIT, LED_ON);
     }
 }
 
