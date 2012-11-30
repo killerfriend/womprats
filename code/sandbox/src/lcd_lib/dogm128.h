@@ -54,7 +54,7 @@
 
 //#define DOG_REVERSE			/* uncomment for 180 degree rotation */
 
-#define DOG_DOUBLE_MEMORY		/* uncomment for speed improvement */
+//#define DOG_DOUBLE_MEMORY		/* uncomment for speed improvement */
 
 //#define DOGM128_HW				/* uncomment for the DOGM128 display */
 #define DOGS102_HW				/* uncomment for the DOGS102 display */

@@ -65,20 +65,22 @@ int main (void) {
    * from the startup code. SystemInit() and chip settings are defined
    * in the CMSIS system_<part family>.c file.
    */
-  stMenu chan1menu,chan2menu,chan3menu,chan4menu;
-  stMenu *channelMenus[4];
-  stMenu *currentMenu;
+  stMenu chan1menu,chan2menu,chan3menu,chan4menu,chan5menu,chan6menu; stMenu *channelMenus[6]; stMenu *currentMenu;
   int menuIndex = 0;
 
   fill_chan_menu(&chan1menu,1);
   fill_chan_menu(&chan2menu,2);
   fill_chan_menu(&chan3menu,3);
   fill_chan_menu(&chan4menu,4);
+  fill_chan_menu(&chan5menu,5);
+  fill_chan_menu(&chan6menu,6);
 
   channelMenus[0] = &chan1menu;
   channelMenus[1] = &chan2menu;
   channelMenus[2] = &chan3menu;
   channelMenus[3] = &chan4menu;
+  channelMenus[4] = &chan5menu;
+  channelMenus[5] = &chan6menu;
 
   currentMenu = channelMenus[menuIndex];
 
@@ -126,7 +128,10 @@ int main (void) {
 			synth_channels[i + 3].freq = tmp1*(i+1);
 		}
 
-	  run_menu(channelMenus, &menuIndex);
+		for (i = 0; i < 6; i++)
+			synth_channels[i].func = channelMenus[i]->options[1].selected;
+
+		run_menu(channelMenus, &menuIndex);
+
   }
 }
-

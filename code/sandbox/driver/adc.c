@@ -75,7 +75,7 @@ void ADC_IRQHandler (void)
 	  LPC_ADC->CR &= 0xF8FFFFFF;	/* stop ADC now */
 	  channel_flag = 0; 
 	  ADCIntDone = 1;
-	  GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
+	  //GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
 	}
 #else
 	LPC_ADC->CR &= 0xF8FFFFFF;	/* stop ADC now */ 
@@ -217,7 +217,7 @@ uint32_t ADCRead( uint8_t channelNum )
 void ADCBurstRead( void )
 {
 	ADCIntDone = 0;
-	GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
+	//GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
 	if ( LPC_ADC->CR & (0x7<<24) ) {
 		LPC_ADC->CR &= ~(0x7<<24);
 	}

@@ -38,7 +38,7 @@ void SysTick_Handler(void)
 
 	int i;
 	int oscdone = 0;
-	//GPIOSetValue(LED_PORT, LED_BIT, LED_ON);
+//	GPIOSetValue(LED2_PORT, LED2_BIT, LED_ON);
 	for(i = 0; i < SYNTH_NUM_CHAN; i++) {
 		update_osc(i);
 		oscdone |= oscillators[i].curpos == 0
@@ -51,7 +51,7 @@ void SysTick_Handler(void)
 	}
 
 	dac_send(sum_osc());
-	//GPIOSetValue(LED_PORT, LED_BIT, LED_OFF);
+//	GPIOSetValue(LED2_PORT, LED2_BIT, LED_OFF);
 
 } 
 int synth_init()
@@ -130,9 +130,6 @@ void update_osc(int num)
 		osc->curpos = osc->amp;
 		
 	}
-		
-	
-	
 		
 }
 

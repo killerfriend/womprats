@@ -26,6 +26,8 @@ void draw_menu (stMenu *menu) {
 	dog_StartPage();
 	do
 	{
+		GPIOSetValue(LED2_PORT, LED2_BIT, LED_ON);
+
 		for (i=0;i<menu->num;i++){
 			dog_DrawStrP(menu->options[i].x, menu->options[i].y, p, menu->options[i].name);
 
@@ -68,6 +70,8 @@ void draw_menu (stMenu *menu) {
 		dog_SetVLine(0,0,63);
 		dog_SetVLine(101,0,63);
 
+		GPIOSetValue(LED2_PORT, LED2_BIT, LED_OFF);
+
 	} while( dog_NextPage() );
 }
 
@@ -82,9 +86,9 @@ void fill_chan_menu (stMenu *menu, int channel)
 	strcpy(menu->options[0].name,scratch);
 
 	strcpy(menu->options[1].name,"Wave");
-		strcpy(menu->options[1].sub_options[0].name,"Sqr");
-		strcpy(menu->options[1].sub_options[1].name,"Tri");
-		strcpy(menu->options[1].sub_options[2].name,"Saw");
+		strcpy(menu->options[1].sub_options[0].name,"Saw");
+		strcpy(menu->options[1].sub_options[1].name,"Sqr");
+		strcpy(menu->options[1].sub_options[2].name,"Tri");
 		menu->options[1].num=3;
 		menu->options[1].selected = 0;
 
@@ -94,15 +98,14 @@ void fill_chan_menu (stMenu *menu, int channel)
 		menu->options[2].num=2;
 		menu->options[2].selected = 0;
 
-	strcpy(menu->options[3].name,"Save Settings");
-	strcpy(menu->options[4].name,"Modify");
-		strcpy(menu->options[4].sub_options[0].name,"001%");
-		menu->options[4].sub_options[0].type=MNU_TYPE_PERCENT;
-		menu->options[4].sub_options[0].value=1;
-		menu->options[4].num=1;
-		menu->options[4].selected=0;
+	strcpy(menu->options[3].name,"Modify");
+		strcpy(menu->options[3].sub_options[0].name,"001%");
+		menu->options[3].sub_options[0].type=MNU_TYPE_PERCENT;
+		menu->options[3].sub_options[0].value=1;
+		menu->options[3].num=1;
+		menu->options[3].selected=0;
 
-	menu->num = 5;
+	menu->num = 4;
 	menu->selected = 1;
 
 	precalc_menu(menu,3,3);
@@ -171,6 +174,8 @@ int run_menu(stMenu *menus[], int *menuIndex)
 
 	int state;
 	static int laststate = 0;
+
+	GPIOSetValue(LED0_PORT, LED0_BIT, LED_ON);
 
 	state = getbit(UI_BUTTONS_PORT, UI_BUTTON_UP) |
 			getbit(UI_BUTTONS_PORT, UI_BUTTON_DOWN) << 1 |
@@ -254,5 +259,7 @@ int run_menu(stMenu *menus[], int *menuIndex)
 
 		draw_menu(menu);
 	}
+
+	GPIOSetValue(LED0_PORT, LED0_BIT, LED_OFF);
 	return 0;
 }

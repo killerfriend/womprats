@@ -23,8 +23,8 @@
 #define LED2_PORT 0
 #define LED2_BIT 3
 
-#define LED_PORT LED0_PORT	// Port for led
-#define LED_BIT LED0_BIT	// Bit on port for led
+#define LED_PORT LED2_PORT	// Port for led
+#define LED_BIT LED2_BIT	// Bit on port for led
 
 
 #define LCD_SPI_PORT 1
@@ -35,11 +35,11 @@
 #define LCD_RESET_BIT 5
 
 #define UI_BUTTONS_PORT 2
-#define UI_BUTTON_UP 4
-#define UI_BUTTON_DOWN 5
-#define UI_BUTTON_LEFT 6
-#define UI_BUTTON_RIGHT 7
-#define UI_BUTTON_OK 8
+#define UI_BUTTON_UP 5
+#define UI_BUTTON_DOWN 7
+#define UI_BUTTON_LEFT 4
+#define UI_BUTTON_RIGHT 8
+#define UI_BUTTON_OK 6
 #define UI_BUTTON_AUX 9
 
 /*********************************************************************************
