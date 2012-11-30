@@ -38,7 +38,7 @@
 #define CONFIG_TIMER32_DEFAULT_TIMER32_0_IRQHANDLER		1
 
 // These defines determine if each ADC should be turned on.
-//#define ADC_EN_AD0
+#define ADC_EN_AD0
 #define ADC_EN_AD1
 //#define ADC_EN_AD2
 //#define ADC_EN_AD3

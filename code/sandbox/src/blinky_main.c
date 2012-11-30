@@ -107,17 +107,24 @@ int main (void) {
   drawWomprat();
 
 	int i;
-	for (i = 0; i < 6; i++) {
+	for (i = 0; i < 3; i++) {
 		synth_channels[i].freq = 100 * i;
 		synth_channels[i].amp = 1 << (20 - i);
 		synth_channels[i].func = SYNTH_SQUARE;
+		synth_channels[i+3].freq = 100 * i;
+		synth_channels[i+3].amp = 1 << (20 - i);
+		synth_channels[i+3].func = SYNTH_SQUARE;
 	}
 
 	while (1) {
-		int tmp = 500 * ADCValue[1]/512;
-		tmp = tmp < 10 ? 0 : tmp;
-		for (i = 0; i < 6; i++)
-			synth_channels[i].freq = tmp*(i+1);
+		int tmp0 = 500 * ADCValue[0]/512;
+		int tmp1 = 500 * ADCValue[1]/512;
+		tmp0 = tmp0 < 10 ? 0 : tmp0;
+		tmp1 = tmp1 < 10 ? 0 : tmp1;
+		for (i = 0; i < 3; i++) {
+			synth_channels[i].freq = tmp0*(i+1);
+			synth_channels[i + 3].freq = tmp1*(i+1);
+		}
 
 	  run_menu(channelMenus, &menuIndex);
   }
