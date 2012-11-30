@@ -27,6 +27,21 @@
 #define LED_BIT LED0_BIT	// Bit on port for led
 
 
+#define LCD_SPI_PORT 1
+
+#define LCD_GPIO_PORT 1
+#define LCD_CE_BIT 8
+#define LCD_CD_BIT 9
+#define LCD_RESET_BIT 5
+
+#define UI_BUTTONS_PORT 2
+#define UI_BUTTON_UP 4
+#define UI_BUTTON_DOWN 5
+#define UI_BUTTON_LEFT 6
+#define UI_BUTTON_RIGHT 7
+#define UI_BUTTON_OK 8
+#define UI_BUTTON_AUX 9
+
 /*********************************************************************************
 **                            End Of File
 *********************************************************************************/
