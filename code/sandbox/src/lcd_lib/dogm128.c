@@ -126,7 +126,8 @@ void dog_Delay(uint16_t val)
 #else
 void dog_Delay(uint16_t val)
 {
-  int i,j;
+  int i;
+  volatile int j;
   j = 0;
   for(i = 0; i < (2000*val); i++)
 	  j++;

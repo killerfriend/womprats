@@ -76,53 +76,86 @@ void SetupLEDs()
   GPIOSetValue( LCD_GPIO_PORT, LCD_BACKLIGHT_BIT, LED_ON);
 }
 
+int ProcessToggleButton(int channel)
+{
+
+#define INTEGRATOR_MAX 500
+
+	static int integrator[6] = {0,0,0,0,0,0};
+	static int output[6] = {1,1,1,1,1,1};
+
+	int button_state;
+
+	button_state = (!! LPC_GPIO[CHAN_BUTTONS_PORT]->MASKED_ACCESS[1 << channel]);
+
+	if (button_state == 0)
+	{
+		if (integrator[channel] > 0)
+			integrator[channel]--;
+	}
+	else if (integrator[channel] < INTEGRATOR_MAX)
+		integrator[channel]++;
+
+	if (integrator[channel] == 0)
+	{
+		output[channel] = 0;
+	}
+	else if (integrator[channel] >= INTEGRATOR_MAX)
+	{
+		integrator[channel] = INTEGRATOR_MAX;
+		output[channel] = 1;
+	}
+	return !(output[channel]);
+}
+
 int main (void) {
   /* Basic chip initialization is taken care of in SystemInit() called
    * from the startup code. SystemInit() and chip settings are defined
    * in the CMSIS system_<part family>.c file.
    */
-  stMenu chan1menu,chan2menu,chan3menu,chan4menu,chan5menu,chan6menu; stMenu *channelMenus[6]; stMenu *currentMenu;
-  int menuIndex = 0;
+	stMenu chan1menu,chan2menu,chan3menu,chan4menu,chan5menu,chan6menu;
+	stMenu *channelMenus[6]; stMenu *currentMenu;
+	int menuIndex = 0;
 
-  fill_chan_menu(&chan1menu,1);
-  fill_chan_menu(&chan2menu,2);
-  fill_chan_menu(&chan3menu,3);
-  fill_chan_menu(&chan4menu,4);
-  fill_chan_menu(&chan5menu,5);
-  fill_chan_menu(&chan6menu,6);
+	fill_chan_menu(&chan1menu,1);
+	fill_chan_menu(&chan2menu,2);
+	fill_chan_menu(&chan3menu,3);
+	fill_chan_menu(&chan4menu,4);
+	fill_chan_menu(&chan5menu,5);
+	fill_chan_menu(&chan6menu,6);
 
-  channelMenus[0] = &chan1menu;
-  channelMenus[1] = &chan2menu;
-  channelMenus[2] = &chan3menu;
-  channelMenus[3] = &chan4menu;
-  channelMenus[4] = &chan5menu;
-  channelMenus[5] = &chan6menu;
+	channelMenus[0] = &chan1menu;
+	channelMenus[1] = &chan2menu;
+	channelMenus[2] = &chan3menu;
+	channelMenus[3] = &chan4menu;
+	channelMenus[4] = &chan5menu;
+	channelMenus[5] = &chan6menu;
 
-  currentMenu = channelMenus[menuIndex];
+	currentMenu = channelMenus[menuIndex];
 
 	/* Initialize 32-bit timer 0. TIME_INTERVAL is defined as 10mS */
-  /* You may also want to use the Cortex SysTick timer to do this */
-  init_timer32(0, TIME_INTERVAL);
-  /* Enable timer 0. Our interrupt handler will begin incrementing
-   * the TimeTick global each time timer 0 matches and resets.
-   */
-  enable_timer32(0);
+	/* You may also want to use the Cortex SysTick timer to do this */
+	init_timer32(0, TIME_INTERVAL);
+	/* Enable timer 0. Our interrupt handler will begin incrementing
+	* the TimeTick global each time timer 0 matches and resets.
+	*/
+	enable_timer32(0);
 
-  /* Initialize GPIO (sets up clock) */
-  GPIOInit();
+	/* Initialize GPIO (sets up clock) */
+	GPIOInit();
 
 	LPC_IOCON->R_PIO0_11 |= 1;
 
-  LPC_IOCON->R_PIO1_1 &= ~(3);
-  LPC_IOCON->R_PIO1_1 |= (1);
+	LPC_IOCON->R_PIO1_1 &= ~(3);
+	LPC_IOCON->R_PIO1_1 |= (1);
 
-  SetupButtons();
-  SetupLEDs();
+	SetupButtons();
+	SetupLEDs();
 
 	synth_init();
 
-  dog_Init(0);
-  drawWomprat();
+	dog_Init(0);
+	drawWomprat();
 
 	int i;
 	for (i = 0; i < 3; i++) {
@@ -138,16 +171,22 @@ int main (void) {
 	}
 
 	int tmps[6];
-	int last_button_state[6];
-	int button_state;
 	int button_hold[6] = {0};
+	int last_state[6] = {1};
+	int state[6] = {1};
+
+	for (i = 0; i < 6; i++)
+	{
+		last_state[i] = 1;
+		state[i] = 1;
+	}
 
 	while (1) {
 		for (i = 0; i < 3; i++)
 		{
 			synth_channels[i].func = channelMenus[i]->options[1].selected;
 
-			tmps[i] = 500 * ADCValue[ADC_Chans[i]]/512;
+			tmps[i] = 1000 * ADCValue[ADC_Chans[i]]/1024;
 			tmps[i] = tmps[i] < 10 ? 0 : tmps[i];
 
 			switch(channelMenus[i]->options[2].selected)
@@ -159,12 +198,12 @@ int main (void) {
 					synth_channels[i].freq = tmps[i];
 				break;
 			case 1:
-				button_state = (!! LPC_GPIO[CHAN_BUTTONS_PORT]->MASKED_ACCESS[1 << i]);
+				state[i] = ProcessToggleButton(i);
 
-				if (button_state != last_button_state[i])
+				if (state[i] == 1 && last_state[i] != 1 )
 				{
-					if (button_state == 0)
-						button_hold[i] = button_hold[i] ^ 1;
+					button_hold[i] = button_hold[i] ^ 1;
+					last_state[i] = state[i];
 				}
 
 				if (button_hold[i])
@@ -172,6 +211,7 @@ int main (void) {
 				else
 					synth_channels[i].freq = 0;
 
+				last_state[i] = state[i];
 				break;
 			}
 		}

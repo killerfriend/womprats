@@ -52,7 +52,7 @@ int eeprom_read(void *dest, uint16_t src, size_t n)
 
 int eeprom_write(uint16_t dest, const void *src, size_t n)
 {
-	int i;
+	volatile int i;
 
 	/* calculate address */
 		uint8_t addr = 0xa0;

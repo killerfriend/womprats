@@ -208,15 +208,21 @@ int run_menu(stMenu *menus[], int *menuIndex)
 
 			if ((state & BTN_LT_MASK) == 0)
 			{
-				if (*menuIndex > 0)
-					*menuIndex = *menuIndex - 1;
+				*menuIndex = *menuIndex - 1;
+
+				if (*menuIndex < 0)
+					*menuIndex = NUM_MENUS - 1;
+
 				menu = menus[*menuIndex];
 			}
 
 			if ((state & BTN_RT_MASK) == 0)
 			{
-				if (*menuIndex < (NUM_MENUS - 1))
-					*menuIndex = *menuIndex + 1;
+				*menuIndex = *menuIndex + 1;
+
+				if (*menuIndex > (NUM_MENUS - 1))
+					*menuIndex = 0;
+
 				menu = menus[*menuIndex];
 			}
 
