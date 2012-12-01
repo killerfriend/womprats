@@ -40,7 +40,7 @@ typedef struct
 	int selected;
 } stMenu;
 
-#define NUM_MENUS 4
+#define NUM_MENUS 6
 
 void draw_menu (stMenu *menu);
 void fill_main_menu (stMenu *menu);

@@ -172,11 +172,8 @@ uint16_t sum_osc()
 		}
 	}
 
-
-
-
 	int half_rate = (1 << (SYNTH_BITWIDTH - 1)) - 3;
-	int value = (half_rate * (sum + min_amp)) / max_amp + 3;
+	int value = ((2*half_rate * (sum + max_amp)) / (2* max_amp)) + 3;
 	return value;
 		
 }

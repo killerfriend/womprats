@@ -26,6 +26,14 @@
 
 /* Main Program */
 
+int ADC_Chans[6] =
+	{ADC_CHAN1,
+	 ADC_CHAN2,
+	 ADC_CHAN3,
+	 ADC_CHAN4,
+	 ADC_CHAN5,
+	 ADC_CHAN6};
+
 void drawWomprat()
 {
 	dog_StartPage();
@@ -47,6 +55,14 @@ void SetupButtons()
 	GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_RIGHT, 0);
 	GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_OK, 0);
 	GPIOSetDir( UI_BUTTONS_PORT, UI_BUTTON_AUX, 0);
+
+	GPIOSetDir( CHAN_BUTTONS_PORT, CHAN1_BUTTON, 0);
+	GPIOSetDir( CHAN_BUTTONS_PORT, CHAN2_BUTTON, 0);
+	GPIOSetDir( CHAN_BUTTONS_PORT, CHAN3_BUTTON, 0);
+	GPIOSetDir( CHAN_BUTTONS_PORT, CHAN4_BUTTON, 0);
+	GPIOSetDir( CHAN_BUTTONS_PORT, CHAN5_BUTTON, 0);
+	GPIOSetDir( CHAN_BUTTONS_PORT, CHAN6_BUTTON, 0);
+
 	return;
 }
 
@@ -56,8 +72,8 @@ void SetupLEDs()
   GPIOSetDir( LED_PORT, LED_BIT, 1 );
   GPIOSetValue( LED_PORT, LED_BIT, LED_OFF );
 
-  GPIOSetDir( 1, 1, 1);
-  GPIOSetValue( 1, 1, 1);
+  GPIOSetDir( LCD_GPIO_PORT, LCD_BACKLIGHT_BIT, 1);
+  GPIOSetValue( LCD_GPIO_PORT, LCD_BACKLIGHT_BIT, LED_ON);
 }
 
 int main (void) {
@@ -110,28 +126,56 @@ int main (void) {
 
 	int i;
 	for (i = 0; i < 3; i++) {
-		synth_channels[i].freq = 100 * i;
-		synth_channels[i].amp = 1 << (20 - i);
+		synth_channels[i].freq = 100;
+		synth_channels[i].amp = 1 << (15);
 		synth_channels[i].func = SYNTH_SQUARE;
-		synth_channels[i+3].freq = 100 * i;
-		synth_channels[i+3].amp = 1 << (20 - i);
-		synth_channels[i+3].func = SYNTH_SQUARE;
 	}
 
-	while (1) {
-		int tmp0 = 500 * ADCValue[0]/512;
-		int tmp1 = 500 * ADCValue[1]/512;
-		tmp0 = tmp0 < 10 ? 0 : tmp0;
-		tmp1 = tmp1 < 10 ? 0 : tmp1;
-		for (i = 0; i < 3; i++) {
-			synth_channels[i].freq = tmp0*(i+1);
-			synth_channels[i + 3].freq = tmp1*(i+1);
-		}
+	for (i = 3; i < 6; i++) {
+		synth_channels[i].freq = 0;
+		synth_channels[i].amp = 1 << (20 - i);
+		synth_channels[i].func = SYNTH_SQUARE;
+	}
 
-		for (i = 0; i < 6; i++)
+	int tmps[6];
+	int last_button_state[6];
+	int button_state;
+	int button_hold[6] = {0};
+
+	while (1) {
+		for (i = 0; i < 3; i++)
+		{
 			synth_channels[i].func = channelMenus[i]->options[1].selected;
 
-		run_menu(channelMenus, &menuIndex);
+			tmps[i] = 500 * ADCValue[ADC_Chans[i]]/512;
+			tmps[i] = tmps[i] < 10 ? 0 : tmps[i];
 
+			switch(channelMenus[i]->options[2].selected)
+			{
+			case 0:
+				if ((!! LPC_GPIO[CHAN_BUTTONS_PORT]->MASKED_ACCESS[1 << i]) == 1)
+					synth_channels[i].freq = 0;
+				else
+					synth_channels[i].freq = tmps[i];
+				break;
+			case 1:
+				button_state = (!! LPC_GPIO[CHAN_BUTTONS_PORT]->MASKED_ACCESS[1 << i]);
+
+				if (button_state != last_button_state[i])
+				{
+					if (button_state == 0)
+						button_hold[i] = button_hold[i] ^ 1;
+				}
+
+				if (button_hold[i])
+					synth_channels[i].freq = tmps[i];
+				else
+					synth_channels[i].freq = 0;
+
+				break;
+			}
+		}
+
+		run_menu(channelMenus, &menuIndex);
   }
 }
