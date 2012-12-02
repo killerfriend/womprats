@@ -36,23 +36,65 @@ Design and build a device that can generate sounds from user-control.
 }
 \subsection{Requirements}
 \frame{{Requirements}
-[Requirements text here]
+\begin{itemize}
+\item Avoid  mechanical complexity
+\item Make the project cheap enough to replicate for each of us to have one / make one cheaply
+\item Stick to free/open source software if possible
+\item Stick to cheap hardware tool costs if possible (try not to buy tools)
+\item Project should be gracefully degradable, i.e. modular (so if we need to cut corners it won't cause complications)
+\item Keep logic "breadboardable" i.e. keep it simple enough to prototype on a breadboard
+\item Use plug and play devices if possible
+\item Device should be safe for the user and durable
+\item Suitable for bringing into an interview situation (keep it portable)
+\end{itemize}
 
 }
 \subsection{Approach}
 \frame{{Approach}
-[Approach text here]
-Project management/documentation tools: Gantt chart, redmine/wiki\\
-Technical tools: kicad, lpcexpresso/redcode
+Project Management \& Documentation tools
+\begin{itemize}
+\item GanttProject
+\item Redmine
+\item \LaTeX
+\end{itemize}
+
+Technical tools
+\begin{itemize}
+\item KiCad EDA
+\item LPCXpresso Code Red IDE
+\item Git
+\end{itemize}
 }
 
 \section{Design}
 \frame{\frametitle{Design}
-[Design text here]
+[Design text here]\\
+
+  \begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{BlockLevelDiagram.png} 
+    \caption{Block Diagram Overview}
+  \end{figure}
+
 }
+
 \subsection{Implementation}
 \frame{{Implementation}
-[Implementation text here]
+The parts chosen for making the audio synthesizer:
+\begin{itemize}
+  \pause
+\item Microcontroller: NPX LPC 1114
+  \pause
+\item EEPROM: Atmel AT24C128C
+  \pause
+\item LCD: EA DOGS102W-6 +EA LED39x41-W
+  \pause
+\item Channels: 
+  \pause
+\item DAC: MCP4921
+  \pause
+\item Audio Amplifier: LM4875
+\end{itemize}
 }
 
 \subsection{PCB Layout}
@@ -64,9 +106,71 @@ Technical tools: kicad, lpcexpresso/redcode
 
 \subsection{Testing \& Debugging}
 \frame{{Testing \& Debugging}
-[Testing \& Debugging text here]
-
+\begin{itemize}
+  \pause
+\item Microcontroller
+  \begin{itemize}
+    \pause
+    \item Programming Test
+    \pause
+    \item Diagonistic Test
+    \pause
+    \end{itemize}
+\item EEPROM
+  \begin{itemize}
+    \pause
+    \item Read/Write Byte Test
+    \pause
+    \item Read/Write Burst Test
+    \pause
+    \end{itemize}
+\item LCD
+  \begin{itemize}
+    \pause
+    \item LCD Test
+    \pause
+    \item Button Test
+    \pause
+  \end{itemize}
+\item DAC
+  \begin{itemize}
+    \pause
+    \item I/O Test (DAC Test)
+    \pause
+    \end{itemize}
+\item Audio Amplifier
+  \begin{itemize}
+    \pause
+    \item Frequency Test
+    \pause
+    \item Line-out Test
+    \pause
+    \item Volume Control Test
+    \pause
+    \end{itemize}
+\item Power Supply
+  \begin{itemize}
+    \pause
+    \item Fuse Test
+    \pause
+    \item Voltage Ripple Test
+    \pause
+    \end{itemize}
+\end{itemize}
 }
+
+\subsection{Integration Tests}
+\frame{{Integration Tests}
+\begin{itemize}
+  \pause
+  \item Power-On Self-Test
+  \pause
+  \item DAC-Audio Amplifier Test
+  \pause
+  \item Display Womprat on LCD screen
+\end{itemize}
+}
+
 \subsection{Results}
 \frame{{Results}
 [Results text here]
