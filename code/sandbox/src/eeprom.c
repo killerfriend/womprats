@@ -5,7 +5,6 @@
  *      Author: agoetz
  */
 
-
 #include "eeprom.h"
 #include "driver_config.h"
 #include "target_config.h"
@@ -17,7 +16,6 @@ extern volatile uint8_t I2CMasterBuffer[BUFSIZE];
 extern volatile uint8_t I2CSlaveBuffer[BUFSIZE];
 extern volatile uint32_t I2CMasterState;
 extern volatile uint32_t I2CReadLength, I2CWriteLength;
-
 
 int eeprom_setup(void)
 {
@@ -33,16 +31,19 @@ int eeprom_read(void *dest, uint16_t src, size_t n)
 
 	/* calculate address */
 	uint8_t addr = 0xa0;
-	uint8_t page = (src >> 8) & 7;
-	uint8_t word = src & 0xff;
-	addr |= (page << 1);
+	uint8_t msb = (src >> 8) & 0x3f;
+	uint8_t lsb = src & 0xff;
+	//addr |= (page << 1);
 
 	/* setup read for single byte */
-	I2CWriteLength = 2;
+	I2CWriteLength = 4;
 	I2CReadLength = n;
 	I2CMasterBuffer[0] = addr; /* dev address as a write */
-	I2CMasterBuffer[1] = word; /* address to read from */
-	I2CMasterBuffer[2] = addr + 1; /* dev address as a read */
+	I2CMasterBuffer[1] = msb;  /* address to read from */
+	I2CMasterBuffer[2] = lsb;  /* address to read from */
+
+	I2CMasterBuffer[3] = addr | 1; /* dev address as a read */
+
 	I2CEngine();
 	
 	memcpy(dest, (void*)I2CSlaveBuffer, n);
@@ -52,23 +53,28 @@ int eeprom_read(void *dest, uint16_t src, size_t n)
 
 int eeprom_write(uint16_t dest, const void *src, size_t n)
 {
-	volatile int i;
+	int i;
+	volatile int j;
 
 	/* calculate address */
 		uint8_t addr = 0xa0;
-		uint8_t page = (dest >> 8) & 7;
-		uint8_t word = dest & 0xff;
-		addr |= (page << 1);
+		uint8_t msb = (dest >> 8) & 0x3f;
+		uint8_t lsb = dest & 0xff;
+		//addr |= (page << 1);
 
 	/* setup the write command for a single byte: */
-	I2CWriteLength = 3;
+	I2CWriteLength = 3 + n;
 	I2CReadLength = 0;
 	I2CMasterBuffer[0] = addr; /* address to write to */
-	I2CMasterBuffer[1] = word;
-	I2CMasterBuffer[2] = ((uint8_t*)src)[0];
+	I2CMasterBuffer[1] = msb;
+	I2CMasterBuffer[2] = lsb;
+
+	for (i = 0; i < n; i++)
+		I2CMasterBuffer[i + 3] = ((uint8_t*)src)[i];
+
 	I2CEngine();
 
-	for ( i = 0; i < 0x200000; i++ );	/* Delay after write */
+	for ( j = 0; j < 0x200000; j++ );	/* Delay after write */
 
 	return 1;
 }

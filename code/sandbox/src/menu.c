@@ -13,8 +13,47 @@
 #include "gpio.h"
 #include "lcd_lib/dogm128.h"
 #include "menu.h"
+#include "eeprom.h"
+
+typedef struct
+{
+	char wave_mode[6];
+	char button_mode[6];
+} saveFile;
 
 int modifyMode = 0;
+
+void saveState(int slot, stMenu *menus[]) {
+	int i;
+	saveFile mySave;
+
+	for (i = 0; i < 6; i++)
+	{
+		mySave.wave_mode[i]   = (char) menus[i]->options[1].selected;
+		mySave.button_mode[i] = (char) menus[i]->options[2].selected;
+	}
+
+	eeprom_write(0, (const void *)&mySave,sizeof(saveFile));
+
+	strcpy(menus[6]->options[0].name, "Config Saved");
+	precalc_menu(menus[6],3,3);
+}
+
+void loadState(int slot, stMenu *menus[]) {
+	int i;
+	saveFile myLoad;
+
+	eeprom_read((void *)&myLoad,0, sizeof(saveFile));
+
+	for (i = 0; i < 6; i++)
+	{
+		menus[i]->options[1].selected  = (int) myLoad.wave_mode[i];
+		menus[i]->options[2].selected  = (int) myLoad.button_mode[i];
+	}
+
+	strcpy(menus[6]->options[0].name, "Config Loaded");
+	precalc_menu(menus[6],3,3);
+}
 
 void draw_menu (stMenu *menu) {
 
@@ -73,6 +112,28 @@ void draw_menu (stMenu *menu) {
 		GPIOSetValue(LED2_PORT, LED2_BIT, LED_OFF);
 
 	} while( dog_NextPage() );
+}
+
+void fill_config_menu (stMenu *menu)
+{
+	memset(menu,0,sizeof(stMenu));
+
+	strcpy(menu->options[0].name,"Config");
+
+	strcpy(menu->options[1].name,"Slot");
+		strcpy(menu->options[1].sub_options[0].name,"1");
+		strcpy(menu->options[1].sub_options[1].name,"2");
+		strcpy(menu->options[1].sub_options[2].name,"3");
+		menu->options[1].num=3;
+		menu->options[1].selected = 0;
+
+	strcpy(menu->options[2].name,"Load Settings");
+	strcpy(menu->options[3].name,"Save Settings");
+
+	menu->num = 4;
+	menu->selected = 1;
+
+	precalc_menu(menu,3,3);
 }
 
 void fill_chan_menu (stMenu *menu, int channel)
@@ -202,9 +263,25 @@ int run_menu(stMenu *menus[], int *menuIndex)
 				if (menu->selected < 1) menu->selected=menu->num-1;
 			}
 
-			if (menu->options[menu->selected].num)
-				if ((state & BTN_OK_MASK) == 0)
+			if ((state & BTN_OK_MASK) == 0)
+			{
+				if (menu->options[menu->selected].num)
+				{
 					menu->options[menu->selected].selected=(menu->options[menu->selected].selected+1) % menu->options[menu->selected].num;
+				}
+				else
+				{
+					if (strcmp(menu->options[menu->selected].name,"Save Settings") == 0) //terrible hack for config menu
+					{
+						saveState(menu->options[1].selected, menus);
+					}
+
+					if (strcmp(menu->options[menu->selected].name,"Load Settings") == 0) //terrible hack for config menu
+					{
+						loadState(menu->options[1].selected, menus);
+					}
+				}
+			}
 
 			if ((state & BTN_LT_MASK) == 0)
 			{

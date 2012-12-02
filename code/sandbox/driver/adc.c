@@ -62,7 +62,7 @@ void ADC_IRQHandler (void)
 	  {
 		ADCValue[i] = LPC_ADC->GDR;
 		ADCValue[i] = ( LPC_ADC->DR[i] >> 6 ) & 0x3FF;
-	//	ADCValue[i] = ADCValue[i] >> 1;
+		ADCValue[i] = ADCValue[i] >> 1;
 	  }
 	}
 #if CONFIG_ADC_ENABLE_BURST_MODE==1

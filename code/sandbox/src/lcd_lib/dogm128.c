@@ -138,11 +138,11 @@ void dog_Delay(uint16_t val)
 static void dog_init_display(void)
 {
   
-  dog_Delay(10);
+  //dog_Delay(10);
   dog_spi_disable_client();	/* force reset of the spi subsystem of the ST7565R */
-  dog_Delay(10);
+  //dog_Delay(10);
   dog_spi_enable_client();
-  dog_Delay(10);
+  //dog_Delay(10);
   dog_cmd_mode();
 
 #ifdef ADA_ST7565P_HW  
@@ -236,9 +236,9 @@ static void dog_init_display(void)
 #endif
 
   dog_spi_out(0x0a5);		/* display all points, ST7565, UC1610 */
-  dog_Delay(300);
+  //dog_Delay(300);
   dog_spi_out(0x0a4);		/* normal display  */
-  dog_Delay(300);
+  //dog_Delay(300);
   dog_spi_disable_client();
   //Serial.println("exiting dog_init_display");
 }
@@ -246,7 +246,7 @@ static void dog_init_display(void)
 /* pin values of 255 are not assigned */
 void dog_InitA0CS(uint8_t pin_a0, uint8_t pin_cs)
 {
-  dog_Delay(60);			/* initial delay */
+  //dog_Delay(60);			/* initial delay */
   if ( pin_a0 != 255 )
     dog_spi_pin_a0 = pin_a0;
   if ( pin_cs != 255 )

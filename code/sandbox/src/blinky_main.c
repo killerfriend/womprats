@@ -41,7 +41,7 @@ void drawWomprat()
 	  dog_SetBitmap(0,64,womprat,102,64);
 	} while(dog_NextPage());
 
-	dog_Delay(2000);
+	dog_Delay(1000);
 
 	return;
 }
@@ -113,8 +113,12 @@ int main (void) {
    * from the startup code. SystemInit() and chip settings are defined
    * in the CMSIS system_<part family>.c file.
    */
+	int i;
+
 	stMenu chan1menu,chan2menu,chan3menu,chan4menu,chan5menu,chan6menu;
-	stMenu *channelMenus[6]; stMenu *currentMenu;
+	stMenu configmenu;
+	stMenu *menus[7];
+
 	int menuIndex = 0;
 
 	fill_chan_menu(&chan1menu,1);
@@ -123,22 +127,21 @@ int main (void) {
 	fill_chan_menu(&chan4menu,4);
 	fill_chan_menu(&chan5menu,5);
 	fill_chan_menu(&chan6menu,6);
+	fill_config_menu(&configmenu);
 
-	channelMenus[0] = &chan1menu;
-	channelMenus[1] = &chan2menu;
-	channelMenus[2] = &chan3menu;
-	channelMenus[3] = &chan4menu;
-	channelMenus[4] = &chan5menu;
-	channelMenus[5] = &chan6menu;
-
-	currentMenu = channelMenus[menuIndex];
+	menus[0] = &chan1menu;
+	menus[1] = &chan2menu;
+	menus[2] = &chan3menu;
+	menus[3] = &chan4menu;
+	menus[4] = &chan5menu;
+	menus[5] = &chan6menu;
+	menus[6] = &configmenu;
 
 	/* Initialize 32-bit timer 0. TIME_INTERVAL is defined as 10mS */
 	/* You may also want to use the Cortex SysTick timer to do this */
 	init_timer32(0, TIME_INTERVAL);
 	/* Enable timer 0. Our interrupt handler will begin incrementing
-	* the TimeTick global each time timer 0 matches and resets.
-	*/
+	* the TimeTick global each time timer 0 matches and resets.*/
 	enable_timer32(0);
 
 	/* Initialize GPIO (sets up clock) */
@@ -152,21 +155,16 @@ int main (void) {
 	SetupButtons();
 	SetupLEDs();
 
+	eeprom_setup();
+
 	synth_init();
 
 	dog_Init(0);
 	drawWomprat();
 
-	int i;
-	for (i = 0; i < 3; i++) {
+	for (i = 0; i < 6; i++) {
 		synth_channels[i].freq = 100;
 		synth_channels[i].amp = 1 << (15);
-		synth_channels[i].func = SYNTH_SQUARE;
-	}
-
-	for (i = 3; i < 6; i++) {
-		synth_channels[i].freq = 0;
-		synth_channels[i].amp = 1 << (20 - i);
 		synth_channels[i].func = SYNTH_SQUARE;
 	}
 
@@ -182,14 +180,14 @@ int main (void) {
 	}
 
 	while (1) {
-		for (i = 0; i < 3; i++)
+		for (i = 0; i < 6; i++)
 		{
-			synth_channels[i].func = channelMenus[i]->options[1].selected;
+			synth_channels[i].func = menus[i]->options[1].selected;
 
-			tmps[i] = 1000 * ADCValue[ADC_Chans[i]]/1024;
+			tmps[i] = 1000 * ADCValue[ADC_Chans[i]]/512;
 			tmps[i] = tmps[i] < 10 ? 0 : tmps[i];
 
-			switch(channelMenus[i]->options[2].selected)
+			switch(menus[i]->options[2].selected)
 			{
 			case 0:
 				if ((!! LPC_GPIO[CHAN_BUTTONS_PORT]->MASKED_ACCESS[1 << i]) == 1)
@@ -215,7 +213,6 @@ int main (void) {
 				break;
 			}
 		}
-
-		run_menu(channelMenus, &menuIndex);
+		run_menu(menus, &menuIndex);
   }
 }
