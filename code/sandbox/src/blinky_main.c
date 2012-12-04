@@ -116,8 +116,7 @@ int main (void) {
 	int i;
 
 	stMenu chan1menu,chan2menu,chan3menu,chan4menu,chan5menu,chan6menu;
-	stMenu configmenu;
-	stMenu *menus[7];
+	stMenu *menus[6];
 
 	int menuIndex = 0;
 
@@ -127,7 +126,6 @@ int main (void) {
 	fill_chan_menu(&chan4menu,4);
 	fill_chan_menu(&chan5menu,5);
 	fill_chan_menu(&chan6menu,6);
-	fill_config_menu(&configmenu);
 
 	menus[0] = &chan1menu;
 	menus[1] = &chan2menu;
@@ -135,7 +133,6 @@ int main (void) {
 	menus[3] = &chan4menu;
 	menus[4] = &chan5menu;
 	menus[5] = &chan6menu;
-	menus[6] = &configmenu;
 
 	/* Initialize 32-bit timer 0. TIME_INTERVAL is defined as 10mS */
 	/* You may also want to use the Cortex SysTick timer to do this */
