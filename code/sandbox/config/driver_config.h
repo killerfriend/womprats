@@ -41,10 +41,10 @@
 #define ADC_EN_AD0
 #define ADC_EN_AD1
 //#define ADC_EN_AD2
-//#define ADC_EN_AD3
+#define ADC_EN_AD3
 // #define ADC_EN_AD4 // Be careful, this pin is shared with SWDIO
-//#define ADC_EN_AD5
-//#define ADC_EN_AD6
+#define ADC_EN_AD5
+#define ADC_EN_AD6
 #define ADC_EN_AD7
 
 
