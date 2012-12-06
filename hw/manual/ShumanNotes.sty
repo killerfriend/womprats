@@ -1,0 +1,101 @@
+%%Modified by Andy Goetz 10-13-09, changed font to Arev, look at font
+%%section for details.
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{ShumanNotes}[2009/08/11]
+ 
+%% load up the fancy box making package
+\RequirePackage{fancybox}
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\usepackage[colorlinks=true,linkcolor=black, urlcolor=black]{hyperref}
+\RequirePackage[letterpaper, portrait]{geometry}
+%% Load up PS insertion package
+\RequirePackage{psboxit}
+\PScommands
+\textheight = 9in
+\footskip = 20pt
+
+%This section was added by Andy Goetz on 10-13-09. It replaces the
+%Arial font with the Arev font, which has math mode support so that
+%math functions match the look and feel of the rest of the document
+\usepackage[T1]{fontenc}
+\usepackage{float}
+%\usepackage{arev}
+
+%Commented out by Andy Goetz on 10-13-09, replace by different code
+%for font selection
+% \renewcommand{\rmdefault}{phv} % Arial
+%\renewcommand{\sfdefault}{phv} % Arial
+%% Load up fancy headers and footers package
+\RequirePackage{fancyhdr}
+
+%% now reset the headers and footers
+\fancyhead{}
+\fancyfoot{}
+% Header/footer Thickness
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%Commented out by Andy Goetz on 10-13-09, as LateX was giving warnings
+%about \warning being defined twice.
+
+% Warning Box with 2 parameters. Param 1: Picture, Param2: Text
+%\newcommand{\warning}[2]{\begin{table}[ht!tbp]
+%\begin{center}
+%\begin{tabular}{c c}
+%
+%#1 \hspace{5mm} & \framebox{\parbox[r]{4in}{#2}} \\ [3ex]
+%\end{tabular}
+%\end{center}
+%\end{table}}
+
+\newcommand{\doublespace}{\newline \newline}
+
+% Side by Side Pictures Param1: Graphic insert, Param2: Caption for Graphic1, Param3:Label for Graphic1, Param4: Graphic insert, Param5:Caption for Graphic2, Param6:Graphic2 label
+\newcommand{\picsidebyside}[6]{\begin{figure}[ht]            
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+#1
+\caption{#2}
+\label{#3}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+#4 
+\caption{#5}
+\label{#6}
+\end{minipage}
+\end{figure}}
+
+% Center Image Command
+\newcommand{\centerimage}[3]{
+\begin{figure}[H]  
+\begin{center}
+#1
+\caption{#2}
+\label{#3}
+\end{center}
+\end{figure}}
+
+
+\setlength\fboxsep{3pt}
+\setlength\fboxrule{0.5pt}
+
+\newcommand{\centerlisting}[3]{
+\centerimage{
+\fbox{
+#1
+}
+}{#2}{#3}
+}
+
+%% bring the style into effect
+\pagestyle{fancy}
+
+\lfoot{\includegraphics[height=0.15in]{womprat-bitmap.png} Womprat T-16}
+\rfoot{\thepage}
+\rhead{\leftmark}
+%%
+%% End of file `phdthesis.sty`
