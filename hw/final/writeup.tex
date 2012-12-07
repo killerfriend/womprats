@@ -1,5 +1,8 @@
 \documentclass{beamer}
 \usetheme{default}
+\setbeamertemplate{caption}[numbered]
+\usepackage[labelformat=empty]{caption}
+
 
 \logo{\includegraphics[width=.3in]{logo.png} \hspace{1em} Womprats T-16}
 \title{ECE411 Final Presentation}
@@ -81,25 +84,28 @@ Technical tools
 
 \section{Design}
 \frame{\frametitle{Design}
-
+\begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{synth0.png} 
-
+        \caption{Level 0 Block Diagram}
+\end{figure}
 }
 
 \frame{\frametitle{Design}
-
+\begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{synth1.png} 
-
+        \caption{Level 1 Block Diagram}
+\end{figure}
 }
 
 \frame{\frametitle{Design}
+        \begin{figure}
+	  \centering
+	  \includegraphics[width=0.6\textwidth]{microcont.png} 
+          \caption{Level 0 Block Diagram of Microcontroller}
+        \end{figure}
 
-	Microcontroller
-	\begin{center}
-	\includegraphics[width=0.6\textwidth]{microcont.png}
-	\end{center}
 	\begin{itemize}
 	\item LPC1114 ARM microcontroller
 	\item SPI and I$^2$C capable
@@ -134,7 +140,11 @@ Technical tools
 	\end{itemize}
         \end{column}
           \begin{column}{1in}
-            \includegraphics[width=1in]{mini-din.png}
+        \begin{figure}
+	  \centering
+	  \includegraphics[width=0.6\textwidth]{mini-din.png} 
+          \caption{External Channel Interface}
+        \end{figure}
             \end{column}
         \end{columns}
 
@@ -142,9 +152,12 @@ Technical tools
 
 \frame{\frametitle{Design}
 	UI \& LCD
-	\begin{center}
-	\includegraphics[width=0.7\textwidth]{lcd.png}
-	\end{center}
+        \begin{figure}
+	  \centering
+	  \includegraphics[width=0.7\textwidth]{lcd.png} 
+          \caption{Level 0 Block Diagram of LCD}
+        \end{figure}
+
 	\begin{itemize}
 	\item UI buttons
 	\item channel buttons
@@ -164,6 +177,19 @@ Technical tools
 	\includegraphics[width=0.5\textwidth]{dac.png}
 	\includegraphics[width=0.5\textwidth]{audioamp.png}
 	\end{center}
+
+        %% \begin{figure}
+	%%   \centering
+	%%   \includegraphics[width=0.5\textwidth]{dac.png} 
+        %%   \caption{Level 0 Block Diagram of DAC}
+        %% \end{figure}
+
+        %% \begin{figure}
+	%%   \centering
+	%%   \includegraphics[width=0.5\textwidth]{audioamp.png} 
+        %%   \caption{Level 0 Block Diagram of Audio Amplifier}
+        %% \end{figure}
+
 	\begin{itemize}
 	\item 12-bit DAC
 		\begin{itemize}
