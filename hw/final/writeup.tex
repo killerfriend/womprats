@@ -91,7 +91,7 @@ Technical tools
 \frame{\frametitle{Design}
 
 	\centering
-  \includegraphics[width=0.7\textwidth]{synth1.png} 
+	\includegraphics[width=0.7\textwidth]{synth1.png} 
 
 }
 
@@ -99,7 +99,7 @@ Technical tools
 
 	Microcontroller
 	\begin{center}
-  \includegraphics[width=0.6\textwidth]{microcont.png}
+	\includegraphics[width=0.6\textwidth]{microcont.png}
 	\end{center}
 	\begin{itemize}
 	\item LPC1114 ARM microcontroller
@@ -114,12 +114,20 @@ Technical tools
 
 \frame{\frametitle{Design}
 
-	Channels \begin{itemize}
-	\item 6 separate channels
+	Channels
+	\begin{itemize}
+	\item 4 internal channels
 		\begin{itemize}
-		\item 4 internal
-		\item 2 external
+		\item 4 internal channels
+		\item 1 momentary switch for each
+		\item 1 single turn pot for each
 		\end{itemize}
+	\item 2 external channels
+		\begin{itemize}
+		\item 1 port for each input
+		\end{itemize}
+	\item Output is voltage between 0V-3.3V
+	\item Converted to 10-bit value by ADC in microcontroller
 	\end{itemize}
 
 }
@@ -128,7 +136,7 @@ Technical tools
 
 	UI \& LCD
 	\begin{center}
-  \includegraphics[width=0.7\textwidth]{lcd.png}
+	\includegraphics[width=0.7\textwidth]{lcd.png}
 	\end{center}
 	\begin{itemize}
 	\item UI buttons
@@ -146,8 +154,8 @@ Technical tools
 
 	DAC \& Audio Out
 	\begin{center}
-  \includegraphics[width=0.5\textwidth]{dac.png}
-  \includegraphics[width=0.5\textwidth]{audioamp.png}
+	\includegraphics[width=0.5\textwidth]{dac.png}
+	\includegraphics[width=0.5\textwidth]{audioamp.png}
 	\end{center}
 	\begin{itemize}
 	\item 12-bit DAC
