@@ -120,6 +120,53 @@ The parts chosen for making the audio synthesizer:
 \end{itemize}
 }
 
+
+\frame{\frametitle{Actual Board \& PCB}
+\begin{center}
+ \includegraphics[width=0.45\textwidth]{pcb.png}
+\end{center}
+  Issue \#1: LDO pin layout incorrectly placed on the PCB\\
+  Solution: Rotated LDO 180$^\circ$
+}
+
+\frame{\frametitle{Actual Board \& PCB}
+\begin{center}
+ \includegraphics[width=0.45\textwidth]{pcb.png}
+\end{center}
+  Issue \#2: Unable to rapidly turn on and off the audio synthesizer\\
+  Solution: Used pull-up resistor to force the bootloader pin high\\
+}
+
+\frame{\frametitle{Actual Board \& PCB}
+\begin{center}
+ \includegraphics[width=0.45\textwidth]{pcb.png}
+\end{center}
+  Issue \#3: Header spacing width too close to fit together\\
+  Solution: Shaved unnecessary header material to make it fit
+}
+
+\frame{\frametitle{BOM}
+Insert finalized BOM table here:\\
+}
+
+\frame{\frametitle{IP/Prior Work}
+\begin{itemize}
+  \item LPCXpresso libraries for:
+  \begin{itemize}
+  \item Timers
+  \item GPIO
+  \item ADC
+  \item SPI
+  \item I$^2$C
+  \end{itemize}
+  \item Dogs m128 LCD library (ported from ATmega)
+  \item Bradon's Menu Code (written early 2000 for X)
+\end{itemize}    
+}
+
+\subsection{PCB Layout}
+\frame{{PCB Layout} 
+}
 \subsection{Implementation}
 \frame{{Software}
 \begin{itemize}
