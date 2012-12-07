@@ -83,20 +83,85 @@ Technical tools
 \section{Design}
 \frame{\frametitle{Design}
 
-  \begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.7\textwidth]{synth0.png} 
-    \caption{Level 0 Block Diagram Overview}
-  \end{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{synth0.png} 
 
 }
 
 \frame{\frametitle{Design}
-  \begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.7\textwidth]{synth1.png} 
-    \caption{Level 1 Block Diagram Overview}
-  \end{figure}
+
+	\centering
+  \includegraphics[width=0.7\textwidth]{synth1.png} 
+
+}
+
+\frame{\frametitle{Design}
+
+	Microcontroller
+	\begin{center}
+  \includegraphics[width=0.6\textwidth]{microcont.png}
+	\end{center}
+	\begin{itemize}
+	\item LPC1114 ARM microcontroller
+	\item SPI and I$^2$C capable
+	\item Multiple GPIO pins
+	\item Simple, Cheap Dev Board (LPC Xpresso)
+	\item Free development tools (code red)
+	\item Available as DIP package to allow for prototyping
+	\end{itemize}
+
+}
+
+\frame{\frametitle{Design}
+
+	Channels \begin{itemize}
+	\item 6 separate channels
+		\begin{itemize}
+		\item 4 internal
+		\item 2 external
+		\end{itemize}
+	\end{itemize}
+
+}
+
+\frame{\frametitle{Design}
+
+	UI \& LCD
+	\begin{center}
+  \includegraphics[width=0.7\textwidth]{lcd.png}
+	\end{center}
+	\begin{itemize}
+	\item UI buttons
+	\item channel buttons
+	\item channel knobs
+	\item LCD display
+		\begin{itemize}
+		\item EA DOGS102W-6 + EA LED39x41-W
+		\end{itemize}
+	\end{itemize}
+
+}
+
+\frame{\frametitle{Design}
+
+	DAC \& Audio Out
+	\begin{center}
+  \includegraphics[width=0.5\textwidth]{dac.png}
+  \includegraphics[width=0.5\textwidth]{audioamp.png}
+	\end{center}
+	\begin{itemize}
+	\item 12-bit DAC
+		\begin{itemize}
+		\item SPI controlled
+		\item Used MCP4921 DAC
+		\end{itemize}
+	\item Mono audio out
+		\begin{itemize}
+		\item LM4875 amplifier
+		\end{itemize}
+	\item Volume control
+	\end{itemize}
+
 }
 
 \section{Implementation}
