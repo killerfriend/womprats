@@ -157,8 +157,13 @@ void fill_chan_menu (stMenu *menu, int channel)
 		strcpy(menu->options[2].sub_options[0].name,"Mom");
 		strcpy(menu->options[2].sub_options[1].name,"Hold");
 		menu->options[2].num=2;
-		menu->options[2].selected = 0;
+		if (channel > 4)
+			menu->options[2].selected = 0;
+		else
+			menu->options[2].selected = 1;
 
+
+	/*
 	strcpy(menu->options[3].name,"Modify");
 		strcpy(menu->options[3].sub_options[0].name,"001%");
 		menu->options[3].sub_options[0].type=MNU_TYPE_PERCENT;
@@ -166,10 +171,12 @@ void fill_chan_menu (stMenu *menu, int channel)
 		menu->options[3].num=1;
 		menu->options[3].selected=0;
 
-	menu->num = 4;
+		*/
+
+	menu->num = 3;
 	menu->selected = 1;
 
-	precalc_menu(menu,3,3);
+	precalc_menu(menu,6,6);
 }
 
 void precalc_menu (stMenu *menu,int y_spacing,int x_spacing) {
@@ -235,6 +242,7 @@ int run_menu(stMenu *menus[], int *menuIndex)
 
 	int state;
 	static int laststate = 0;
+	int lastSelected;
 
 	GPIOSetValue(LED0_PORT, LED0_BIT, LED_ON);
 
@@ -285,22 +293,26 @@ int run_menu(stMenu *menus[], int *menuIndex)
 
 			if ((state & BTN_LT_MASK) == 0)
 			{
+				lastSelected = menus[*menuIndex]->selected;
 				*menuIndex = *menuIndex - 1;
 
 				if (*menuIndex < 0)
 					*menuIndex = NUM_MENUS - 1;
 
 				menu = menus[*menuIndex];
+				menu->selected = lastSelected;
 			}
 
 			if ((state & BTN_RT_MASK) == 0)
 			{
+				lastSelected = menus[*menuIndex]->selected;
 				*menuIndex = *menuIndex + 1;
 
 				if (*menuIndex > (NUM_MENUS - 1))
 					*menuIndex = 0;
 
 				menu = menus[*menuIndex];
+				menu->selected = lastSelected;
 			}
 
 			if ((state & BTN_AU_MASK) == 0)

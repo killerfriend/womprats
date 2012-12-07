@@ -69,7 +69,7 @@ Project Management \& Documentation tools
 \begin{itemize}
 \item GanttProject
 \item Redmine
-\item \LaTeX
+\item \LaTeX and Beamer
 \end{itemize}
 
 Technical tools
@@ -82,12 +82,21 @@ Technical tools
 
 \section{Design}
 \frame{\frametitle{Design}
-[Design text here]\\
 
   \begin{figure}[htb]
     \centering
-    \includegraphics[width=0.7\textwidth]{BlockLevelDiagram.png} 
-    \caption{Block Diagram Overview}
+    \includegraphics[width=0.7\textwidth]{synth0.png} 
+    \caption{Level 0 Block Diagram Overview}
+  \end{figure}
+
+}
+
+\frame{\frametitle{Design}
+
+  \begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{synth1.png} 
+    \caption{Level 1 Block Diagram Overview}
   \end{figure}
 
 }
@@ -111,14 +120,21 @@ The parts chosen for making the audio synthesizer:
 \end{itemize}
 }
 
-\subsection{PCB Layout}
-\frame{{PCB Layout} 
+\subsection{Implementation}
+\frame{{Software}
+\begin{itemize}
+  \item LCD Menu Core
 
-\begin{center}
- \includegraphics[width=0.7\textwidth]{pcb.png}
-\end{center}
+  \item Synth Core
+\end{itemize}
 }
 
+\subsection{PCB Layout}
+\frame{{PCB Layout} 
+  \begin{center}
+   \includegraphics[width=0.7\textwidth]{pcb.png}
+  \end{center}
+}
 
 \begin{frame}{Lessons Learned}
 \end{frame}
