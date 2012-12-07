@@ -282,10 +282,24 @@ Technical tools
     \end{itemize}
   \end{column}
     \begin{column}{1.5in}
-      \includegraphics[width=1.5in]{audioout_back.jpg}
+      \begin{figure}
+        \centering
+        \includegraphics[width=1.5in]{audioout_back.jpg}
+        \caption{PCB Prototype of the Audio Amplifier}
+      \end{figure}
     \end{column}
   \end{columns}
 }
+
+
+
+\frame{{PCB Layout}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{pcb.png}
+    \caption{Finalized PCB Layout}
+  \end{figure} 
+  }
 
 
 \subsection{Software}
@@ -305,9 +319,12 @@ Technical tools
 
 
 \frame{{Menu Core}
-  \begin{center}
+  \begin{figure}
+    \centering
     \includegraphics[width=0.7\textwidth]{LCD-annotated.png}
-  \end{center}
+    \caption{LCD Menu}
+  \end{figure}
+
   \begin{columns}
     \begin{column}{1.5in}
       Select Waveform
@@ -328,9 +345,12 @@ Technical tools
 }
 
 \frame{{Synth Core}
-  \begin{center}
+  \begin{figure}
+    \centering
     \includegraphics[width=3in]{synth-isr.png}
-  \end{center}
+    \caption{Synth Core State Diagram}
+  \end{figure}
+
   Broken down into three main parts: 
   \begin{itemize}
     \item Frequency Generation
@@ -345,16 +365,21 @@ Technical tools
   Generated Ramp functions are turned into Square, Sawtooth and
   Triangle waves using following transfer functions.
   
-    \begin{columns}
+  \begin{columns}
     \begin{column}{1.1in}
-      $f(x)$
-      \includegraphics[width=1.4in]{sawtooth.png}
+      
+      \begin{figure}
+        \centering
+        \includegraphics[width=1.4in]{sawtooth.png}
+        \caption{$f(x)$}
+      \end{figure}
+      
     \end{column}
     \begin{column}{1.9in}
       
       \begin{displaymath}
         f_{saw}(x) = 2f(x) - A
-        \end{displaymath}
+      \end{displaymath}
       
       \begin{displaymath}
         f_{squ}(x) = \left\{
@@ -391,35 +416,50 @@ Technical tools
   \end{center}
 }
 
+
 \frame{\frametitle{Sunstone PCB}
-\begin{center}
- \includegraphics[width=0.35\textwidth]{ldo_orientation.jpg}
-\end{center}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.35\textwidth]{ldo_orientation.jpg}
+    \caption{LDO Issue Resolved}
+  \end{figure}
+
   Issue \#1: LDO pin layout incorrectly placed on the PCB\\
   Solution: Rotated LDO 180$^\circ$
 }
 
+
 \frame{\frametitle{Sunstone PCB}
-\begin{center}
- \includegraphics[width=0.65\textwidth]{rewire.jpg}
-\end{center}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.65\textwidth]{rewire.jpg}
+    \caption{Mod-wire Fix}
+  \end{figure}
+
   Issue \#2: Unable to rapidly turn on and off the audio synthesizer\\
   Solution: Used pull-up resistor to force the bootloader pin high\\
 }
 
+
 \frame{\frametitle{Sunstone PCB}
-\begin{center}
- \includegraphics[width=0.65\textwidth]{header_issue.jpg}
-\end{center}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.65\textwidth]{header_issue.jpg}
+    \caption{Header Spacing}
+  \end{figure}
+
   Issue \#3: Header spacing width too close to fit together\\
   Solution: Shaved unnecessary header material to make it fit\\
 }
 
 \frame{\frametitle{Mechanical}
 
-\begin{center}
-	\includegraphics[width=0.5\textwidth]{unannotated.png}
-\end{center}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{unannotated.png}
+    \caption{Mechanical Layout of Audio Synthesizer Box}
+  \end{figure}
+
 
 \begin{itemize}
 \item Comically sized power switch
@@ -432,9 +472,12 @@ Technical tools
 }
 
 \frame{\frametitle{Mechanical}
-\begin{center}
- \includegraphics[width=0.65\textwidth]{ratsnest.jpg}
-\end{center}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.65\textwidth]{ratsnest.jpg}
+    \caption{Wire Mess Inside Audio Synthesizer}
+  \end{figure}
+
 	\begin{itemize}
   \item Wiring is messy inside box
 	\item Was not considered ahead of time
@@ -470,9 +513,6 @@ Insert finalized BOM table here:\\
       \item Fast and Loose
       \item Unit testing was implicit 
     \end{itemize}
-    \begin{center}
-      \includegraphics[width=0.7\textwidth]{pcb.png}
-    \end{center}
 \end{itemize}
 }
 
