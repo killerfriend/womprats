@@ -344,7 +344,44 @@ Insert finalized BOM table here:\\
 
 }
 
-\frame{{Waveform Generation}}
+\frame{{Waveform Generation} 
+
+  Generated Ramp functions are turned into Square, Sawtooth and
+  Triangle waves using following transfer functions.
+  
+    \begin{columns}
+    \begin{column}{1.1in}
+      $f(x)$
+      \includegraphics[width=1.4in]{sawtooth.png}
+    \end{column}
+    \begin{column}{1.9in}
+      
+      \begin{displaymath}
+        f_{saw}(x) = 2f(x) - A
+        \end{displaymath}
+      
+      \begin{displaymath}
+        f_{squ}(x) = \left\{
+        \begin{array}{lr}
+          A & : x > A/2 \\
+          -A & : x \le A/2
+        \end{array}
+        \right.
+      \end{displaymath} 
+      
+      \begin{displaymath}
+        f_{tri}(x) = \left\{
+        \begin{array}{lr}
+          4f(x) - A & : x \le A/2 \\
+          -4f(x) + 3A & : x > A/2
+        \end{array}
+        \right.
+      \end{displaymath} 
+      
+
+    \end{column}
+  \end{columns}
+}
 \subsection{PCB Layout}
 \frame{{PCB Layout} 
   \begin{center}
