@@ -32,7 +32,7 @@
   riffs, and catchy hooks.
   \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{logo.png} 
+    \includegraphics[width=0.5\textwidth]{unannotated.png}
     \caption{}
   \end{figure}
 }
@@ -112,7 +112,6 @@
         \begin{itemize}
 	\item 4 internal channels
 		\begin{itemize}
-		\item 4 internal channels
 		\item 1 momentary switch for each
 		\item 1 single turn pot for each
 		\end{itemize}
@@ -152,9 +151,10 @@
 
 \frame{\frametitle{Design}
 	DAC \& Audio Amp
-	\begin{center}
+	\begin{figure}
 	\includegraphics[width=0.8\textwidth]{Level-0_DACaudio.png}
-	\end{center}
+	\caption{Level 0 Block Diagram of DAC and Audio Amp}
+	\end{figure}
 
 	\begin{itemize}
 	\item 12-bit DAC
@@ -352,15 +352,11 @@
 \frame{{Synth Core}
   \begin{figure}
     \centering
-    \includegraphics[width=3in]{synth-isr.png}
-    \caption{Synth Core State Diagram}
+    \includegraphics[width=3in]{synth-diag.png}
+    \caption{Synthesizer Diagram}
   \end{figure}
-
-  Broken down into two main parts: 
-  \begin{itemize}
-    \item Frequency Generation
-    \item Waveform Generation
-    \end{itemize}
+  
+  Synthesizer uses sawtooth functions to generate signal. 
 
 }
 
@@ -567,7 +563,34 @@ Technical tools
 
 \section{Contributions}
 \frame{{Contributions}
-[Contributions text here]
+	\begin{itemize}
+	\item Kevin:
+		\begin{itemize}
+		\item LCD Hardware
+		\item Case Design
+		\item PWM hardware
+		\item EEPROM software
+		\end{itemize}
+	\item Bradon
+		\begin{itemize}
+		\item UI software
+		\item Amp breakout board
+		\item Integration and software testing
+		\end{itemize}
+	\item Jackson:
+		\begin{itemize}
+		\item Board buildup and rework
+		\item Amp design
+		\item Overcurrent testing
+		\item BOM
+		\end{itemize}
+	\item Andy:
+		\begin{itemize}
+		\item Synth core software
+		\item Schematic and layout
+		\item Main board integration design
+		\end{itemize}
+	\end{itemize}
 }
 
 \section{Lessons Learned}
