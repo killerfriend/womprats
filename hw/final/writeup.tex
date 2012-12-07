@@ -101,7 +101,7 @@ Technical tools
 
 }
 
-\subsection{Implementation}
+\section{Implementation}
 \frame{{Implementation}
 The parts chosen for making the audio synthesizer:
 \begin{itemize}
@@ -120,7 +120,57 @@ The parts chosen for making the audio synthesizer:
 \end{itemize}
 }
 
-\subsection{Implementation}
+\subsection{Part Selection}
+\frame{{Part Selection}
+  
+}
+\frame{{Microcontroller}
+  \textbf{Selected Part: } NXP LPC1114
+  \begin{columns}
+    \column{2in}
+
+  
+    \textbf{Pros}
+    \begin{itemize}
+    \item Cheap Development Environment
+    \item DIP Package
+    \item Hardware Debugging
+  \end{itemize}
+  
+  \textbf{Cons}
+  \begin{itemize}
+    \item Not as many examples as Atmel
+    \item Closed source debugger
+  \end{itemize}
+  \column{2in}
+  \includegraphics[width=1in]{lqfp.jpg}
+
+  \end{columns}
+}
+
+\frame{{DAC}
+    \textbf{Selected Part: } Microchip MCP4921
+    \begin{columns}
+
+    \begin{column}{1.5in}
+    \textbf{Pros}
+    \begin{itemize}
+    \item
+    \end{itemize}
+    
+    \textbf{Cons}
+    \begin{itemize}
+    \item
+    \end{itemize}
+    \end{column}
+    
+    \begin{column}{1.5in}
+      \includegraphics[width=1in]{soic.jpg}
+    \end{column}
+  \end{columns}
+}
+
+\subsection{Software}
 \frame{{Software}
 \begin{itemize}
   \item LCD Menu Core
