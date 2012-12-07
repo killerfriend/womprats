@@ -260,80 +260,14 @@ Technical tools
   \end{columns}
 }
 
+\frame{{PCB Layout} 
+  \begin{center}
+   \includegraphics[width=0.7\textwidth]{pcb.png}
+  \end{center}
+}
+
 \subsection{Software}
 
-\frame{\frametitle{Actual Board \& PCB}
-\begin{center}
- \includegraphics[width=0.35\textwidth]{ldo_orientation.jpg}
-\end{center}
-  Issue \#1: LDO pin layout incorrectly placed on the PCB\\
-  Solution: Rotated LDO 180$^\circ$
-}
-
-\frame{\frametitle{Actual Board \& PCB}
-\begin{center}
- \includegraphics[width=0.65\textwidth]{rewire.jpg}
-\end{center}
-  Issue \#2: Unable to rapidly turn on and off the audio synthesizer\\
-  Solution: Used pull-up resistor to force the bootloader pin high\\
-}
-
-\frame{\frametitle{Actual Board \& PCB}
-\begin{center}
- \includegraphics[width=0.65\textwidth]{header_issue.jpg}
-\end{center}
-  Issue \#3: Header spacing width too close to fit together\\
-  Solution: Shaved unnecessary header material to make it fit\\
-}
-
-\frame{\frametitle{Actual Board \& PCB}
-\begin{center}
- \includegraphics[width=0.65\textwidth]{ratsnest.jpg}
-\end{center}
-  Issue \#4: Wiring is messy inside box\\
-  Solution: Crammed wiring in box and screwed it shut\\
-}
-
-\frame{\frametitle{Mechanical}
-
-\begin{center}
-	\includegraphics[width=0.5\textwidth]{unannotated.png}
-\end{center}
-
-\begin{itemize}
-\item Comically sized power switch
-\item Simple project box
-\item Panel mounted
-\item Various buttons and knobs
-\item Rats-nest wiring
-\end{itemize}
-
-}
-
-\frame{\frametitle{BOM}
-Insert finalized BOM table here:\\
-}
-
-\frame{\frametitle{IP/Prior Work}
-\begin{itemize}
-  \item LPCXpresso libraries for:
-  \begin{itemize}
-  \item Timers
-  \item GPIO
-  \item ADC
-  \item SPI
-  \item I$^2$C
-  \end{itemize}
-  \item Dogm128 LCD library (ported from ATmega)
-  \item Bradon's Menu Code (written early 2000 for X)
-\end{itemize}    
-}
-
-\subsection{PCB Layout}
-\frame{{PCB Layout} 
-}
-
-\subsection{Implementation}
 
 \frame{{Software}
 \begin{itemize}
@@ -349,7 +283,7 @@ Insert finalized BOM table here:\\
 \end{itemize}
 }
 
-\subsection{Implementation}
+
 \frame{{Menu Core}
   \begin{center}
     \includegraphics[width=0.7\textwidth]{LCD-annotated.png}
@@ -424,12 +358,74 @@ Insert finalized BOM table here:\\
     \end{column}
   \end{columns}
 }
-\subsection{PCB Layout}
-\frame{{PCB Layout} 
-  \begin{center}
-   \includegraphics[width=0.7\textwidth]{pcb.png}
-  \end{center}
+
+\frame{\frametitle{Actual Board \& PCB}
+\begin{center}
+ \includegraphics[width=0.35\textwidth]{ldo_orientation.jpg}
+\end{center}
+  Issue \#1: LDO pin layout incorrectly placed on the PCB\\
+  Solution: Rotated LDO 180$^\circ$
 }
+
+\frame{\frametitle{Actual Board \& PCB}
+\begin{center}
+ \includegraphics[width=0.65\textwidth]{rewire.jpg}
+\end{center}
+  Issue \#2: Unable to rapidly turn on and off the audio synthesizer\\
+  Solution: Used pull-up resistor to force the bootloader pin high\\
+}
+
+\frame{\frametitle{Actual Board \& PCB}
+\begin{center}
+ \includegraphics[width=0.65\textwidth]{header_issue.jpg}
+\end{center}
+  Issue \#3: Header spacing width too close to fit together\\
+  Solution: Shaved unnecessary header material to make it fit\\
+}
+
+\frame{\frametitle{Actual Board \& PCB}
+\begin{center}
+ \includegraphics[width=0.65\textwidth]{ratsnest.jpg}
+\end{center}
+  Issue \#4: Wiring is messy inside box\\
+  Solution: Crammed wiring in box and screwed it shut\\
+}
+
+\frame{\frametitle{Mechanical}
+
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{unannotated.png}
+\end{center}
+
+\begin{itemize}
+\item Comically sized power switch
+\item Simple project box
+\item Panel mounted
+\item Various buttons and knobs
+\item Rats-nest wiring
+\end{itemize}
+
+}
+
+\frame{\frametitle{BOM}
+Insert finalized BOM table here:\\
+}
+
+\frame{\frametitle{IP/Prior Work}
+\begin{itemize}
+  \item LPCXpresso libraries for:
+  \begin{itemize}
+  \item Timers
+  \item GPIO
+  \item ADC
+  \item SPI
+  \item I$^2$C
+  \end{itemize}
+  \item Dogm128 LCD library (ported from ATmega)
+  \item Bradon's Menu Code (written early 2000 for X)
+\end{itemize}    
+}
+
 
 \subsection{Testing}
 \frame{{Testing}
