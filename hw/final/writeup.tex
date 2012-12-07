@@ -29,13 +29,18 @@
   \textit{What is the T-16 Audio Synth?}
   
   \pause A flexible Audio Synthesizer platform, capable of sweet
-  riffs, and catchy hooks.  }
+  riffs, and catchy hooks.
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{logo.png} 
+    \caption{}
+  \end{figure}
+}
 
 
 %\frame{\titlepage}
 \frame{\frametitle{Agenda}\tableofcontents} 
 
-\subsection{Objective}
 \frame{{Objective}
   \textit{What is the objective of the T-16?}
 \begin{itemize}
@@ -53,7 +58,6 @@
 \end{itemize}
 }
 
-\subsection{Requirements}
 \frame{{Requirements}
 \begin{itemize}
 \item Avoid  mechanical complexity
@@ -65,22 +69,6 @@
 \end{itemize}
 }
 
-\subsection{Approach}
-\frame{{Approach}
-Project Management \& Documentation tools
-\begin{itemize}
-\item GanttProject
-\item Redmine
-\item \LaTeX and Beamer
-\end{itemize}
-
-Technical tools
-\begin{itemize}
-\item KiCad EDA
-\item LPCXpresso Code Red IDE
-\item Git
-\end{itemize}
-}
 
 \section{Design}
 \frame{\frametitle{Design}
@@ -110,9 +98,7 @@ Technical tools
 	\item LPC1114 ARM microcontroller
 	\item SPI and I$^2$C capable
 	\item Multiple GPIO pins
-	\item Simple, Cheap Dev Board (LPC Xpresso)
-	\item Free development tools (code red)
-	\item Available as DIP package to allow for prototyping
+  \item 48 MHz LQFP
 	\end{itemize}
 
 }
@@ -164,27 +150,6 @@ Technical tools
 }
 
 \frame{\frametitle{Design}
-	UI \& LCD
-        \begin{figure}
-	  \centering
-	  \includegraphics[width=0.7\textwidth]{lcd.png} 
-          \caption{Level 0 Block Diagram of LCD}
-        \end{figure}
-
-	\begin{itemize}
-	\item UI buttons
-	\item channel buttons
-	\item channel knobs
-	\item LCD display
-		\begin{itemize}
-		\item EA DOGS102W-6 + EA LED39x41-W
-		\end{itemize}
-	\end{itemize}
-
-}
-
-\frame{\frametitle{Design}
-
 	DAC \& Audio Amp
 	\begin{figure}
 	\includegraphics[width=0.8\textwidth]{Level-0_DACaudio.png}
@@ -200,6 +165,7 @@ Technical tools
 	\item Mono audio out
 		\begin{itemize}
 		\item LM4875 amplifier
+    \item 1 watt output
 		\end{itemize}
 	\item Volume control
 	\end{itemize}
@@ -207,8 +173,28 @@ Technical tools
 }
 
 \frame{\frametitle{Design}
+	UI \& LCD
+        \begin{figure}
+	  \centering
+	  \includegraphics[width=0.7\textwidth]{lcd.png} 
+          \caption{Level 0 Block Diagram of LCD}
+        \end{figure}
+
+	\begin{itemize}
+	\item UI buttons
+	\item LCD display
+		\begin{itemize}
+		\item EA DOGS102W-6 + EA LED39x41-W
+    \item 102x64 monochrome raster display
+    \item PWM controllable backlight
+		\end{itemize}
+	\end{itemize}
+
+}
+
+\frame{\frametitle{Design}
 \begin{center}
-\includegraphics[width=0.9\textwidth]{schem.pdf}
+\includegraphics[width=0.9\textwidth]{main-schematic.png}
 \end{center}
 
 }
@@ -274,7 +260,6 @@ Technical tools
     \end{column}
   \end{columns}
 }
-\subsection{Prototyping}
 \frame{{Prototyping}
   \begin{columns}
     \begin{column}{1.5in}
@@ -296,7 +281,6 @@ Technical tools
   \end{columns}
 }
 
-\subsection{Software}
 \frame{{Software}
 \begin{itemize}
   \item LCD Core
@@ -514,7 +498,6 @@ Technical tools
   \end{figure}
 }
 
-\subsection{Testing}
 \frame{{Testing}
 \begin{itemize}
   \item Prototyping 
@@ -530,7 +513,25 @@ Technical tools
 \end{center}
 }
 
-\subsection{IP/Prior Work}
+
+\frame{{Tools Used}
+Project Management \& Documentation tools
+\begin{itemize}
+\item GanttProject
+\item Redmine
+\item \LaTeX and Beamer
+\end{itemize}
+
+Technical tools
+\begin{itemize}
+\item KiCad EDA
+\item LPCXpresso Code Red IDE
+\item Git
+\end{itemize}
+}
+
+
+
 \frame{{IP/Prior Work}
 \begin{itemize}
   \item LPCXpresso libraries for:
