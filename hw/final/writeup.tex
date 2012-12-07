@@ -92,34 +92,25 @@ Technical tools
 }
 
 \frame{\frametitle{Design}
-
   \begin{figure}[htb]
     \centering
     \includegraphics[width=0.7\textwidth]{synth1.png} 
     \caption{Level 1 Block Diagram Overview}
   \end{figure}
-
 }
 
 \section{Implementation}
 \frame{{Implementation}
 The parts chosen for making the audio synthesizer:
 \begin{itemize}
-  \pause
-\item Microcontroller: NPX LPC 1114
-  \pause
-\item EEPROM: Atmel AT24C128C
-  \pause
-\item LCD: EA DOGS102W-6 +EA LED39x41-W
-  \pause
-\item Channels: 
-  \pause
-\item DAC: MCP4921
-  \pause
-\item Audio Amplifier: LM4875
+  \item Microcontroller: NPX LPC 1114
+  \item EEPROM: Atmel AT24C128C
+  \item LCD: EA DOGS102W-6 +EA LED39x41-W
+  \item Channels: 
+  \item DAC: MCP4921
+  \item Audio Amplifier: LM4875
 \end{itemize}
 }
-
 
 \subsection{Part Selection}
 \frame{{Part Selection}
@@ -156,7 +147,9 @@ The parts chosen for making the audio synthesizer:
     \begin{column}{1.5in}
     \textbf{Pros}
     \begin{itemize}
-    \item
+    \item Proven Design 
+    \item DIP Package
+    \item 
     \end{itemize}
     
     \textbf{Cons}
@@ -172,7 +165,6 @@ The parts chosen for making the audio synthesizer:
 }
 
 \subsection{Software}
-
 
 \frame{\frametitle{Actual Board \& PCB}
 \begin{center}
@@ -212,7 +204,7 @@ Insert finalized BOM table here:\\
   \item SPI
   \item I$^2$C
   \end{itemize}
-  \item Dogs m128 LCD library (ported from ATmega)
+  \item Dogm128 LCD library (ported from ATmega)
   \item Bradon's Menu Code (written early 2000 for X)
 \end{itemize}    
 }
@@ -220,6 +212,7 @@ Insert finalized BOM table here:\\
 \subsection{PCB Layout}
 \frame{{PCB Layout} 
 }
+
 \subsection{Implementation}
 
 \frame{{Software}
@@ -238,12 +231,12 @@ Insert finalized BOM table here:\\
 
 \subsection{Implementation}
 \frame{{Menu Core}
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{LCD-annotated.png}
+  \end{center}
   \begin{itemize}
-    \begin{center}
-     \includegraphics[width=0.7\textwidth]{LCD-annotated.png}
-    \end{center}
     \item Select Waveform per Channel
-    \begin{itemize}
+      \begin{itemize}
       \item Sawtooth
       \item Square
       \item Triangle
@@ -366,7 +359,7 @@ Insert finalized BOM table here:\\
 
 %\begin{frame}{Design Choices}
 %  \begin{itemize}
-%    \pause
+ppp%    \pause
 %  \item KiCad
 %    \pause
 %  \item LPC1114
