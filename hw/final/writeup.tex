@@ -1,7 +1,7 @@
 \documentclass{beamer}
 \usetheme{default}
 
-
+\logo{\includegraphics[width=.3in]{logo.png} \hspace{1em} Womprats T-16}
 \title{ECE411 Final Presentation}
 \subtitle{Womprats T-16 Audio Synthesizer}
 \author{A. Goetz \and B. Kanyid \and J. Pugh \and K. Riedl}
@@ -18,33 +18,48 @@
   \titlepage
 \end{frame}
 
-%\frame{\titlepage}
-\frame{\frametitle{Agenda}\tableofcontents} 
 
 
 % 30 seconds for overview
-\section{Project Overview} 
-\frame{\frametitle{Project Overview} 
-[Overview text here]
-Audio synthesizers provide entertainment by creating unique sounds.
-}
+\section{Overview} 
+\frame{{Project Overview} 
+  \textit{What is the T-16 Audio Synth?}
+  
+  \pause A flexible Audio Synthesizer platform, capable of sweet
+  riffs, and catchy hooks.  }
+
+
+%\frame{\titlepage}
+\frame{\frametitle{Agenda}\tableofcontents} 
+
 \subsection{Objective}
 \frame{{Objective}
-[Objective text here]
-Design and build a device that can generate sounds from user-control.
+  \textit{What is the objective of the T-16?}
+\begin{itemize}
+  \pause 
+  \item Make Dead Week in the Capstone Lab as annoying as possible.
+
+  \pause
+  \item Demonstrate our ``Phat Engineering Skillz''
+
+  \pause
+  \item Develop an extensible music platform.
+
+  \pause 
+  \item Develop a project that is easy to demonstrate in an interview situation. 
+\end{itemize}
 }
+
 \subsection{Requirements}
 \frame{{Requirements}
 \begin{itemize}
 \item Avoid  mechanical complexity
-\item Make the project cheap enough to replicate for each of us to have one / make one cheaply
-\item Stick to free/open source software if possible
-\item Stick to cheap hardware tool costs if possible (try not to buy tools)
-\item Project should be gracefully degradable, i.e. modular (so if we need to cut corners it won't cause complications)
-\item Keep logic "breadboardable" i.e. keep it simple enough to prototype on a breadboard
-\item Use plug and play devices if possible
-\item Device should be safe for the user and durable
-\item Suitable for bringing into an interview situation (keep it portable)
+\item Cheap to build
+\item Cheap tools
+\item Use Free Tools
+\item Gracefully Degradeable
+\item Breadboardable
+\item Demonstratable in an interview situation
 \end{itemize}
 
 }
@@ -54,7 +69,7 @@ Project Management \& Documentation tools
 \begin{itemize}
 \item GanttProject
 \item Redmine
-\item \LaTeX
+\item \LaTeX and Beamer
 \end{itemize}
 
 Technical tools
@@ -67,12 +82,21 @@ Technical tools
 
 \section{Design}
 \frame{\frametitle{Design}
-[Design text here]\\
 
   \begin{figure}[htb]
     \centering
-    \includegraphics[width=0.7\textwidth]{BlockLevelDiagram.png} 
-    \caption{Block Diagram Overview}
+    \includegraphics[width=0.7\textwidth]{synth0.png} 
+    \caption{Level 0 Block Diagram Overview}
+  \end{figure}
+
+}
+
+\frame{\frametitle{Design}
+
+  \begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{synth1.png} 
+    \caption{Level 1 Block Diagram Overview}
   \end{figure}
 
 }
@@ -95,6 +119,7 @@ The parts chosen for making the audio synthesizer:
 \item Audio Amplifier: LM4875
 \end{itemize}
 }
+
 
 \frame{\frametitle{Actual Board \& PCB}
 \begin{center}
@@ -142,9 +167,21 @@ Insert finalized BOM table here:\\
 \subsection{PCB Layout}
 \frame{{PCB Layout} 
 
-\begin{center}
- \includegraphics[width=0.7\textwidth]{pcb.png}
-\end{center}
+\subsection{Implementation}
+\frame{{Software}
+\begin{itemize}
+  \item LCD Menu Core
+
+  \item Synth Core
+\end{itemize}
+}
+
+
+\subsection{PCB Layout}
+\frame{{PCB Layout} 
+  \begin{center}
+   \includegraphics[width=0.7\textwidth]{pcb.png}
+  \end{center}
 }
 
 \begin{frame}{Lessons Learned}

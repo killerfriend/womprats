@@ -166,15 +166,19 @@ int main (void) {
 	}
 
 	int tmps[6];
-	int button_hold[6] = {0};
-	int last_state[6] = {1};
-	int state[6] = {1};
+	int button_hold[6];
+	int last_state[6] ;
+	int state[6];
 
 	for (i = 0; i < 6; i++)
 	{
 		last_state[i] = 1;
 		state[i] = 1;
+
+		if (i < 4)
+			button_hold[i] = 0;
 	}
+
 
 	while (1) {
 		for (i = 0; i < 6; i++)
