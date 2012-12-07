@@ -1,8 +1,7 @@
 \documentclass{beamer}
 \usetheme{default}
 \setbeamertemplate{caption}[numbered]
-\usepackage[labelformat=empty]{caption}
-
+\usepackage[labelformat=empty, center]{caption}
 
 \logo{\includegraphics[width=.3in]{logo.png}}
 \title{ECE411 Final Presentation}
@@ -141,12 +140,26 @@ Technical tools
 	\end{itemize}
         \end{column}
           \begin{column}{1in}
-        \begin{figure}
-	  \centering
-	  \includegraphics[width=0.6\textwidth]{mini-din.png} 
-          \caption{External Channel Interface}
-        \end{figure}
-            \end{column}
+            \begin{figure}
+              \centering
+              \begin{tabular}{rl}
+                Pin & Signal \\
+                \hline
+                1 & $V_{DD}$  \\
+                2 & $D_{in}$\\
+                3 & $GND$\\
+                4 & $A_{in}$
+              \end{tabular}
+              \caption{\emph{Channel PCB Header}}
+            \end{figure}
+
+            \begin{figure}
+              \begin{center}
+	      \includegraphics[width=0.6\textwidth]{mini-din.png} 
+              \caption{\emph{External Channel Interface}}
+              \end{center}
+            \end{figure}
+          \end{column}
         \end{columns}
 
 }
@@ -482,7 +495,12 @@ Technical tools
 }
 
 \frame{\frametitle{BOM}
-Insert finalized BOM table here:\\
+  \begin{figure}
+    \centering
+    \includegraphics[scale=.4]{synthbom.pdf}
+    \caption{Build of Materials}
+
+  \end{figure}
 }
 
 \subsection{Testing}
@@ -495,6 +513,10 @@ Insert finalized BOM table here:\\
       \item Unit testing was implicit 
     \end{itemize}
 \end{itemize}
+
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{TEK00006.PNG} 
+\end{center}
 }
 
 \subsection{IP/Prior Work}
