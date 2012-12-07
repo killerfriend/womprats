@@ -58,16 +58,6 @@
 \end{itemize}
 }
 
-\frame{{Requirements}
-\begin{itemize}
-\item Avoid  mechanical complexity
-\item Cheap to build
-\item Prefer inexpensive and open source tools
-\item Gracefully degradeable
-\item Breadboardable
-\item Demonstratable in an interview situation
-\end{itemize}
-}
 
 
 \section{Design}
@@ -98,7 +88,7 @@
 	\item LPC1114 ARM microcontroller
 	\item SPI and I$^2$C capable
 	\item Multiple GPIO pins
-  \item 48 MHz LQFP
+        \item 48 MHz LQFP
 	\end{itemize}
 
 }
@@ -282,6 +272,8 @@
 }
 
 \frame{{Software}
+  \begin{columns}
+\begin{column}{.5\textwidth}
 \begin{itemize}
   \item LCD Core
   \begin{itemize}
@@ -293,6 +285,13 @@
   \end{itemize}
   \item Synth Core
 \end{itemize}
+\end{column}
+\begin{column}{.5\textwidth}
+  \begin{center}
+        \includegraphics[width=0.45\textheight]{codered.png}
+      \end{center}
+    \end{column}
+\end{columns}
 }
 
 \frame{{LCD Driver}
@@ -556,9 +555,22 @@ Technical tools
 
 \section{Results}
 \frame{{Results - The Good}
+These requirements passed 
+\begin{itemize}
+\item Use inexpensive and open source tools
+\item Gracefully degradeable
+\item Breadboardable
+\item Demonstratable in an interview situation
+\end{itemize}
 }
 
 \frame{{Results - The Bad}
+These requirements failed to pass
+\begin{itemize}
+\item Avoid  mechanical complexity
+\item Cheap to build
+\item Ability to save synth state
+\end{itemize}
 }
 
 \section{Contributions}
