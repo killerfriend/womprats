@@ -91,7 +91,7 @@ Technical tools
 \frame{\frametitle{Design}
 
 	\centering
-  \includegraphics[width=0.7\textwidth]{synth1.png} 
+	\includegraphics[width=0.7\textwidth]{synth1.png} 
 
 }
 
@@ -99,7 +99,7 @@ Technical tools
 
 	Microcontroller
 	\begin{center}
-  \includegraphics[width=0.6\textwidth]{microcont.png}
+	\includegraphics[width=0.6\textwidth]{microcont.png}
 	\end{center}
 	\begin{itemize}
 	\item LPC1114 ARM microcontroller
@@ -114,18 +114,27 @@ Technical tools
 
 \frame{\frametitle{Design}
 
+
 	Channels 
         \begin{columns}
-          \begin{column}{1.5in}
+          \begin{column}{2in}
         \begin{itemize}
-	\item 6 separate channels
+	\item 4 internal channels
 		\begin{itemize}
-		\item 4 internal
-		\item 2 external
+		\item 4 internal channels
+		\item 1 momentary switch for each
+		\item 1 single turn pot for each
 		\end{itemize}
+	\item 2 external channels
+
+		\begin{itemize}
+		\item 1 port for each input
+		\end{itemize}
+	\item Output is voltage between 0V-3.3V
+	\item Converted to 10-bit value by ADC in microcontroller
 	\end{itemize}
         \end{column}
-          \begin{column}{1.5in}
+          \begin{column}{1in}
             \includegraphics[width=1in]{mini-din.png}
             \end{column}
         \end{columns}
@@ -135,7 +144,7 @@ Technical tools
 \frame{\frametitle{Design}
 	UI \& LCD
 	\begin{center}
-  \includegraphics[width=0.7\textwidth]{lcd.png}
+	\includegraphics[width=0.7\textwidth]{lcd.png}
 	\end{center}
 	\begin{itemize}
 	\item UI buttons
@@ -153,8 +162,8 @@ Technical tools
 
 	DAC \& Audio Out
 	\begin{center}
-  \includegraphics[width=0.5\textwidth]{dac.png}
-  \includegraphics[width=0.5\textwidth]{audioamp.png}
+	\includegraphics[width=0.5\textwidth]{dac.png}
+	\includegraphics[width=0.5\textwidth]{audioamp.png}
 	\end{center}
 	\begin{itemize}
 	\item 12-bit DAC
@@ -385,11 +394,8 @@ Insert finalized BOM table here:\\
 \subsection{Integration Tests}
 \frame{{Integration Tests}
 \begin{itemize}
-  \pause
   \item Power-On Self-Test
-  \pause
   \item DAC-Audio Amplifier Test
-  \pause
   \item Display Womprat on LCD screen
 \end{itemize}
 }
@@ -399,10 +405,6 @@ Insert finalized BOM table here:\\
 [Results text here]
 }
 
-\section{Team Evaluation}
-\frame{\frametitle{Team Evaluation}
-[Team Evaluation text here]
-}
 \subsection{Contributions}
 \frame{{Contributions}
 [Contributions text here]
@@ -428,7 +430,7 @@ Insert finalized BOM table here:\\
 
 %\begin{frame}{Design Choices}
 %  \begin{itemize}
-ppp%    \pause
+%    \pause
 %  \item KiCad
 %    \pause
 %  \item LPC1114
