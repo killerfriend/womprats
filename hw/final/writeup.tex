@@ -112,10 +112,33 @@ The parts chosen for making the audio synthesizer:
 \subsection{Implementation}
 \frame{{Software}
 \begin{itemize}
-  \item LCD Menu Core
-
+  \item LCD Core
+  \begin{itemize}
+    \item Display Womprat on Startup
+  \end{itemize}
+  \item Menu Core
   \item Synth Core
 \end{itemize}
+}
+
+\subsection{Implementation}
+\frame{{Menu Core}
+  \begin{itemize}
+    \begin{center}
+     \includegraphics[width=0.7\textwidth]{LCD-annotated.png}
+    \end{center}
+    \item Select Waveform per Channel
+    \begin{itemize}
+      \item Sawtooth
+      \item Square
+      \item Triangle
+    \end{itemize}
+    \item Select Button Mode 
+    \begin{itemize}
+      \item Hold
+      \item Momentary
+    \end{itemize}
+  \end{itemize}
 }
 
 \subsection{PCB Layout}
